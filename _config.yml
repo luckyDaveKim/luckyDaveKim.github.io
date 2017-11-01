@@ -19,7 +19,7 @@ baseurl:
 permalink: pretty
 
 # Pagination
-paginate: 10
+paginate: 7
 #paginate_path: "/page:num/"
 #archive:
   #paginate: 10
@@ -379,8 +379,8 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: dave-dev
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
