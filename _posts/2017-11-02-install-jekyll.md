@@ -1,6 +1,6 @@
 ---
 title: Jekyll 설치하기
-date: 2017-11-02
+date: 2017-11-02 13:45:30 +09:00
 excerpt: ''
 categories:
   - Jekyll

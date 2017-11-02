@@ -10,6 +10,6 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 
-.sublime-project
-
 *.lock
+
+*.sublime-project
