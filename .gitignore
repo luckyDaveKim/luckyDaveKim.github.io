@@ -1,5 +1,6 @@
 _site/*
 _theme_packages/*
+_drafts/*
 
 Thumbs.db
 .DS_Store
@@ -8,5 +9,7 @@ Thumbs.db
 
 .rbenv-version
 .rvmrc
+
+.sublime-project
 
 *.lock

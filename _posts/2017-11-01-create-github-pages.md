@@ -1,12 +1,12 @@
 ---
 title: GitHub Pages 생성
-date: 2017-11-01 11:32:43
-excerpt: ' '
+date: 2017-11-01
+excerpt: ''
 categories:
-- GitHub
+  - GitHub
 tags:
-- github
-- github_pages
+  - github
+  - github_pages
 ---
 
 # 개요
