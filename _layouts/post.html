@@ -121,11 +121,11 @@ into the {body} of the default.hbs template -->
                 {% assign primary = page.tags | first %}
                 {% assign related_posts = 0 %}
                 {% for post in site.posts %}
-                  {% if post.tags.size > 0 %}
-                      {% if post.tags contains primary %}
-                        {% assign related_posts = related_posts | plus: 1 %}
-                      {% endif %}
-                  {% endif %}
+                    {% if post.tags.size > 0 %}
+                        {% if post.tags contains primary %}
+                            {% assign related_posts = related_posts | plus: 1 %}
+                        {% endif %}
+                    {% endif %}
                 {% endfor %}
                 {% if related_posts > 1 %}
                     <article class="read-next-card"
@@ -162,7 +162,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">
                                 {% if related_posts > 1 %}
-                                    See all {{ related_posts | minus: 1 }} posts  →
+                                    See all {{ related_posts }} posts  →
                                 {% elsif related_posts == 1 %}
                                     {{ related_posts }} post  →
                                 {% else %}
