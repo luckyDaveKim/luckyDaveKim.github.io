@@ -73,7 +73,7 @@ username: luckyDaveKim
 repo: luckyDaveKim.github.io
 branch: gh-core
 relative_source:
-destination: ../pages/
+destination: ./_site/
 production_url: https://luckydavekim.github.io/
 source_url: https://github.com/luckyDaveKim/luckyDaveKim.github.io/
 

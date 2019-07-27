@@ -8,7 +8,8 @@ navigation: true
 label: Author
 logo: 'assets/images/dev-dave.png'
 ---
-<!-- < default}} -->
+
+<!-- default -->
 <!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
 
 <!-- #author  -->
@@ -35,7 +36,7 @@ logo: 'assets/images/dev-dave.png'
                     </div>
                     {% if author[1].url %}
                         <a class="social-link social-link-wb" href="{{ author[1].url_full }}" target="_blank" rel="noopener">{% include website.html %}</a>
-                    {% endif
+                    {% endif %}
                     {% if author[1].github %}
                         <a class="social-link social-link-gh" href="https://github.com/{{ author[1].github }}" target="_blank" rel="noopener">{% include github.html %}</a>
                     {% endif %}
@@ -60,11 +61,9 @@ logo: 'assets/images/dev-dave.png'
 <!-- The main content area -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-
         <div class="post-feed">
             <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
             {%  include post-card.html %}
         </div>
-
     </div>
 </main>

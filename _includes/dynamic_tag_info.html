@@ -4,7 +4,6 @@
     {% if page.url contains tagName %}
         {% assign cover = tag[1].cover %}
         {% assign tag_description = tag[1].description %}
-        {{ tagName }} == {{tag[1].name}}
         {% break %}
     {% endif %}
 {% endfor %}
