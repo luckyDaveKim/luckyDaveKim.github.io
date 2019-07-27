@@ -1,0 +1,24 @@
+environment:
+  name: '개발 환경'
+  description: '개발 환경을 구축하기 위한 정보를 정리합니다.'
+  group: 'development'
+  cover: 'assets/images/category/environment-cover.png'
+  permalink: 'environment'
+git:
+  name: 'Git'
+  description: '컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율할 수 있는 분산 버전 관리 시스템 Git에 대해 정리합니다.'
+  group: 'development'
+  cover: 'assets/images/category/git-cover.png'
+  permalink: 'git'
+javascript:
+  name: 'JavaScript'
+  description: '객체 기반의 스크립트 프로그래밍 언어인 JavaScript에 대해 정리합니다.'
+  group: 'frontend'
+  cover: 'assets/images/category/javascript-cover.jpg'
+  permalink: 'javascript'
+jekyll:
+  name: 'Jekyll'
+  description: '개인 프로젝트 혹은 조직 사이트를 위한 간단한 블로그를 생성 할 수 있는 정적 사이트 생성기 Jekyll에 대해 정리합니다.'
+  group: 'frontend'
+  cover: 'assets/images/category/jekyll-cover.png'
+  permalink: 'jekyll'

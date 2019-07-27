@@ -380,7 +380,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
 
-.post-feed {
+.category-feed-title {
+    margin: 20px 0;
+}
+
+.post-feed, .category-feed {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -388,7 +392,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 40px 0 0 0;
 }
 
-.post-card {
+.post-card, .category-card {
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
@@ -402,34 +406,34 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s ease;
 }
 
-.post-card:hover {
+.post-card:hover, .category-card:hover {
     box-shadow: 0 0 1px rgba(39,44,49,0.10), 0 3px 16px rgba(39, 44, 49,0.07);
     transition: all 0.3s ease;
     transform: translate3D(0, -1px, 0);
 }
 
-.post-card-image-link {
+.post-card-image-link, .category-card-image-link {
     position: relative;
     display: block;
     overflow: hidden;
     border-radius: 5px 5px 0 0;
 }
 
-.post-card-image {
+.post-card-image, .category-card-image {
     width: auto;
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
     background-size: cover;
 }
 
-.post-card-content-link {
+.post-card-content-link, .category-card-content-link {
     position: relative;
     display: block;
     padding: 25px 25px 0;
     color: var(--darkgrey);
 }
 
-.post-card-content-link:hover {
+.post-card-content-link:hover, .category-card-content-link:hover {
     text-decoration: none;
 }
 
@@ -446,18 +450,18 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
-.post-card-title {
+.post-card-title, .category-card-title {
     margin-top: 0;
 }
 
-.post-card-content {
+.post-card-content, .category-card-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.post-card-excerpt {
+.post-card-excerpt, .category-card-description {
     font-family: Georgia, serif;
 }
 

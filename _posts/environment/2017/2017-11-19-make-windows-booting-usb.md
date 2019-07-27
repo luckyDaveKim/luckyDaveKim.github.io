@@ -5,7 +5,7 @@ navigation: true
 class: post-template
 subclass: 'post tag-getting-started'
 
-category: Windows
+category: environment
 tags:
   - windows
   - windows10

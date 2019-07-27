@@ -5,7 +5,7 @@ navigation: true
 class: post-template
 subclass: 'post tag-getting-started'
 
-category: Web-Server
+category: environment
 tags:
   - jdk
   - jdk8

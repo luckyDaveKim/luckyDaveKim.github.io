@@ -5,7 +5,7 @@ navigation: true
 class: post-template
 subclass: 'post tag-getting-started'
 
-category: Jekyll
+category: jekyll
 tags:
   - jekyll
   - github
@@ -13,7 +13,7 @@ tags:
 
 date: 2017-11-02 13:45:30 +09:00
 title: Jekyll 설치하기
-cover: assets/posts/2017-11-02/install-jekyll/cover.png
+cover: assets/posts/2017-11-02/install-jekyll/cover.jpg
 ---
 
 # 개요
