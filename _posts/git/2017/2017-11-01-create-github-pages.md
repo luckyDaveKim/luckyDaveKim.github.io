@@ -3,7 +3,7 @@ layout: post
 current: post
 navigation: true
 class: post-template
-subclass: 'post tag-getting-started'
+subclass: 'post tag-github-pages'
 
 category: git
 tags:
