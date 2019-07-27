@@ -17,7 +17,7 @@ tags:
 
 date: 2018-02-07 20:30:04 +09:00
 title: "ES6?! ES2015?! ECMAScript란 도대체 무엇인가?"
-cover: assets/posts/2018-02-07/what-is-the-ecmascript/javascript-history.png
+cover: assets/images/post/javascript/2018/2018-02-07/what-is-the-ecmascript/javascript-history.png
 ---
 
 # ES6은 뭐고 ES2015는 뭐야?!

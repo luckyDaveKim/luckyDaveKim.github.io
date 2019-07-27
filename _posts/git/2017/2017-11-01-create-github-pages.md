@@ -12,13 +12,13 @@ tags:
 
 date: 2017-11-01 23:32:43 +09:00
 title: GitHub Pages 생성
-cover: assets/posts/2017-11-01/create-github-pages/cover.jpeg
+cover: assets/images/post/git/2017/2017-11-01/create-github-pages/cover.jpeg
 ---
 
 # 개요
 이 포스팅에서는 GitHub Pages를 생성하는 방법에 대해 소개하고자 합니다.
 
-![github-pages-logo](/assets/posts/2017-11-01/create-github-pages/github-pages.jpg)
+![github-pages-logo](/assets/images/post/git/2017/2017-11-01/create-github-pages/github-pages.jpg)
 
 # GitHub 계정생성
 [GitHub 홈페이지](https://github.com)에서 계정생성한다.
@@ -31,7 +31,7 @@ cover: assets/posts/2017-11-01/create-github-pages/cover.jpeg
 4. **Public**을 선택한다.
 5. **Create repository**를 클릭한다.
 
-![create-github-repository](/assets/posts/2017-11-01/create-github-pages/create-github-repository.png)
+![create-github-repository](/assets/images/post/git/2017/2017-11-01/create-github-pages/create-github-repository.png)
 
 ## HTML, Javascript, CSS 파일 추가
 1. Bash 명령어를 통해 github 저장소를 clone 한다.
@@ -54,8 +54,8 @@ git push
 
 # 테마 선택
 1. **Settings**탭을 선택한다.
-![repository-setting](/assets/posts/2017-11-01/create-github-pages/repository-setting.png)
+![repository-setting](/assets/images/post/git/2017/2017-11-01/create-github-pages/repository-setting.png)
 2. **GitHub Pages**에서 **Choose a theme**를 클릭한다.
-![github-pages-setting](/assets/posts/2017-11-01/create-github-pages/github-pages-setting.png)
+![github-pages-setting](/assets/images/post/git/2017/2017-11-01/create-github-pages/github-pages-setting.png)
 3. 원하는 테마를 클릭 후 **Select theme**를 클릭한다.
-![choose-repository-theme](/assets/posts/2017-11-01/create-github-pages/choose-repository-theme.png)
+![choose-repository-theme](/assets/images/post/git/2017/2017-11-01/create-github-pages/choose-repository-theme.png)

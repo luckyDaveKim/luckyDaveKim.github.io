@@ -16,7 +16,7 @@ tags:
 
 date: 2017-11-02 13:48:18 +09:00
 title: 검색엔진에서 페이지 검색 가능하게 하기
-cover: assets/posts/2017-11-02/add-blog-to-search-engine/cover.jpg
+cover: assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/cover.jpg
 ---
 
 # 개요
@@ -41,7 +41,7 @@ Google 검색엔진에 등록은 Google 웹마스터 도구(Search Console)를 �
 1. [Google 웹마스터 도구](https://www.google.com/webmasters/tools/home?hl=ko)에 접속한다.
 2. **속성추가**를 클릭하여 자신의 홈페이지 주소를 입력한다.
 3. 좌측메뉴에서 크롤링 > **Sitemaps**를 클릭한다.
-![google-goto-check-sitemap](/assets/posts/2017-11-02/add-blog-to-search-engine/google-goto-check-sitemap.png)
+![google-goto-check-sitemap](/assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/google-goto-check-sitemap.png)
 4. 우측 상단의 **SITEMAP 추가/테스트**를 클릭한다.
 5. 자신의 홈페이지 sitemap.xml 주소`https://luckydavekim.github.io/sitemap.xml`를 입력한다.
 
@@ -49,8 +49,8 @@ Google 검색엔진에 등록은 Google 웹마스터 도구(Search Console)를 �
 Naver 검색엔진에 등록은 Naver 웹마스터 도구를 통해 등록할 수 있다.
 1. [Naver 웹마스터 도구](http://webmastertool.naver.com/board/main.naver)에 접속한다.
 2. **사이트 간단 체크**를 통하여 자신의 홈페이지 등록 가능 여부를 확인한다.
-![naver-check-site](/assets/posts/2017-11-02/add-blog-to-search-engine/naver-check-site.png)
+![naver-check-site](/assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/naver-check-site.png)
 3. 사이트 체크를 통과하였을 경우 하단의 **조회한 사이트 소유확인 하기**를 클릭한다.
-![naver-goto-check-site-own](/assets/posts/2017-11-02/add-blog-to-search-engine/naver-goto-check-site-own.png)
+![naver-goto-check-site-own](/assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/naver-goto-check-site-own.png)
 4. HTML 파일 업로드, HTML 태그 중 원하는 인증 방식을 선택하여 인증한다.
-![naver-check-site-own](/assets/posts/2017-11-02/add-blog-to-search-engine/naver-check-site-own.png)
+![naver-check-site-own](/assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/naver-check-site-own.png)

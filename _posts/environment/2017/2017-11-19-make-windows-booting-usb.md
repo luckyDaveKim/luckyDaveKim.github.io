@@ -13,7 +13,7 @@ tags:
 
 date: 2017-11-19 02:06:00 +09:00
 title: "윈도우10 부팅 USB 만들기"
-cover: assets/posts/2017-11-19/make-windows-booting-usb/cover.jpg
+cover: assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/cover.jpg
 ---
 
 # 개요
@@ -30,21 +30,21 @@ cover: assets/posts/2017-11-19/make-windows-booting-usb/cover.jpg
 
 # MediaCreationTool 설치
 1. [Microsoft 홈페이지](https://www.microsoft.com/ko-kr/software-download/windows10)에서 MediaCreationTool을 다운로드 한다.
-![media-creation-tool-download](/assets/posts/2017-11-19/make-windows-booting-usb/media-creation-tool-download.png)
+![media-creation-tool-download](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/media-creation-tool-download.png)
 2. 다운로드한 MediaCreationTool을 실행한다.
-![create-media-init](/assets/posts/2017-11-19/make-windows-booting-usb/create-media-init.png)
+![create-media-init](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/create-media-init.png)
 3. 원하는 작업을 선택한다.
 (다른 PC용 설치 미디어(USB 플래시 드라이브, DVD 또는 ISO 파일) 만들기)
-![create-media-choose-work](/assets/posts/2017-11-19/make-windows-booting-usb/create-media-choose-work.png)
+![create-media-choose-work](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/create-media-choose-work.png)
 4. 부팅 USB로 만들 Windows 정보를 선택한다.
-![create-media-choose-version](/assets/posts/2017-11-19/make-windows-booting-usb/create-media-choose-version.png)
+![create-media-choose-version](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/create-media-choose-version.png)
 5. USB 플래시 드라이브를 선택하여, 부팅 USB 만들 준비를 한다.
-![create-media-choose-media-type](/assets/posts/2017-11-19/make-windows-booting-usb/create-media-choose-media-type.png)
+![create-media-choose-media-type](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/create-media-choose-media-type.png)
 6. 부팅 USB로 만들 드라이브를 선택한다.
-![create-media-choose-drive](/assets/posts/2017-11-19/make-windows-booting-usb/create-media-choose-drive.png)
+![create-media-choose-drive](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/create-media-choose-drive.png)
 7. Windows10 다운로드를 진행한다.
-![create-media-install](/assets/posts/2017-11-19/make-windows-booting-usb/create-media-install.png)
+![create-media-install](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/create-media-install.png)
 
 # 부팅 USB 생성 완료
  SB를 열어보면 다음과 같이 부팅 Windows USB가 생성되어있다.
-![booting-usb](/assets/posts/2017-11-19/make-windows-booting-usb/booting-usb.png)
+![booting-usb](/assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/booting-usb.png)

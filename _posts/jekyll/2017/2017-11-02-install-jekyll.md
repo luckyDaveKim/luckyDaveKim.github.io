@@ -13,13 +13,13 @@ tags:
 
 date: 2017-11-02 13:45:30 +09:00
 title: Jekyll 설치하기
-cover: assets/posts/2017-11-02/install-jekyll/cover.jpg
+cover: assets/images/post/jekyll/2017/2017-11-02/install-jekyll/cover.jpg
 ---
 
 # 개요
 이 포스팅에서는 Jekyll을 설치하고 GitHub에 적용하는 방법에 대해 소개하고자 합니다.
 
-![github-jekyll-logo](/assets/posts/2017-11-02/install-jekyll/github-jekyll-logo.png)
+![github-jekyll-logo](/assets/images/post/jekyll/2017/2017-11-02/install-jekyll/github-jekyll-logo.png)
 
 # 필요한 Software
 - Ruby
@@ -33,13 +33,13 @@ cover: assets/posts/2017-11-02/install-jekyll/cover.jpg
 # Ruby 설치하기
 ## Ruby 설치
 1. [Ruby 홈페이지](https://rubyinstaller.org/downloads)에서 PC환경에 맞는 Ruby 설치파일을 다운로드한다.
-![ruby-download](/assets/posts/2017-11-02/install-jekyll/ruby-download.png)
+![ruby-download](/assets/images/post/jekyll/2017/2017-11-02/install-jekyll/ruby-download.png)
 2. **I accept the License**를 선택 후 **Next**를 클릭하여 설치한다.
-![ruby-install](/assets/posts/2017-11-02/install-jekyll/ruby-install.png)
+![ruby-install](/assets/images/post/jekyll/2017/2017-11-02/install-jekyll/ruby-install.png)
 
 ## RubyDevKit 설치
 1. [Ruby 홈페이지](https://rubyinstaller.org/downloads)에서 PC환경에 맞는 RubyDevKit 설치파일을 다운로드한다.
-![rubydevkit-download](/assets/posts/2017-11-02/install-jekyll/rubydevkit-download.png)
+![rubydevkit-download](/assets/images/post/jekyll/2017/2017-11-02/install-jekyll/rubydevkit-download.png)
 2. RubyDevKit을 `C:\RubyDevKit`에 설치한다.
 3. CMD창에서 RubyDevKit을 초기화 한다.
 ```bash
@@ -63,7 +63,7 @@ $ gem install rouge
 # Python 설치하기
 ## Python 설치
 1. [Python 홈페이지](https://www.python.org/downloads)에서 PC환경에 맞는 Python 설치파일을 다운로드한다.
-![python-download](/assets/posts/2017-11-02/install-jekyll/python-download.png)
+![python-download](/assets/images/post/jekyll/2017/2017-11-02/install-jekyll/python-download.png)
 
 ## Pygments 설치
 1. CMD창에서 pip를 이용하여 pygments를 설치한다.
