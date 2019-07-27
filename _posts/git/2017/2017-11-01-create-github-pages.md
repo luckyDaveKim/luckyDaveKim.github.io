@@ -1,18 +1,18 @@
 ---
-layout: post
-current: post
+layout: 'post'
+current: 'post'
 navigation: true
-class: post-template
+class: 'post-template'
 subclass: 'post tag-github-pages'
 
-category: git
+category: 'git'
 tags:
-  - github
-  - github_pages
+  - 'github'
+  - 'github_pages'
 
-date: 2017-11-01 23:32:43 +09:00
-title: GitHub Pages 생성
-cover: assets/images/post/git/2017/2017-11-01/create-github-pages/cover.jpeg
+date: '2017-11-01 23:32:43 +09:00'
+title: 'GitHub Pages 생성'
+cover: 'assets/images/post/git/2017/2017-11-01/create-github-pages/cover.jpeg'
 ---
 
 # 개요

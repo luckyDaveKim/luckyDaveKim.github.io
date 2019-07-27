@@ -1,22 +1,22 @@
 ---
-layout: post
-current: post
+layout: 'post'
+current: 'post'
 navigation: true
-class: post-template
+class: 'post-template'
 subclass: 'post tag-search-engine'
 
-category: jekyll
+category: 'jekyll'
 tags:
-  - jekyll
-  - search_engine
-  - github
-  - github_pages
-  - google
-  - naver
+  - 'jekyll'
+  - 'search_engine'
+  - 'github'
+  - 'github_pages'
+  - 'google'
+  - 'naver'
 
-date: 2017-11-02 13:48:18 +09:00
-title: 검색엔진에서 페이지 검색 가능하게 하기
-cover: assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/cover.jpg
+date: '2017-11-02 13:48:18 +09:00'
+title: '검색엔진에서 페이지 검색 가능하게 하기'
+cover: 'assets/images/post/jekyll/2017/2017-11-02/add-blog-to-search-engine/cover.jpg'
 ---
 
 # 개요

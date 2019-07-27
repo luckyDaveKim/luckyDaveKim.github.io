@@ -1,23 +1,23 @@
 ---
-layout: post
-current: post
+layout: 'post'
+current: 'post'
 navigation: true
-class: post-template
+class: 'post-template'
 subclass: 'post tag-ecmascript'
 
-category: javascript
+category: 'javascript'
 tags:
-  - javascript
-  - js
-  - ecmascript
-  - es5
-  - es6
-  - es2015
-  - es2016
+  - 'javascript'
+  - 'js'
+  - 'ecmascript'
+  - 'es5'
+  - 'es6'
+  - 'es2015'
+  - 'es2016'
 
-date: 2018-02-07 20:30:04 +09:00
-title: "ES6?! ES2015?! ECMAScript란 도대체 무엇인가?"
-cover: assets/images/post/javascript/2018/2018-02-07/what-is-the-ecmascript/javascript-history.png
+date: '2018-02-07 20:30:04 +09:00'
+title: 'ES6?! ES2015?! ECMAScript란 도대체 무엇인가?'
+cover: 'assets/images/post/javascript/2018/2018-02-07/what-is-the-ecmascript/javascript-history.png'
 ---
 
 # ES6은 뭐고 ES2015는 뭐야?!

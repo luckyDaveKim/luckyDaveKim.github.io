@@ -1,19 +1,19 @@
 ---
-layout: post
-current: post
+layout: 'post'
+current: 'post'
 navigation: true
-class: post-template
+class: 'post-template'
 subclass: 'post tag-windows-booting-usb'
 
-category: environment
+category: 'environment'
 tags:
-  - windows
-  - windows10
-  - booting_usb
+  - 'windows'
+  - 'windows10'
+  - 'booting_usb'
 
-date: 2017-11-19 02:06:00 +09:00
-title: "윈도우10 부팅 USB 만들기"
-cover: assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/cover.jpg
+date: '2017-11-19 02:06:00 +09:00'
+title: '윈도우10 부팅 USB 만들기'
+cover: 'assets/images/post/environment/2017/2017-11-19/make-windows-booting-usb/cover.jpg'
 ---
 
 # 개요

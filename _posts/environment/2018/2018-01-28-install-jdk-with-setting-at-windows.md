@@ -1,19 +1,19 @@
 ---
-layout: post
-current: post
+layout: 'post'
+current: 'post'
 navigation: true
-class: post-template
+class: 'post-template'
 subclass: 'post tag-jdk-install'
 
-category: environment
+category: 'environment'
 tags:
-  - jdk
-  - jdk8
-  - windows
+  - 'jdk'
+  - 'jdk8'
+  - 'windows'
 
-date: 2018-01-28 15:53:25 +09:00
-title: "윈도우에서 JDK 8 설치 및 환경설정"
-cover: assets/images/post/environment/2018/2018-01-28/install-jdk-with-setting-at-windows/cover.jpg
+date: '2018-01-28 15:53:25 +09:00'
+title: '윈도우에서 JDK 8 설치 및 환경설정'
+cover: 'assets/images/post/environment/2018/2018-01-28/install-jdk-with-setting-at-windows/cover.jpg'
 ---
 
 # 개요

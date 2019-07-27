@@ -1,19 +1,19 @@
 ---
-layout: post
-current: post
+layout: 'post'
+current: 'post'
 navigation: true
-class: post-template
+class: 'post-template'
 subclass: 'post tag-jekyll-install'
 
-category: jekyll
+category: 'jekyll'
 tags:
-  - jekyll
-  - github
-  - github_pages
+  - 'jekyll'
+  - 'github'
+  - 'github_pages'
 
-date: 2017-11-02 13:45:30 +09:00
-title: Jekyll 설치하기
-cover: assets/images/post/jekyll/2017/2017-11-02/install-jekyll/cover.jpg
+date: '2017-11-02 13:45:30 +09:00'
+title: 'Jekyll 설치하기'
+cover: 'assets/images/post/jekyll/2017/2017-11-02/install-jekyll/cover.jpg'
 ---
 
 # 개요
