@@ -1,23 +1,24 @@
 ---
-layout: page
-current: about
+layout: 'page'
+current: 'about'
 navigation: true
-class: page-template
+class: 'page-template'
 subclass: 'post page'
 
-title: About
+title: 'About'
 logo: 'assets/images/dev-dave.png'
 ---
 
 # Interests
-Web / Server / Algorithm / DevOps/ Software Engineering
+Web / Server / Back-End / Algorithm / Front-End / DevOps / Software Engineering
 
 # Technical Skill
-- Program Language - Java / JavaScript / PHP / C++
-- Framework - Java(Spring) / Node.js(Express, Angular)
-- Database - OracleDB / MongoDB / MySQL / SQLite
-- Version Control System - Git / SVN
-- CI / CD - Jenkins / Travis CI
+- Program Language :: Java / Node.js / JavaScript / PHP / C++
+- Framework :: Spring Boot / Vue.Js / Angular2 / AngularJs / Express 
+- Database :: OracleDB / MongoDB / MySQL / SQLite
+- Version Control System :: Git / SVN
+- CI / CD :: Jenkins / Travis CI
+- DevOps :: Docker
 
 # Activities
 ## 2019
