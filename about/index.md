@@ -10,15 +10,40 @@ logo: 'assets/images/dev-dave.png'
 ---
 
 # Interests
-Web / Server / Back-End / Algorithm / Front-End / DevOps / Software Engineering
+- Web
+- Server
+- Back-End
+- Algorithm
+- Front-End
+- DevOps
+- Software Engineering
 
 # Technical Skill
-- Program Language :: Java / Node.js / JavaScript / PHP / C++
-- Framework :: Spring Boot / Vue.Js / Angular2 / AngularJs / Express 
-- Database :: OracleDB / MongoDB / MySQL / SQLite
-- Version Control System :: Git / SVN
-- CI / CD :: Jenkins / Travis CI
-- DevOps :: Docker
+- Program Language
+  - Java
+  - Node.js
+  - JavaScript
+  - PHP
+  - C++
+- Framework
+  - Spring Boot
+  - Vue.Js
+  - Angular2
+  - AngularJs
+  - Express 
+- Database
+  - OracleDB
+  - MongoDB
+  - MySQL
+  - SQLite
+- Version Control System
+  - Git
+  - SVN
+- CI / CD
+  - Jenkins
+  - Travis CI
+- DevOps
+  - Docker
 
 # Activities
 ## 2019
@@ -50,18 +75,9 @@ Web / Server / Back-End / Algorithm / Front-End / DevOps / Software Engineering
 - 2016.04.01 ~ 2016.09.30 :: TMS Solution Quality Control and Common Criteria
 - 2015.09.01 ~ 2015.12.31 :: TMS Solution Launcher Development
 
-# License
-- 2015.05.08 :: Engineer Information Processing
-- 2013.06.10 :: MOS Master
-
 # Profile
 - Bachelor in Computer Engineering from [Gachon University](http://www.gachon.ac.kr/)
 
-- 2011.01 ~ 2012.10 :: Serving a mandatory military service
-
-# Links
-- Email : lucky.dave.k@gmail.com
-
-- Github : [https://github.com/luckydavekim](https://github.com/luckydavekim)
-
-- Blog : [https://luckydavekim.github.io](https://luckydavekim.github.io)
+# License
+- Engineer Information Processing :: 2015.05.08
+- MOS Master :: 2013.06.10
