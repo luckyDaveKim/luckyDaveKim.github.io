@@ -1,3 +1,9 @@
+kotlin:
+  name: 'Kotlin'
+  description: 'Jetbrains에서 만든 개발 언어로 Java와 100% 호환이 가능하며, 간결한 문법과 타입 추론을 제공하는 Kotlin에 대해 정리합니다.'
+  group: 'backend'
+  cover: 'assets/images/category/kotlin-cover.png'
+  permalink: 'kotlin'
 javascript:
   name: 'JavaScript'
   description: '객체 기반의 스크립트 프로그래밍 언어인 JavaScript에 대해 정리합니다.'
