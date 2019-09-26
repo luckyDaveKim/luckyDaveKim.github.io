@@ -100,7 +100,7 @@ class TodoApi {
 테스트를 작성하기에 앞서 의존성 모듈을 설정하도록 하겠습니다.  
 `build.gradle.kts` gradle 설정 파일에 다음과 같이 dependencies를 변경해 줍니다.
 
-- As-Is
+#### As-Is
 ```$xslt
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -110,7 +110,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 ```
-- To-Be
+
+#### To-Be
 ```$xslt
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -125,10 +126,10 @@ dependencies {
 }
 ```
 
-  - (1) : `org.springframework.boot:spring-boot-starter-test` 모듈은 `JUnit4`에 대한 의존성을 가지고 있습니다.  
-  그래서 `JUnit5`를 사용하기 위해서는 `org.springframework.boot:spring-boot-starter-test`에 추가되어 있는 `JUnit4`를 제외해야 합니다.
-  - (2) : `org.junit.jupiter:junit-jupiter-api` 모듈은 테스트 코드 작성에 사용되는 모듈입니다.
-  - (3) : `org.junit.jupiter:junit-jupiter-engine` 모듈은 테스트 실행에 사용되는 모듈입니다.
+- (1) : `org.springframework.boot:spring-boot-starter-test` 모듈은 `JUnit4`에 대한 의존성을 가지고 있습니다.  
+그래서 `JUnit5`를 사용하기 위해서는 `org.springframework.boot:spring-boot-starter-test`에 추가되어 있는 `JUnit4`를 제외해야 합니다.
+- (2) : `org.junit.jupiter:junit-jupiter-api` 모듈은 테스트 코드 작성에 사용되는 모듈입니다.
+- (3) : `org.junit.jupiter:junit-jupiter-engine` 모듈은 테스트 실행에 사용되는 모듈입니다.
 
 그리고 추가로 `useJUnitPlatform`을 선언합니다.
 
