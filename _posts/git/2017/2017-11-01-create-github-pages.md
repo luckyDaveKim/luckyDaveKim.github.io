@@ -34,16 +34,16 @@ cover: 'assets/images/post/git/2017/2017-11-01/create-github-pages/cover.jpeg'
 ![create-github-repository](/assets/images/post/git/2017/2017-11-01/create-github-pages/create-github-repository.png)
 
 ## HTML, Javascript, CSS 파일 추가
-1. Bash 명령어를 통해 github 저장소를 clone 한다.
-```bash
+1.Bash 명령어를 통해 github 저장소를 clone 한다.
+```$xslt
 git clone https://github.com/luckyDaveKim/luckyDaveKim.github.io
 ```
-2. HTML 소스를 작성한다.
-```html
+2.HTML 소스를 작성한다.
+```$xslt
 github 테스트 페이지
 ```
-3. 작성한 소스를 commit 및 push 한다.
-```bash
+3.작성한 소스를 commit 및 push 한다.
+```$xslt
 git add *
 git commit - m "init blog"
 git push
