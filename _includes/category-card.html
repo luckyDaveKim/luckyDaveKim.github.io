@@ -5,7 +5,7 @@
         </a>
     {% endif %}
     <div class="category-card-content">
-        <a class="category-card-content-link" href="{{ site.baseurl }}{{ include.category.url | remove_first: '/' }}">
+        <a class="category-card-content-link" href="{{ site.baseurl }}category/{{ include.category.permalink | remove_first: '/' }}">
             <header class="category-card-header">
                 <h2 class="category-card-title">{{ include.category.name }}</h2>
             </header>
