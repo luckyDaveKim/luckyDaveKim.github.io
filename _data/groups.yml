@@ -1,6 +1,0 @@
-frontend:
-  name: 'Front-End'
-backend:
-  name: 'Back-End'
-development:
-  name: 'Development'
