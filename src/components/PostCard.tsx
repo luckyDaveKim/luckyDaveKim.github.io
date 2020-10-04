@@ -17,7 +17,7 @@ export interface PostCardProps {
   large?: boolean;
 }
 
-export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
+export const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const date = new Date(post.frontmatter.date);
   // 2018-08-20
   const datetime = format(date, 'yyyy-MM-dd');
@@ -26,10 +26,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
 
   return (
     <article
-      className={`post-card ${post.frontmatter.image ? '' : 'no-image'} ${
-        large ? 'post-card-large' : ''
-      }`}
-      css={[PostCardStyles, large && PostCardLarge]}
+      className={`post-card ${post.frontmatter.image ? '' : 'no-image'}`}
+      css={PostCardStyles}
     >
       {post.frontmatter.image && (
         <Link className="post-card-image-link" css={PostCardImageLink} to={post.fields.slug}>
@@ -47,11 +45,15 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
       <PostCardContent className="post-card-content">
         <Link className="post-card-content-link" css={PostCardContentLink} to={post.fields.slug}>
           <PostCardHeader className="post-card-header">
-            {post.frontmatter.tags && (
-              <PostCardPrimaryTag className="post-card-primary-tag">
-                {post.frontmatter.tags[0]}
-              </PostCardPrimaryTag>
-            )}
+            <div className="post-card-tags">
+              {post.frontmatter.tags?.map(tag => {
+                return (
+                  <PostCardTag key={tag} className="post-card-primary-tag">
+                    #{tag}
+                  </PostCardTag>
+                );
+              })}
+            </div>
             <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
           </PostCardHeader>
           <PostCardExcerpt className="post-card-excerpt">
@@ -88,67 +90,21 @@ const PostCardStyles = css`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: 0 0 40px;
-  padding: 0 20px 40px;
+  margin: 0 20px 40px;
   min-height: 220px;
-  /* border-bottom: 1px solid color(var(--lightgrey) l(+12%)); */
+  box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+  border-radius: 5px;
   border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
+  background-color: #fff;
   background-size: cover;
 
-  @media (prefers-color-scheme: dark) {
-    /* border-bottom-color: color(var(--darkmode) l(+8%)); */
-    border-bottom-color: ${lighten('0.08', colors.darkmode)};
+  :hover .post-card-image {
+    transition: all 0.5s ease;
+    transform: translate3D(0, -1px, 0) scale(1.1);
   }
-`;
 
-const PostCardLarge = css`
-  @media (min-width: 795px) {
-    flex: 1 1 100%;
-    flex-direction: row;
-    padding-bottom: 40px;
-    min-height: 280px;
-    border-top: 0;
-
-    :not(.no-image) .post-card-header {
-      margin-top: 0;
-    }
-
-    .post-card-image-link {
-      position: relative;
-      flex: 1 1 auto;
-      margin-bottom: 0;
-      min-height: 380px;
-    }
-
-    .post-card-image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    .post-card-content {
-      flex: 0 1 361px;
-      justify-content: center;
-    }
-
-    .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
-    }
-
-    .post-card-content-link {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-meta {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-excerpt p {
-      margin-bottom: 1.5em;
-      font-size: 1.8rem;
-      line-height: 1.5em;
-    }
+  @media (prefers-color-scheme: dark) {
+    border-bottom-color: ${lighten('0.08', colors.darkmode)};
   }
 `;
 
@@ -156,7 +112,6 @@ const PostCardImageLink = css`
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 5px 5px 0 0;
 `;
 
 const PostCardImage = styled.div`
@@ -164,6 +119,7 @@ const PostCardImage = styled.div`
   height: 200px;
   background: ${colors.lightgrey} no-repeat center center;
   background-size: cover;
+  transition: all 0.5s ease;
 `;
 
 const PostCardContent = styled.div`
@@ -175,6 +131,8 @@ const PostCardContent = styled.div`
 const PostCardContentLink = css`
   position: relative;
   display: block;
+  padding: 0 25px 0;
+  flex-grow: 1;
   /* color: var(--darkgrey); */
   color: ${colors.darkgrey};
 
@@ -183,7 +141,7 @@ const PostCardContentLink = css`
   }
 `;
 
-const PostCardPrimaryTag = styled.div`
+const PostCardTag = styled.span`
   margin: 0 0 0.2em;
   /* color: var(--blue); */
   color: ${colors.blue};
@@ -191,6 +149,16 @@ const PostCardPrimaryTag = styled.div`
   font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: uppercase;
+
+  :first-of-type:before {
+    content: '';
+    margin-left: 0;
+  }
+
+  :before {
+    content: '';
+    margin-left: 0.5em;
+  }
 `;
 
 const PostCardTitle = styled.h2`
@@ -215,7 +183,7 @@ const PostCardExcerpt = styled.section`
 const PostCardMeta = styled.footer`
   display: flex;
   align-items: flex-start;
-  padding: 0;
+  padding: 0 25px 25px;
 `;
 
 const PostCardBylineContent = styled.div`

@@ -28,6 +28,7 @@ export const SiteNavMain = css`
 `;
 
 export const SiteMain = css`
+  z-index: 100;
   flex-grow: 1;
 
   @media (prefers-color-scheme: dark) {
@@ -62,25 +63,23 @@ export const SiteDescription = styled.h2`
   }
 `;
 
-export const Posts = css`
-  overflow-x: hidden;
-`;
-
 export const PostFeed = css`
   position: relative;
   display: flex;
   flex-wrap: wrap;
   margin: 0 -20px;
   padding: 50px 0 0;
-  background: #fff;
 
   /* Special Template Styles */
   padding: 40px 0 5vw;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+`;
 
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
+export const PostFeedRaise = css`
+  @media (min-width: 900px) {
+    margin-top: -70px;
+    padding-top: 0;
   }
 `;
 
@@ -114,7 +113,7 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6vw 3vw;
+  padding: 10vw 3vw;
   min-height: 200px;
   max-height: 340px;
 `;

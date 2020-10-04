@@ -84,7 +84,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     return (
       <>
         {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
-        <nav css={SiteNavStyles}>
+        <nav css={[isHome && HomeNavRaise, SiteNavStyles]}>
           <SiteNavLeft className="site-nav-left">
             {!isHome && <SiteNavLogo />}
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
@@ -155,6 +155,13 @@ export const SiteNavMain = css`
   @media (max-width: 700px) {
     padding-right: 0;
     padding-left: 0;
+  }
+`;
+
+const HomeNavRaise = css`
+  @media (min-width: 900px) {
+    position: relative;
+    top: -70px;
   }
 `;
 

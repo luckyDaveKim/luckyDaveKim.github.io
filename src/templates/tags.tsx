@@ -116,7 +116,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
         </header>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
-            <div css={[PostFeed]}>
+            <div css={PostFeed}>
               {edges.map(({ node }) => (
                 <PostCard key={node.fields.slug} post={node} />
               ))}

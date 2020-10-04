@@ -15,7 +15,7 @@ import {
   inner,
   outer,
   PostFeed,
-  Posts,
+  PostFeedRaise,
   SiteDescription,
   SiteHeader,
   SiteHeaderContent,
@@ -98,7 +98,6 @@ const IndexPage: React.FC<IndexProps> = props => {
           }}
         >
           <div css={inner}>
-            <SiteNav isHome />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
@@ -113,17 +112,18 @@ const IndexPage: React.FC<IndexProps> = props => {
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
+            <SiteNav isHome />
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
-            <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
+          <div css={inner}>
+            <div css={[PostFeed, PostFeedRaise]}>
+              {props.data.allMarkdownRemark.edges.map((post) => {
                 // filter out drafts in production
                 return (
                   (post.node.frontmatter.draft !== true ||
                     process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+                    <PostCard key={post.node.fields.slug} post={post.node} />
                   )
                 );
               })}
@@ -212,58 +212,41 @@ export const pageQuery = graphql`
 
 const HomePosts = css`
   @media (min-width: 795px) {
-    .post-card-large {
+    .post-card:nth-of-type(6n + 1):not(.no-image) {
       flex: 1 1 100%;
       flex-direction: row;
-      padding-bottom: 40px;
-      min-height: 280px;
-      border-top: 0;
     }
 
-    .post-card-large .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
-    }
-
-    .post-card-large:not(.no-image) .post-card-header {
-      margin-top: 0;
-    }
-
-    .post-card-large .post-card-image-link {
+    .post-card:nth-of-type(6n + 1):not(.no-image) .post-card-image-link {
       position: relative;
       flex: 1 1 auto;
-      margin-bottom: 0;
-      min-height: 380px;
     }
 
-    .post-card-large .post-card-image {
+    .post-card:nth-of-type(6n + 1):not(.no-image) .post-card-image {
       position: absolute;
       width: 100%;
       height: 100%;
     }
 
-    .post-card-large .post-card-content {
-      flex: 0 1 361px;
-      justify-content: center;
+    .post-card:nth-of-type(6n + 1):not(.no-image) .post-card-content {
+      flex: 0 1 357px;
     }
 
-    .post-card-large .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
+    .post-card:nth-of-type(6n + 1):not(.no-image) h2 {
+      font-size: 2.6rem;
     }
 
-    .post-card-large .post-card-content-link {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-meta {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-excerpt p {
-      margin-bottom: 1.5em;
+    .post-card:nth-of-type(6n + 1):not(.no-image) p {
       font-size: 1.8rem;
-      line-height: 1.5em;
+      line-height: 1.55em;
+    }
+
+    .post-card:nth-of-type(6n + 1):not(.no-image) .post-card-content-link {
+      padding: 30px 40px 0;
+    }
+
+    .post-card:nth-of-type(6n + 1):not(.no-image) .post-card-meta {
+      padding: 0 40px 30px;
     }
   }
 `;

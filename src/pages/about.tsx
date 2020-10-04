@@ -16,7 +16,7 @@ import {
   SiteMain,
   SiteNavMain,
 } from '../styles/shared';
-import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
+import { PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
 
 const PageTemplate = css`
@@ -49,7 +49,7 @@ const About: React.FC = () => (
       </header>
       <main id="site-main" className="site-main" css={[SiteMain, outer]}>
         <div css={inner}>
-          <article className="post page" css={[PostFull, NoImage]}>
+          <article className="post page" css={PostFull}>
             <PostFullHeader className="post-full-header">
               <PostFullTitle className="post-full-title">About</PostFullTitle>
             </PostFullHeader>
