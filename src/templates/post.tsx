@@ -183,7 +183,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             {/* TODO: no-image css tag? */}
-            <article css={[PostFull, !post.frontmatter.image && NoImage]}>
+            <article css={PostFull}>
               <PostFullHeader className="post-full-header">
                 <PostFullTags className="post-full-tags">
                   {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
@@ -268,17 +268,6 @@ const PostTemplate = css`
 export const PostFull = css`
   position: relative;
   z-index: 50;
-`;
-
-export const NoImage = css`
-  .post-full-content {
-    padding-top: 0;
-  }
-
-  .post-full-content:before,
-  .post-full-content:after {
-    display: none;
-  }
 `;
 
 export const PostFullHeader = styled.header`
@@ -413,14 +402,14 @@ export const PostFullTitle = styled.h1`
 `;
 
 const PostFullImage = styled.figure`
-  margin: 25px 0 50px;
+  margin: 0 -10vw -165px;
   height: 800px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
   border-radius: 5px;
 
   @media (max-width: 1170px) {
-    margin: 25px -6vw 50px;
+    margin: 0 -4vw -100px;
     border-radius: 0;
     img {
       max-width: 1170px;
