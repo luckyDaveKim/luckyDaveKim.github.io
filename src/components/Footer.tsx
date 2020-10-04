@@ -13,18 +13,24 @@ export const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{' '}
-          {config.footer && (
-            <Link to="/">
-              | {config.title} {config.footer}
-            </Link>
-          )}
+          <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}
+          {config.footer && ` | ${config.title} ${config.footer}`}
         </section>
         <SiteFooterNav>
           <Link to="/">Latest Posts</Link>
+          {config.github && (
+            <a href={config.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          )}
           {config.facebook && (
             <a href={config.facebook} target="_blank" rel="noopener noreferrer">
               Facebook
+            </a>
+          )}
+          {config.instagram && (
+            <a href={config.instagram} target="_blank" rel="noopener noreferrer">
+              Instagram
             </a>
           )}
           {config.twitter && (

@@ -6,9 +6,11 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-import { SocialLink, SocialLinkFb } from '../../styles/shared';
+import {SocialLink, SocialLinkFb, SocialLinkGh, SocialLinkIg} from '../../styles/shared';
 import config from '../../website-config';
+import { Github } from '../icons/github';
 import { Facebook } from '../icons/facebook';
+import { Instagram } from '../icons/instagram';
 import { Twitter } from '../icons/twitter';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
@@ -109,6 +111,18 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           </SiteNavLeft>
           <SiteNavRight>
             <SocialLinks>
+              {config.github && (
+                <a
+                  className="social-link-gh"
+                  css={[SocialLink, SocialLinkGh]}
+                  href={config.github}
+                  target="_blank"
+                  title="GitHub"
+                  rel="noopener noreferrer"
+                >
+                  <Github />
+                </a>
+              )}
               {config.facebook && (
                 <a
                   className="social-link-fb"
@@ -119,6 +133,18 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                   rel="noopener noreferrer"
                 >
                   <Facebook />
+                </a>
+              )}
+              {config.instagram && (
+                <a
+                  className="social-link-ig"
+                  css={[SocialLink, SocialLinkIg]}
+                  href={config.instagram}
+                  target="_blank"
+                  title="Instagram"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram />
                 </a>
               )}
               {config.twitter && (

@@ -99,9 +99,21 @@ export const SocialLink = css`
   }
 `;
 
+export const SocialLinkGh = css`
+  svg {
+    height: 1.6rem;
+  }
+`;
+
 export const SocialLinkFb = css`
   svg {
     height: 1.6rem;
+  }
+`;
+
+export const SocialLinkIg = css`
+  svg {
+    height: 2.2rem;
   }
 `;
 

@@ -15,7 +15,15 @@ export interface WebsiteConfig {
   /**
    * full url, no username
    */
+  github?: string;
+  /**
+   * full url, no username
+   */
   facebook?: string;
+  /**
+   * full url, no username
+   */
+  instagram?: string;
   /**
    * full url, no username
    */
@@ -55,7 +63,9 @@ const config: WebsiteConfig = {
   logo: 'img/blog-icon.png',
   lang: 'ko',
   siteUrl: 'https://luckydavekim.github.io',
+  github: 'https://github.com/luckyDaveKim',
   facebook: 'https://www.facebook.com/lucky.dave.k',
+  instagram: 'https://www.instagram.com/lucky.dave',
   twitter: '',
   showSubscribe: true,
   mailchimpAction: '',
