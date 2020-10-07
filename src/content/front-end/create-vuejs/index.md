@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/cover.jpg
 date: 2019-09-09 10:20:55 +09:00
 title: Vue.js 사용하기

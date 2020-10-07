@@ -19,17 +19,6 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
-import { AuthorList } from '../components/AuthorList';
-
-export interface Author {
-  id: string;
-  bio: string;
-  avatar: {
-    children: Array<{
-      fluid: FluidObject;
-    }>;
-  };
-}
 
 interface PageTemplateProps {
   location: Location;
@@ -55,7 +44,6 @@ interface PageTemplateProps {
         };
         excerpt: string;
         tags: string[];
-        author: Author[];
       };
     };
     relatedPosts: {
@@ -98,7 +86,6 @@ export interface PageContext {
     date: string;
     draft?: boolean;
     tags: string[];
-    author: Author[];
   };
 }
 
@@ -154,7 +141,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
           />
         )}
         <meta name="twitter:label1" content="Written by" />
-        <meta name="twitter:data1" content={post.frontmatter.author[0].id} />
         <meta name="twitter:label2" content="Filed under" />
         {post.frontmatter.tags && <meta name="twitter:data2" content={post.frontmatter.tags[0]} />}
         {config.twitter && (
@@ -198,15 +184,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 </PostFullCustomExcerpt>
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
-                    <AuthorList authors={post.frontmatter.author} tooltip="large" />
                     <section className="post-full-byline-meta">
-                      <h4 className="author-name">
-                        {post.frontmatter.author.map(author => (
-                          <Link key={author.id} to={`/author/${_.kebabCase(author.id)}/`}>
-                            {author.id}
-                          </Link>
-                        ))}
-                      </h4>
                       <div className="byline-meta-content">
                         <time className="byline-meta-date" dateTime={datetime}>
                           {displayDatetime}
@@ -336,11 +314,6 @@ const PostFullByline = styled.div`
     align-items: flex-start;
   }
 
-  .post-full-byline-content .author-list {
-    justify-content: flex-start;
-    padding: 0 12px 0 0;
-  }
-
   .post-full-byline-meta {
     margin: 2px 0 0;
     /* color: color(var(--midgrey) l(+10%)); */
@@ -450,19 +423,6 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 3720) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        author {
-          id
-          bio
-          avatar {
-            children {
-              ... on ImageSharp {
-                fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
             }
           }
         }

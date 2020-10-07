@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/cover.jpg
 date: 2017-11-02 13:48:18 +09:00
 title: 검색엔진에서 페이지 검색 가능하게 하기

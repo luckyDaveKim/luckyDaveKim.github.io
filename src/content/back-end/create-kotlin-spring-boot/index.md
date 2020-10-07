@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/cover.png
 date: 2019-09-25 10:05:34 +09:00
 title: Kotlin과 Spring Boot로 REST API 서비스 구축

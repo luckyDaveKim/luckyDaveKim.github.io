@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/cover.jpg
 date: 2017-11-19 02:06:00 +09:00
 title: 윈도우10 부팅 USB 만들기

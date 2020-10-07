@@ -1,7 +1,6 @@
 import { format } from 'date-fns';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import _ from 'lodash';
 import { lighten } from 'polished';
 import React from 'react';
 
@@ -10,7 +9,6 @@ import styled from '@emotion/styled';
 
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
-import { AuthorList } from './AuthorList';
 
 export interface PostCardProps {
   post: PageContext;
@@ -61,22 +59,9 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
           </PostCardExcerpt>
         </Link>
         <PostCardMeta className="post-card-meta">
-          <AuthorList authors={post.frontmatter.author} tooltip="small" />
           <PostCardBylineContent className="post-card-byline-content">
-            <span>
-              {post.frontmatter.author.map((author, index) => {
-                return (
-                  <React.Fragment key={author.id}>
-                    <Link to={`/author/${_.kebabCase(author.id)}/`}>{author.id}</Link>
-                    {post.frontmatter.author.length - 1 > index && ', '}
-                  </React.Fragment>
-                );
-              })}
-            </span>
-            <span className="post-card-byline-date">
-              <time dateTime={datetime}>{displayDatetime}</time>{' '}
-              <span className="bull">&bull;</span> {post.timeToRead} min read
-            </span>
+            <span>{post.timeToRead} min read</span>
+            <time dateTime={datetime}>{displayDatetime}</time>
           </PostCardBylineContent>
         </PostCardMeta>
       </PostCardContent>
@@ -190,8 +175,6 @@ const PostCardBylineContent = styled.div`
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  margin: 4px 0 0 10px;
-  /* color: color(var(--midgrey) l(+10%)); */
   color: ${lighten('0.1', colors.midgrey)};
   font-size: 1.2rem;
   line-height: 1.4em;
@@ -199,14 +182,8 @@ const PostCardBylineContent = styled.div`
   letter-spacing: 0.2px;
   text-transform: uppercase;
 
-  span {
-    margin: 0;
-  }
-
-  a {
-    /* color: color(var(--darkgrey) l(+20%)); */
-    color: ${lighten('0.2', colors.darkgrey)};
-    font-weight: 600;
+  * {
+    margin-left: auto;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -232,19 +209,5 @@ export const StaticAvatar = css`
   @media (prefers-color-scheme: dark) {
     /* border-color: color(var(--darkgrey) l(+2%)); */
     border-color: ${lighten('0.02', colors.darkgrey)};
-  }
-`;
-
-export const AuthorProfileImage = css`
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
-  border-radius: 100%;
-  object-fit: cover;
-
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
   }
 `;

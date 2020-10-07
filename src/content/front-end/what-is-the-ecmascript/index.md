@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/javascript-history.png
 date: 2018-02-07 20:30:04 +09:00
 title: ES6?! ES2015?! ECMAScript란 도대체 무엇인가?

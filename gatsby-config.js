@@ -7,9 +7,6 @@ module.exports = {
     description: 'The blog for dave',
     siteUrl: 'https://luckydavekim.github.io', // full path to blog - no ending slash
   },
-  mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
-  },
   plugins: [
     'gatsby-plugin-sitemap',
     {

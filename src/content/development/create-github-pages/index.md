@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/cover.jpeg
 date: 2017-11-01 23:32:43 +09:00
 title: GitHub Pages 생성

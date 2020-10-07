@@ -1,7 +1,6 @@
 ---
 template: post
 draft: false
-author: [Ghost]
 image: img/cover.jpg
 date: 2018-01-28 15:53:25 +09:00
 title: 윈도우에서 JDK 8 설치 및 환경설정
