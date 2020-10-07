@@ -63,6 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
             excerpt
             timeToRead
             frontmatter {
+              template
               title
               tags
               date
@@ -141,28 +142,29 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   posts.forEach(({ node }, index) => {
-    const { slug, layout } = node.fields;
+    const { slug } = node.fields;
+    const { template, tags } = node.frontmatter;
     const prev = index === 0 ? null : posts[index - 1].node;
     const next = index === posts.length - 1 ? null : posts[index + 1].node;
 
     createPage({
       path: slug,
       // This will automatically resolve the template to a corresponding
-      // `layout` frontmatter in the Markdown.
+      // `template` frontmatter in the Markdown.
       //
-      // Feel free to set any `layout` as you'd like in the frontmatter, as
+      // Feel free to set any `template` as you'd like in the frontmatter, as
       // long as the corresponding template file exists in src/templates.
       // If no template is set, it will fall back to the default `post`
       // template.
       //
       // Note that the template has to exist first, or else the build will fail.
-      component: path.resolve(`./src/templates/${layout || 'post'}.tsx`),
+      component: path.resolve(`./src/templates/${template || 'post'}.tsx`),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug,
         prev,
         next,
-        primaryTag: node.frontmatter.tags ? node.frontmatter.tags[0] : '',
+        primaryTag: tags ? tags[0] : '',
       },
     });
   });

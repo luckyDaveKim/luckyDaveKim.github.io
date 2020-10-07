@@ -92,6 +92,7 @@ export interface PageContext {
         fluid: FluidObject;
       };
     };
+    layout: string;
     excerpt: string;
     title: string;
     date: string;
@@ -439,6 +440,7 @@ export const query = graphql`
       excerpt
       timeToRead
       frontmatter {
+        template
         title
         userDate: date(formatString: "D MMMM YYYY")
         date
