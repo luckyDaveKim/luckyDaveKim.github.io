@@ -28,7 +28,6 @@ const PageTemplate = css`
 
   @media (prefers-color-scheme: dark) {
     .site-main {
-      /* background: var(--darkmode); */
       background: ${colors.darkmode};
     }
   }
@@ -56,44 +55,120 @@ const About: React.FC = () => (
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h5>
-                  A starter template for Gatsby <br /> GitHub: <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a>
-                </h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo finibus leo,
-                  non tempus magna vehicula ac. Maecenas mollis ante finibus pharetra imperdiet.
-                  Maecenas in aliquam purus. Nam et massa a nulla fermentum dapibus sit amet in
-                  neque. Ut ipsum ipsum, rhoncus a sodales pellentesque, interdum a elit. Nullam
-                  aliquam tellus nibh, eget laoreet dui aliquet non. Vestibulum malesuada ante at
-                  diam tempus, ac interdum risus scelerisque. Sed ipsum neque, vulputate porta diam
-                  eget, consequat blandit nulla. Integer volutpat velit vitae purus lacinia aliquam.
-                  Integer bibendum ipsum vitae magna pulvinar, nec vehicula dolor vulputate. Nulla
-                  eu massa id orci placerat finibus vel sit amet eros. Vestibulum quis consequat
-                  massa. Sed sagittis sollicitudin massa at commodo. Praesent diam nisi, imperdiet
-                  posuere eleifend nec, blandit ac massa.
-                </p>
-                <p>
-                  Vestibulum semper pretium ipsum nec congue. Ut ac eros nisi. Donec leo sem,
-                  aliquam mollis sapien ultrices, dapibus congue diam. Proin viverra dapibus
-                  blandit. Ut mauris tellus, tristique id felis vel, venenatis vestibulum nunc. Nam
-                  molestie pulvinar nibh, eget egestas augue. Maecenas tellus arcu, mattis ut ipsum
-                  non, sollicitudin convallis nunc. Donec nec neque tristique, aliquet lacus id,
-                  laoreet nunc. Cras dapibus nisi nulla, ullamcorper faucibus neque suscipit ac.
-                  Donec eget orci venenatis justo lobortis volutpat. Proin vel placerat nisl.
-                  Integer arcu nunc, sodales eu fringilla non, aliquam non diam. Cras placerat,
-                  massa et faucibus pretium, ante elit tincidunt tellus, tristique ultricies velit
-                  quam et massa.
-                </p>
-                <p>
-                  In nunc lacus, dapibus vitae lacus sit amet, efficitur iaculis neque. Suspendisse
-                  ut tellus quis leo vestibulum tincidunt. Aenean nec enim ac dolor lacinia semper.
-                  Ut sed laoreet libero. Nunc elementum sollicitudin accumsan. Nunc eu augue neque.
-                  Proin a tortor nibh. Cras eu nisl ornare sapien feugiat pellentesque. Mauris
-                  dignissim vel quam eu pellentesque. Integer sit amet posuere quam, eu ullamcorper
-                  odio. Nullam a lacus tempus sapien dignissim ullamcorper. In hac habitasse platea
-                  dictumst. Proin quis massa aliquam, feugiat tortor sit amet, tincidunt urna. Donec
-                  posuere pulvinar lectus, ac semper ipsum vulputate quis.
-                </p>
+                <h1 id="interests">Interests</h1>
+                <ul>
+                  <li>Web</li>
+                  <li>Server</li>
+                  <li>Back-End</li>
+                  <li>Algorithm</li>
+                  <li>Front-End</li>
+                  <li>DevOps</li>
+                  <li>Software Engineering</li>
+                </ul>
+
+                <h1 id="technical-skill">Technical Skill</h1>
+                <ul>
+                  <li>Program Language
+                    <ul>
+                      <li>Java</li>
+                      <li>Node.js</li>
+                      <li>JavaScript</li>
+                      <li>PHP</li>
+                      <li>C++</li>
+                    </ul>
+                  </li>
+                  <li>Framework
+                    <ul>
+                      <li>Spring Boot</li>
+                      <li>Vue.Js</li>
+                      <li>Angular2</li>
+                      <li>AngularJs</li>
+                      <li>Express</li>
+                    </ul>
+                  </li>
+                  <li>Database
+                    <ul>
+                      <li>OracleDB</li>
+                      <li>MongoDB</li>
+                      <li>MySQL</li>
+                      <li>SQLite</li>
+                    </ul>
+                  </li>
+                  <li>Version Control System
+                    <ul>
+                      <li>Git</li>
+                      <li>SVN</li>
+                    </ul>
+                  </li>
+                  <li>CI / CD
+                    <ul>
+                      <li>Jenkins</li>
+                      <li>Travis CI</li>
+                    </ul>
+                  </li>
+                  <li>DevOps
+                    <ul>
+                      <li>Docker</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h1 id="activities">Activities</h1>
+                <h2 id="2019">2019</h2>
+                <ul>
+                  <li>2017.11.25 ~ :: Working at <strong>AhnLab</strong></li>
+                </ul>
+
+                <h2 id="2017">2017</h2>
+                <ul>
+                  <li>2017.11.01 ~ 2017.11.01 :: Start a <strong>Blog</strong></li>
+                  <li>2015.07.20 ~ 2017.10.31 :: Working at <strong>WINS</strong></li>
+                </ul>
+
+                <h2 id="2016">2016</h2>
+                <ul>
+                  <li>2010.03.01 ~ 2016.02.01 :: Graduate from <strong>Gachon University</strong></li>
+                </ul>
+
+                <h2 id="2015">2015</h2>
+                <ul>
+                  <li>2014.05.01 ~ 2015.02.28 :: KT - <strong>Mobile Futurist</strong></li>
+                </ul>
+
+                <h2 id="2014">2014</h2>
+                <ul>
+                  <li>2014.10.17 ~ 2014.12.19 :: App Center - <strong>A-Camp</strong></li>
+                  <li>2014.01.06 ~ 2014.02.05 :: Field Placement - <strong>Woonghin Holdings</strong></li>
+                </ul>
+
+                <h2 id="2013">2013</h2>
+                <ul>
+                  <li>2013.07.01 ~ 2013.08.31 :: Language and Culture Immersion Program in <strong>Canada</strong> at <strong>Thompson Rivers University</strong>
+                  </li>
+                </ul>
+
+                <h1 id="project">Project</h1>
+                <ul>
+                  <li>2019.05.01 ~ 2019.07.31 :: Partner v4.5 Back-Office Development</li>
+                  <li>2019.01.01 ~ 2019.05.31 :: V3 MSS Back-Office Development</li>
+                  <li>2018.07.01 ~ 2018.10.31 :: Partner v4.4 Back-Office Development</li>
+                  <li>2018.03.01 ~ 2019.05.31 :: Partner v4.3 Back-Office Development</li>
+                  <li>2016.10.01 ~ 2017.06.31 :: TMS Solution Web Development</li>
+                  <li>2016.04.01 ~ 2016.09.30 :: TMS Solution Quality Control and Common Criteria</li>
+                  <li>2015.09.01 ~ 2015.12.31 :: TMS Solution Launcher Development</li>
+                </ul>
+
+                <h1 id="profile">Profile</h1>
+                <ul>
+                  <li>Bachelor in Computer Engineering from <a href="http://www.gachon.ac.kr/">Gachon University</a>
+                  </li>
+                </ul>
+
+                <h1 id="license">License</h1>
+                <ul>
+                  <li>Engineer Information Processing :: 2015.05.08</li>
+                  <li>MOS Master :: 2013.06.10</li>
+                </ul>
               </div>
             </PostFullContent>
           </article>
