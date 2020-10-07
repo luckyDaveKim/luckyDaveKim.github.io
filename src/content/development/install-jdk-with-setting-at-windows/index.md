@@ -4,7 +4,7 @@ draft: false
 image: img/cover.jpg
 date: 2018-01-28 15:53:25 +09:00
 title: 윈도우에서 JDK 8 설치 및 환경설정
-excerpt: TODO
+excerpt: 윈도우에서 Java 개발을 위한 JDK 8 설치 방법을 알아봅니다.
 tags:
   - jdk
   - jdk8

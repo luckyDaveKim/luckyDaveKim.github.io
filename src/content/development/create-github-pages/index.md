@@ -4,7 +4,7 @@ draft: false
 image: img/cover.jpeg
 date: 2017-11-01 23:32:43 +09:00
 title: GitHub Pages 생성
-excerpt: TODO
+excerpt: GitHub Pages를 사용해 개인 블로그를 만드는 방법을 알아봅니다.
 tags:
   - github
   - github_pages

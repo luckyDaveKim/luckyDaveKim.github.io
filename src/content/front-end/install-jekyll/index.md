@@ -3,8 +3,8 @@ template: post
 draft: false
 image: img/cover.jpg
 date: 2017-11-02 13:45:30 +09:00
-title: Jekyll 설치하기
-excerpt: TODO
+title: Jekyll로 홈페이지 만들기
+excerpt: Jekyll을 통한 홈페이지 생성 방법을 알아봅니다.
 tags:
   - jekyll
   - github

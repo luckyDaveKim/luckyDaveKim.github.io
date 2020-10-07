@@ -4,7 +4,7 @@ draft: false
 image: img/cover.jpg
 date: 2017-11-02 13:48:18 +09:00
 title: 검색엔진에서 페이지 검색 가능하게 하기
-excerpt: TODO
+excerpt: 검색엔진에 홈페이지의 컨텐츠를 노출시켜 사용자를 유입시키는 방법을 알아봅니다.
 tags:
   - jekyll
   - search_engine

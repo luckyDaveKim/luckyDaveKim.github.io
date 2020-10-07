@@ -4,7 +4,7 @@ draft: false
 image: img/cover.jpg
 date: 2017-11-19 02:06:00 +09:00
 title: 윈도우10 부팅 USB 만들기
-excerpt: TODO
+excerpt: 윈도우 설치를 위한 부팅 USB를 만드는 방법을 알아봅니다.
 tags:
   - windows
   - windows10

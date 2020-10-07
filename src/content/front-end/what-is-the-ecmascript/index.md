@@ -4,7 +4,7 @@ draft: false
 image: img/javascript-history.png
 date: 2018-02-07 20:30:04 +09:00
 title: ES6?! ES2015?! ECMAScript란 도대체 무엇인가?
-excerpt: TODO
+excerpt: Javascript의 버전 정보에 대해 알아봅니다.
 tags:
   - javascript
   - js

@@ -4,7 +4,7 @@ draft: false
 image: img/cover.png
 date: 2019-09-25 10:05:34 +09:00
 title: Kotlin과 Spring Boot로 REST API 서비스 구축
-excerpt: TODO
+excerpt: Kotlin 언어와 Spring Boot 프레임워크로 REST Api 서비스 기본 구성하는 방법을 알아봅니다.
 tags:
   - kotlin
   - spring_boot

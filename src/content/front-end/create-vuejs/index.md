@@ -4,7 +4,7 @@ draft: false
 image: img/cover.jpg
 date: 2019-09-09 10:20:55 +09:00
 title: Vue.js 사용하기
-excerpt: TODO
+excerpt: VieJS 기본 프로젝트를 생성하는 방법을 알아봅니다.
 tags:
   - vuejs
   - vue_cli_3
