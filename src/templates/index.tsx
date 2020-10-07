@@ -56,7 +56,6 @@ const IndexPage: React.FC<IndexProps> = props => {
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
-        <html lang={config.lang} />
         <title>{config.title}</title>
         <meta name="description" content={config.description} />
         <meta property="og:site_name" content={config.title} />

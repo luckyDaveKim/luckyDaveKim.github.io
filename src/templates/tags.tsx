@@ -63,7 +63,6 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
   return (
     <IndexLayout>
       <Helmet>
-        <html lang={config.lang} />
         <title>
           {tag} - {config.title}
         </title>

@@ -84,7 +84,6 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
   return (
     <IndexLayout>
       <Helmet>
-        <html lang={config.lang} />
         <title>
           {author.id} - {config.title}
         </title>

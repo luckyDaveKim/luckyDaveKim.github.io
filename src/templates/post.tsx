@@ -119,7 +119,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   return (
     <IndexLayout className="post-template">
       <Helmet>
-        <html lang={config.lang} />
         <title>{post.frontmatter.title}</title>
 
         <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />

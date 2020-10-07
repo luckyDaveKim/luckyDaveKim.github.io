@@ -7,6 +7,7 @@ import { lighten } from 'polished';
 // @ts-ignore
 import favicon from '../../src/favicon.ico';
 import { colors } from '../styles/colors';
+import config from "../website-config";
 
 interface IndexProps {
   className?: string;
@@ -16,6 +17,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
   return (
     <div className={props.className}>
       <Helmet>
+        <html lang={config.lang} />
         <link rel="icon" href={favicon} type="image/x-icon" />
       </Helmet>
       <Global
