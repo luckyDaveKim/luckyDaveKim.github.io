@@ -124,9 +124,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         <meta property="article:published_time" content={post.frontmatter.date} />
         {/* not sure if modified time possible */}
         {/* <meta property="article:modified_time" content="2018-08-20T15:12:00.000Z" /> */}
-        {post.frontmatter.tags && (
-          <meta property="article:tag" content={post.frontmatter.tags[0]} />
-        )}
+        {post.frontmatter.tags?.map(tag => (<meta property="article:tag" content={tag} />))}
 
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.facebook && <meta property="article:author" content={config.facebook} />}
@@ -142,7 +140,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         )}
         <meta name="twitter:label1" content="Written by" />
         <meta name="twitter:label2" content="Filed under" />
-        {post.frontmatter.tags && <meta name="twitter:data2" content={post.frontmatter.tags[0]} />}
         {config.twitter && (
           <meta
             name="twitter:site"
@@ -172,11 +169,11 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
             <article css={PostFull}>
               <PostFullHeader className="post-full-header">
                 <PostFullTags className="post-full-tags">
-                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-                    <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
-                      {post.frontmatter.tags[0]}
+                  {post.frontmatter.tags?.map(tag => (
+                    <Link to={`/tags/${_.kebabCase(tag)}/`}>
+                      #{tag}
                     </Link>
-                  )}
+                  ))}
                 </PostFullTags>
                 <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
                 <PostFullCustomExcerpt className="post-full-custom-excerpt">
@@ -271,14 +268,17 @@ export const PostFullHeader = styled.header`
 
 const PostFullTags = styled.section`
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  /* color: var(--midgrey); */
   color: ${colors.midgrey};
-  font-size: 1.3rem;
-  line-height: 1.4em;
+  font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
+
+  * {
+    margin: 0 0.3em;
+  }
 `;
 
 const PostFullCustomExcerpt = styled.p`
