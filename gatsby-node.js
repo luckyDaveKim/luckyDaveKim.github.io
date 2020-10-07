@@ -18,7 +18,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       let slug = permalink;
 
       if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`;
+        /*
+          An 'index.md' file of permalink is parent directory name. Otherwise
+          '*.md' file of permalink is that name.
+         */
+        slug = `/${relativePath.replace('/index.md', '').replace('.md', '')}`;
       }
 
       // Used to generate URL to view this content.
