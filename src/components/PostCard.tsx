@@ -89,7 +89,9 @@ const PostCardStyles = css`
   }
 
   @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkgrey};
     border-bottom-color: ${lighten('0.08', colors.darkmode)};
+    box-shadow: ${lighten('0.06', colors.darkgrey)} 8px 14px 38px, ${lighten('0.03', colors.darkgrey)} 1px 3px 8px;
   }
 `;
 
