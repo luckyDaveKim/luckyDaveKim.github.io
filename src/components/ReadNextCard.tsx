@@ -6,6 +6,7 @@ import * as _ from 'lodash';
 
 import { colors } from '../styles/colors';
 import { format } from 'date-fns';
+import {ko} from "date-fns/locale"
 
 export interface ReadNextProps {
   tags: string[];
@@ -43,10 +44,10 @@ export const ReadNextCard: React.FC<ReadNextProps> = props => {
         <ul>
           {relatedPosts.map(n => {
             const date = new Date(n.node.frontmatter.date);
-            // 2018-08-20
-            const datetime = format(date, 'yyyy-MM-dd');
-            // 20 AUG 2018
-            const displayDatetime = format(date, 'dd LLL yyyy');
+            // 1991-03-26
+            const datetime = format(date, 'yyyy-MM-dd', {locale: ko});
+            // 1991년 03월 26일
+            const displayDatetime = format(date, 'yyyy년 MMM do', {locale: ko});
             return (
               <li key={n.node.frontmatter.title}>
                 <h4>

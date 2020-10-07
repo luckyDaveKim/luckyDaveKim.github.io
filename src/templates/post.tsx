@@ -19,6 +19,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
+import {ko} from "date-fns/locale"
 
 interface PageTemplateProps {
   location: Location;
@@ -99,10 +100,10 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   }
 
   const date = new Date(post.frontmatter.date);
-  // 2018-08-20
-  const datetime = format(date, 'yyyy-MM-dd');
-  // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
+  // 1991-03-26
+  const datetime = format(date, 'yyyy-MM-dd', {locale: ko});
+  // 1991년 03월 26일
+  const displayDatetime = format(date, 'yyyy년 MMM do', {locale: ko});
 
   return (
     <IndexLayout className="post-template">

@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { ko } from 'date-fns/locale'
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { lighten } from 'polished';
@@ -17,10 +18,10 @@ export interface PostCardProps {
 
 export const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const date = new Date(post.frontmatter.date);
-  // 2018-08-20
-  const datetime = format(date, 'yyyy-MM-dd');
-  // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
+  // 1991-03-26
+  const datetime = format(date, 'yyyy-MM-dd', {locale: ko});
+  // 1991년 03월 26일
+  const displayDatetime = format(date, 'yyyy년 MMM do', {locale: ko});
 
   return (
     <article
