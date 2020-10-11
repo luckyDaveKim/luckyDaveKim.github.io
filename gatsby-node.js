@@ -14,6 +14,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     case 'MarkdownRemark': {
       const { permalink, layout, primaryTag } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
+      const category = relativePath.split('/')[0];
 
       let slug = permalink;
 
@@ -43,6 +44,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         node,
         name: 'primaryTag',
         value: primaryTag || '',
+      });
+
+      createNodeField({
+        node,
+        name: 'category',
+        value: category || '',
       });
     }
   }
@@ -82,7 +89,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
             fields {
-              layout
+              category
               slug
             }
           }
@@ -160,6 +167,25 @@ exports.createPages = async ({ graphql, actions }) => {
       component: tagTemplate,
       context: {
         tag,
+      },
+    });
+  });
+
+  // Create category pages
+  const categoryTemplate = path.resolve('./src/templates/categories.tsx');
+  const categories = _.uniq(
+    _.flatten(
+      result.data.allMarkdownRemark.edges.map(edge => {
+        return _.castArray(_.get(edge, 'node.fields.category', []));
+      }),
+    ),
+  );
+  categories.forEach(category => {
+    createPage({
+      path: `/categories/${_.kebabCase(category)}/`,
+      component: categoryTemplate,
+      context: {
+        category,
       },
     });
   });
