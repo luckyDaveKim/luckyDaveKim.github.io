@@ -171,7 +171,6 @@ export const pageQuery = graphql`
             }
           }
           fields {
-            layout
             slug
           }
         }

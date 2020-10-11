@@ -81,7 +81,6 @@ export interface PageContext {
         fluid: FluidObject;
       };
     };
-    layout: string;
     excerpt: string;
     title: string;
     date: string;

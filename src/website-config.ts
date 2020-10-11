@@ -45,11 +45,9 @@ export interface WebsiteConfig {
    */
   mailchimpEmailFieldName?: string;
   /**
-  /**
    * Meta tag for Google Webmaster Tools
    */
   googleSiteVerification?: string;
-  /**
   /**
    * Appears alongside the footer, after the credits
    */
@@ -59,7 +57,6 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'DevDave',
   description: '프로그래밍으로 예술을 꿈꾸다',
-  coverImage: 'img/blog-cover.jpg',
   logo: 'img/blog-icon.png',
   lang: 'ko',
   siteUrl: 'https://luckydavekim.github.io',

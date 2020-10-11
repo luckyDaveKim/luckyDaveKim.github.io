@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout, primaryTag } = node.frontmatter;
+      const { permalink, template, primaryTag } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
       const category = relativePath.split('/')[0];
 
@@ -33,11 +33,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         value: slug || '',
       });
 
-      // Used to determine a page layout.
+      // Used to determine a page template.
       createNodeField({
         node,
-        name: 'layout',
-        value: layout || '',
+        name: 'template',
+        value: template || '',
       });
 
       createNodeField({

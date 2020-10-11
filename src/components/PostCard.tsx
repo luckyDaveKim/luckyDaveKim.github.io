@@ -195,18 +195,3 @@ const PostCardBylineContent = styled.div`
 const PostCardHeader = styled.header`
   margin: 15px 0 0;
 `;
-
-export const StaticAvatar = css`
-  display: block;
-  overflow: hidden;
-  margin: 0 0 0 -6px;
-  width: 34px;
-  height: 34px;
-  border: #fff 2px solid;
-  border-radius: 100%;
-
-  @media (prefers-color-scheme: dark) {
-    /* border-color: color(var(--darkgrey) l(+2%)); */
-    border-color: ${lighten('0.02', colors.darkgrey)};
-  }
-`;

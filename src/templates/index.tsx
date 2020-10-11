@@ -187,7 +187,6 @@ export const pageQuery = graphql`
           }
           excerpt
           fields {
-            layout
             slug
           }
         }
