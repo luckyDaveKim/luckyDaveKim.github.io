@@ -30,6 +30,7 @@ export interface IndexProps {
   pageContext: {
     currentPage: number;
     numPages: number;
+    coverImage: string;
   };
   data: {
     logo: {
@@ -143,7 +144,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 };
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query blogPageQuery($coverImage: String, $skip: Int!, $limit: Int!) {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
@@ -153,7 +154,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
+    header: file(relativePath: { eq: $coverImage }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
