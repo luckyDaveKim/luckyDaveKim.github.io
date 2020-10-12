@@ -60,11 +60,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      site {
-        siteMetadata {
-          coverImage
-        }
-      }
       allMarkdownRemark(
         limit: 2000
         sort: { fields: [frontmatter___date], order: DESC }
@@ -124,8 +119,7 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
-        currentPage: i + 1,
-        coverImage: result.data.site.siteMetadata.coverImage
+        currentPage: i + 1
       },
     });
   });

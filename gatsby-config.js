@@ -6,7 +6,6 @@ module.exports = {
     title: 'DevDave',
     description: 'The blog for dave',
     siteUrl: 'https://luckydavekim.github.io', // full path to blog - no ending slash
-    coverImage: 'img/blog-cover.jpg',
   },
   plugins: [
     'gatsby-plugin-sitemap',
