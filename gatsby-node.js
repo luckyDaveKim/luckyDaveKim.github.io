@@ -67,7 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allMarkdownRemark(
         limit: 2000
-        sort: { fields: [frontmatter___date], order: ASC }
+        sort: { fields: [frontmatter___date], order: DESC }
         filter: { frontmatter: { draft: { ne: true } } }
       ) {
         edges {
@@ -162,7 +162,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const tagTemplate = path.resolve('./src/templates/tags.tsx');
   const tags = _.uniq(
     _.flatten(
-      result.data.allMarkdownRemark.edges.map(edge => {
+      posts.map(edge => {
         return _.castArray(_.get(edge, 'node.frontmatter.tags', []));
       }),
     ),
@@ -181,7 +181,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const categoryTemplate = path.resolve('./src/templates/categories.tsx');
   const categories = _.uniq(
     _.flatten(
-      result.data.allMarkdownRemark.edges.map(edge => {
+      posts.map(edge => {
         return _.castArray(_.get(edge, 'node.fields.category', []));
       }),
     ),
