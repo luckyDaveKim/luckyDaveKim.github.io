@@ -159,7 +159,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Create tag pages
-  const tagTemplate = path.resolve('./src/templates/tags.tsx');
+  const tagTemplate = path.resolve('./src/templates/tag.tsx');
   const tags = _.uniq(
     _.flatten(
       posts.map(edge => {
@@ -178,7 +178,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Create category pages
-  const categoryTemplate = path.resolve('./src/templates/categories.tsx');
+  const categoryTemplate = path.resolve('./src/templates/category.tsx');
   const categories = _.uniq(
     _.flatten(
       posts.map(edge => {

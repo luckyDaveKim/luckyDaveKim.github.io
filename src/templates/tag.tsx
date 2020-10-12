@@ -53,7 +53,7 @@ interface TagTemplateProps {
   };
 }
 
-const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
+const Tag = ({ pageContext, data, location }: TagTemplateProps) => {
   const tag = pageContext.tag ? pageContext.tag : '';
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagData = data.allTagYaml.edges.find(
@@ -128,7 +128,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
   );
 };
 
-export default Tags;
+export default Tag;
 
 export const pageQuery = graphql`
   query($tag: String) {

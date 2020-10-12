@@ -53,7 +53,7 @@ interface CategoryTemplateProps {
   };
 }
 
-const Categories = ({ pageContext, data, location }: CategoryTemplateProps) => {
+const Category = ({ pageContext, data, location }: CategoryTemplateProps) => {
   const category = pageContext.category ? pageContext.category : '';
   const { edges, totalCount } = data.allMarkdownRemark;
   const CategoryData = data.allCategoryYaml.edges.find(
@@ -128,7 +128,7 @@ const Categories = ({ pageContext, data, location }: CategoryTemplateProps) => {
   );
 };
 
-export default Categories;
+export default Category;
 
 export const pageQuery = graphql`
   query($category: String) {
