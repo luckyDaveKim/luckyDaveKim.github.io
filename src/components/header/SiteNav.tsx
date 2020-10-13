@@ -106,6 +106,11 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                   </NavLink>
                 </li>
                 <li role="menuitem">
+                  <NavLink to="/algorithm" activeClassName="active">
+                    Algorithm
+                  </NavLink>
+                </li>
+                <li role="menuitem">
                   <NavLink to="/tags" activeClassName="active">
                     Tags
                   </NavLink>
