@@ -1,7 +1,8 @@
-import { Link } from 'gatsby';
+import { GatsbyLinkProps, Link } from 'gatsby';
 import { darken } from 'polished';
-import React from 'react';
+import React  from 'react';
 
+import { LinkGetProps } from '@reach/router';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
@@ -91,18 +92,23 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             {!isHome && <SiteNavLogo />}
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
-                {/* TODO: mark current nav item - add class nav-current */}
                 <li role="menuitem">
                   <Link to="/">Home</Link>
                 </li>
                 <li role="menuitem">
-                  <Link to="/about">About</Link>
+                  <NavLink to="/about" activeClassName="active">
+                    About
+                  </NavLink>
                 </li>
                 <li role="menuitem">
-                  <Link to="/categories/development">Development</Link>
+                  <NavLink to="/development" activeClassName="active">
+                    Development
+                  </NavLink>
                 </li>
                 <li role="menuitem">
-                  <Link to="/tags">Tags</Link>
+                  <NavLink to="/tags" activeClassName="active">
+                    Tags
+                  </NavLink>
                 </li>
               </ul>
               {isPost && (
@@ -171,6 +177,19 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     );
   }
 }
+
+const NavLink: React.FC<Omit<GatsbyLinkProps<{}>, 'ref'>> = ({ className, children, ...props }) => {
+  const isActive = (className: string | undefined) => ({ isCurrent, isPartiallyCurrent }: LinkGetProps) => {
+    const activeClassName = { className: `${className} active` }
+    return (isCurrent || isPartiallyCurrent ) ? activeClassName : { className };
+  };
+
+  return (
+    <Link getProps={isActive(className)} {...props}>
+      {children}
+    </Link>
+  )
+};
 
 export const SiteNavMain = css`
   position: fixed;
@@ -274,6 +293,15 @@ const NavStyles = css`
   }
 
   li a:hover:before {
+    right: 12px;
+    opacity: 0.5;
+  }
+
+  li .active {
+    opacity: 1;
+  }
+
+  li .active:before {
     right: 12px;
     opacity: 0.5;
   }
