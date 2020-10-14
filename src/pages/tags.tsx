@@ -43,7 +43,8 @@ const Tags: React.FC<TagsPageProps> = props => {
     .groupBy()
     .map((v, k) => ({'text': `#${k.toUpperCase()}`, 'value': v.length }))
     .value()
-    .slice(0, 50);
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 25);
 
   return (
     <IndexLayout>
@@ -74,7 +75,7 @@ const Tags: React.FC<TagsPageProps> = props => {
                   colors: _.map(colors),
                   deterministic: false,
                   enableTooltip: false,
-                  fontSizes: [24, 64],
+                  fontSizes: [24, 36],
                   fontFamily: 'impact',
                   padding: 1,
                   rotations: 3,
