@@ -72,7 +72,7 @@ The number of nodes in the list is sz.
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-public class RemoveNthNodeFromEndOfListNew {
+public class RemoveNthNodeFromEndOfList {
 
 	public ListNode removeNthFromEnd(ListNode head, int n) {
 		ListNode start = new ListNode(0);
