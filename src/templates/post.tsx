@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { ko } from 'date-fns/locale';
 import { graphql, Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
@@ -19,7 +20,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
-import {ko} from "date-fns/locale"
+import Comment from '../components/Comment';
 
 interface PageTemplateProps {
   location: Location;
@@ -205,6 +206,8 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 </PostFullImage>
               )}
               <PostContent htmlAst={post.htmlAst} />
+
+              <Comment />
 
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}

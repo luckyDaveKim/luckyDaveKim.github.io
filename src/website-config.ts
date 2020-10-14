@@ -27,6 +27,10 @@ export interface WebsiteConfig {
    */
   twitter?: string;
   /**
+   * GitHub owner/repo
+   */
+  utterancesRepo?: string;
+  /**
    * hide or show all email subscribe boxes
    */
   showSubscribe: boolean;
@@ -61,6 +65,7 @@ const config: WebsiteConfig = {
   facebook: 'https://www.facebook.com/lucky.dave.k',
   instagram: 'https://www.instagram.com/lucky.dave',
   twitter: '',
+  utterancesRepo: 'luckyDaveKim/luckyDaveKim.github.io',
   showSubscribe: true,
   mailchimpAction: '',
   mailchimpName: '',
