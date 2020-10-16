@@ -24,10 +24,16 @@ import {
 import { PageContext } from './post';
 import { Helmet } from 'react-helmet';
 import config from '../website-config';
+import Pagination from '../components/Pagination';
 
 interface CategoryTemplateProps {
   location: Location;
   pageContext: {
+    limit: number;
+    skip: number;
+    currentPage: number;
+    numPages: number;
+    pathPrefix: string;
     category: string;
   };
   data: {
@@ -53,7 +59,7 @@ interface CategoryTemplateProps {
   };
 }
 
-const Category = ({ pageContext, data, location }: CategoryTemplateProps) => {
+const Category: React.FC<CategoryTemplateProps> = ({ location, pageContext, data }) => {
   const category = pageContext.category ? pageContext.category : '';
   const { edges, totalCount } = data.allMarkdownRemark;
   const CategoryData = data.allCategoryYaml.edges.find(
@@ -122,6 +128,11 @@ const Category = ({ pageContext, data, location }: CategoryTemplateProps) => {
             </div>
           </div>
         </main>
+        <Pagination
+          currentPage={pageContext.currentPage}
+          numPages={pageContext.numPages}
+          pathPrefix={pageContext.pathPrefix}
+        />
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -131,7 +142,7 @@ const Category = ({ pageContext, data, location }: CategoryTemplateProps) => {
 export default Category;
 
 export const pageQuery = graphql`
-  query($category: String) {
+  query($skip: Int!, $limit: Int!, $category: String!) {
     allCategoryYaml {
       edges {
         node {
@@ -148,9 +159,10 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { category: { eq: $category } }, frontmatter: { draft: { ne: true } } }
+      limit: $limit
+      skip: $skip
     ) {
       totalCount
       edges {

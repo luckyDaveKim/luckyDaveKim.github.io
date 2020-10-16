@@ -32,6 +32,7 @@ export interface IndexProps {
     skip: number;
     currentPage: number;
     numPages: number;
+    pathPrefix: string;
   };
   data: {
     logo: {
@@ -131,12 +132,11 @@ const IndexPage: React.FC<IndexProps> = props => {
             </div>
           </div>
         </main>
-        {props.pageContext.numPages > 1 && (
-          <Pagination
-            currentPage={props.pageContext.currentPage}
-            numPages={props.pageContext.numPages}
-          />
-        )}
+        <Pagination
+          currentPage={props.pageContext.currentPage}
+          numPages={props.pageContext.numPages}
+          pathPrefix={props.pageContext.pathPrefix}
+        />
         <Footer />
       </Wrapper>
     </IndexLayout>

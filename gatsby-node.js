@@ -95,6 +95,12 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      categories: allMarkdownRemark(filter: {}) {
+        group(field: fields___category) {
+          totalCount
+          fieldValue
+        }
+      }
     }
   `);
 
@@ -119,6 +125,7 @@ exports.createPages = async ({ graphql, actions }) => {
         skip: i * postsPerPage,
         currentPage: i + 1,
         numPages,
+        pathPrefix: '/'
       },
     });
   });
@@ -172,22 +179,30 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create category pages
   const categoryTemplate = path.resolve('./src/templates/category.tsx');
-  const categories = _.uniq(
-    _.flatten(
-      posts.map(edge => {
-        return _.castArray(_.get(edge, 'node.fields.category', []));
-      }),
-    ),
-  );
-  categories.forEach(category => {
-    createPage({
-      path: `/${_.kebabCase(category)}/`,
-      component: categoryTemplate,
-      context: {
-        category,
-      },
+  result.data.categories.group
+    .forEach(({
+                fieldValue: category,
+                totalCount: numPosts
+              }) => {
+      const postsPerPage = 6;
+      const numPages = Math.ceil(numPosts / postsPerPage);
+      const pathPrefix = `/${_.kebabCase(category)}`;
+
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? `${pathPrefix}` : `${pathPrefix}/${i + 1}`,
+          component: categoryTemplate,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            currentPage: i + 1,
+            numPages,
+            pathPrefix,
+            category,
+          },
+        });
+      });
     });
-  });
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
