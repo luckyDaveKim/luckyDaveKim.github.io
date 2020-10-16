@@ -9,7 +9,6 @@ tags:
   - gatsby
   - ssg
   - react
-  - github_pages
 ---
 
 # 개요
