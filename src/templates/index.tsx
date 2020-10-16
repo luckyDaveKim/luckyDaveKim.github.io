@@ -28,6 +28,8 @@ import { PageContext } from './post';
 
 export interface IndexProps {
   pageContext: {
+    limit: number;
+    skip: number;
     currentPage: number;
     numPages: number;
   };
@@ -129,7 +131,6 @@ const IndexPage: React.FC<IndexProps> = props => {
             </div>
           </div>
         </main>
-        {props.children}
         {props.pageContext.numPages > 1 && (
           <Pagination
             currentPage={props.pageContext.currentPage}

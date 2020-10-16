@@ -107,8 +107,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMarkdownRemark.edges;
 
   // Create paginated index
-  // TODO: new pagination
-  const postsPerPage = 1000;
+  const postsPerPage = 6;
   const numPages = Math.ceil(posts.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -118,8 +117,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
+        currentPage: i + 1,
         numPages,
-        currentPage: i + 1
       },
     });
   });
