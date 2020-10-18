@@ -66,6 +66,7 @@ module.exports = {
         postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
       },
     },
+    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
