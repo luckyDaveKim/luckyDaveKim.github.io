@@ -51,6 +51,10 @@ export interface WebsiteConfig {
    */
   googleSiteVerification?: string;
   /**
+   * Meta tag for Naver Webmaster Tools
+   */
+  naverSiteVerification?: string;
+  /**
    * Appears alongside the footer, after the credits
    */
   footer?: string;
@@ -70,7 +74,8 @@ const config: WebsiteConfig = {
   mailchimpAction: '',
   mailchimpName: '',
   mailchimpEmailFieldName: '',
-  googleSiteVerification: 'GoogleCode',
+  googleSiteVerification: 'Q9FWQVKtHtbDrT2pK1lAr35tKbStwz6-39cNBZMNB2U',
+  naverSiteVerification: 'e3439586b4f8ec683a32b7204c6afae7355c4c65',
   footer: 'blog is proudly published with Gatsby & GitHub Pages',
 };
 
