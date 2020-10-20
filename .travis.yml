@@ -1,14 +1,10 @@
 language: node_js
 
 node_js:
-  - "stable"
+  - "12"
 
 cache:
   yarn: true
-  directories:
-    - node_modules
-    - public
-    - .cache
 
 before_install:
   - npm install -g gatsby-cli
