@@ -75,7 +75,7 @@ const config: WebsiteConfig = {
   instagram: 'https://www.instagram.com/lucky.dave',
   twitter: '',
   utterancesRepo: 'luckyDaveKim/luckyDaveKim.github.io',
-  showSubscribe: true,
+  showSubscribe: false,
   mailchimpAction: '',
   mailchimpName: '',
   mailchimpEmailFieldName: '',
