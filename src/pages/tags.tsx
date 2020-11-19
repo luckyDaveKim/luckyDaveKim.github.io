@@ -75,7 +75,7 @@ const Tags: React.FC<TagsPageProps> = props => {
                   colors: _.map(colors),
                   deterministic: false,
                   enableTooltip: false,
-                  fontSizes: [24, 36],
+                  fontSizes: [12, 38],
                   fontFamily: 'impact',
                   padding: 1,
                   rotations: 3,
