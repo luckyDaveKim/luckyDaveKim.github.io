@@ -17,6 +17,10 @@ export interface WebsiteConfig {
   /**
    * full url, no username
    */
+  linkedin?: string;
+  /**
+   * full url, no username
+   */
   facebook?: string;
   /**
    * full url, no username
@@ -66,6 +70,7 @@ const config: WebsiteConfig = {
   lang: 'ko',
   siteUrl: 'https://luckydavekim.github.io',
   github: 'https://github.com/luckyDaveKim',
+  linkedin: 'https://www.linkedin.com/in/%EB%AF%BC%EA%B7%9C-%EA%B9%80-88890818b',
   facebook: 'https://www.facebook.com/lucky.dave.k',
   instagram: 'https://www.instagram.com/lucky.dave',
   twitter: '',

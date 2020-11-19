@@ -23,6 +23,11 @@ export const Footer: React.FC = () => {
               GitHub
             </a>
           )}
+          {config.linkedin && (
+            <a href={config.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          )}
           {config.facebook && (
             <a href={config.facebook} target="_blank" rel="noopener noreferrer">
               Facebook

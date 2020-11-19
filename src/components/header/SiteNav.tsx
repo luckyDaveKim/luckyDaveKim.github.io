@@ -7,12 +7,19 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-import {SocialLink, SocialLinkFb, SocialLinkGh, SocialLinkIg} from '../../styles/shared';
+import {
+  SocialLink,
+  SocialLinkGitHub,
+  SocialLinkLinkedIn,
+  SocialLinkFacebook,
+  SocialLinkInstagram
+} from '../../styles/shared';
 import config from '../../website-config';
-import { Github } from '../icons/github';
-import { Facebook } from '../icons/facebook';
-import { Instagram } from '../icons/instagram';
-import { Twitter } from '../icons/twitter';
+import { GitHub } from '../icons/GitHub';
+import { LinkedIn } from "../icons/LinkedIn";
+import { Facebook } from '../icons/Facebook';
+import { Instagram } from '../icons/Instagram';
+import { Twitter } from '../icons/Twitter';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
@@ -127,20 +134,29 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             <SocialLinks>
               {config.github && (
                 <a
-                  className="social-link-gh"
-                  css={[SocialLink, SocialLinkGh]}
+                  css={[SocialLink, SocialLinkGitHub]}
                   href={config.github}
                   target="_blank"
                   title="GitHub"
                   rel="noopener noreferrer"
                 >
-                  <Github />
+                  <GitHub />
+                </a>
+              )}
+              {config.linkedin && (
+                <a
+                  css={[SocialLink, SocialLinkLinkedIn]}
+                  href={config.linkedin}
+                  target="_blank"
+                  title="LinkedIn"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedIn />
                 </a>
               )}
               {config.facebook && (
                 <a
-                  className="social-link-fb"
-                  css={[SocialLink, SocialLinkFb]}
+                  css={[SocialLink, SocialLinkFacebook]}
                   href={config.facebook}
                   target="_blank"
                   title="Facebook"
@@ -151,8 +167,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               )}
               {config.instagram && (
                 <a
-                  className="social-link-ig"
-                  css={[SocialLink, SocialLinkIg]}
+                  css={[SocialLink, SocialLinkInstagram]}
                   href={config.instagram}
                   target="_blank"
                   title="Instagram"

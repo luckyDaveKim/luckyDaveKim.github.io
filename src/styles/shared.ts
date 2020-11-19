@@ -100,19 +100,25 @@ export const SocialLink = css`
   }
 `;
 
-export const SocialLinkGh = css`
+export const SocialLinkGitHub = css`
   svg {
     height: 1.6rem;
   }
 `;
 
-export const SocialLinkFb = css`
+export const SocialLinkLinkedIn = css`
   svg {
     height: 1.6rem;
   }
 `;
 
-export const SocialLinkIg = css`
+export const SocialLinkFacebook = css`
+  svg {
+    height: 1.6rem;
+  }
+`;
+
+export const SocialLinkInstagram = css`
   svg {
     height: 2.2rem;
   }
