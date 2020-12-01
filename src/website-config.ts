@@ -79,7 +79,7 @@ const config: WebsiteConfig = {
   mailchimpAction: '',
   mailchimpName: '',
   mailchimpEmailFieldName: '',
-  googleSiteVerification: 'Q9FWQVKtHtbDrT2pK1lAr35tKbStwz6-39cNBZMNB2U',
+  googleSiteVerification: 'Ze766h-NxidIPwgp4pq6c2EgVNG-Lkorf72kY3Zne-U',
   naverSiteVerification: 'e3439586b4f8ec683a32b7204c6afae7355c4c65',
   footer: 'blog is proudly published with Gatsby & GitHub Pages',
 };
