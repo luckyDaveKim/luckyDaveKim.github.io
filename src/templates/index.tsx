@@ -93,8 +93,6 @@ const IndexPage: React.FC<IndexProps> = props => {
         )}
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
-
-        <script data-ad-client="ca-pub-7933583473323654" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
       </Helmet>
       <Wrapper>
         <div

@@ -6,6 +6,7 @@ import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import GoogleAdsense from 'react-adsense-google';
 
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
@@ -214,6 +215,15 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
             </article>
           </div>
         </main>
+
+        <GoogleAdsense
+          adClient='ca-pub-7933583473323654'
+          adSlot='3598572309'
+          style={{'display': 'block', 'text-align': 'center'}}
+          adLayout='in-article'
+          adFormat='fluid'
+          fullWidthResponsive='true'
+        />
 
         <ReadNext
           currentPageSlug={location.pathname}
