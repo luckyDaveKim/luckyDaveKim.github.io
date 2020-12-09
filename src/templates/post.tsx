@@ -208,6 +208,15 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               )}
               <PostContent htmlAst={post.htmlAst} />
 
+              <GoogleAdsense
+                adClient='ca-pub-7933583473323654'
+                adSlot='3598572309'
+                style={{'display': 'block', 'text-align': 'center'}}
+                adLayout='in-article'
+                adFormat='fluid'
+                fullWidthResponsive='true'
+              />
+
               <Comment />
 
               {/* The big email subscribe modal content */}
@@ -215,15 +224,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
             </article>
           </div>
         </main>
-
-        <GoogleAdsense
-          adClient='ca-pub-7933583473323654'
-          adSlot='3598572309'
-          style={{'display': 'block', 'text-align': 'center'}}
-          adLayout='in-article'
-          adFormat='fluid'
-          fullWidthResponsive='true'
-        />
 
         <ReadNext
           currentPageSlug={location.pathname}
