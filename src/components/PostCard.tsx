@@ -13,7 +13,6 @@ import { PageContext } from '../templates/post';
 
 export interface PostCardProps {
   post: PageContext;
-  large?: boolean;
 }
 
 export const PostCard: React.FC<PostCardProps> = ({ post }) => {
@@ -70,7 +69,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
   );
 };
 
-const PostCardStyles = css`
+export const PostCardStyles = css`
   position: relative;
   flex: 1 1 301px;
   display: flex;
