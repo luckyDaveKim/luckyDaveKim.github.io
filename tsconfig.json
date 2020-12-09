@@ -10,6 +10,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "declaration": true,
+    "declarationDir": "./@types"
   }
 }
