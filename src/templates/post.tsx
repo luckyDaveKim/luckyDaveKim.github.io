@@ -126,7 +126,12 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         <meta property="article:published_time" content={post.frontmatter.date} />
         {/* not sure if modified time possible */}
         {/* <meta property="article:modified_time" content="2018-08-20T15:12:00.000Z" /> */}
-        {post.frontmatter.tags?.map(tag => (<meta property="article:tag" content={tag} />))}
+        {post.frontmatter.tags?.map((tag, index) => (
+          <meta
+            key={index}
+            property="article:tag"
+            content={tag} />
+        ))}
 
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.facebook && <meta property="article:author" content={config.facebook} />}
@@ -171,8 +176,11 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
             <article css={PostFull}>
               <PostFullHeader className="post-full-header">
                 <PostFullTags className="post-full-tags">
-                  {post.frontmatter.tags?.map(tag => (
-                    <Link to={`/tags/${_.kebabCase(tag)}/`}>
+                  {post.frontmatter.tags?.map((tag, index) => (
+                    <Link
+                      key={index}
+                      to={`/tags/${_.kebabCase(tag)}/`}
+                    >
                       #{tag}
                     </Link>
                   ))}
@@ -211,7 +219,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               <GoogleAdsense
                 adClient='ca-pub-7933583473323654'
                 adSlot='3598572309'
-                style={{'display': 'block', 'text-align': 'center'}}
+                style={{'display': 'block', 'textAlign': 'center'}}
                 adLayout='in-article'
                 adFormat='fluid'
                 fullWidthResponsive='true'

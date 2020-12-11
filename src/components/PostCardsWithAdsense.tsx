@@ -19,21 +19,19 @@ export const PostCardsWithAdsense: React.FC<PostCardsWithAdsenseProps> = ({posts
     <>
       {posts.map((post, index) => {
         return (
-          (adsenseInsertable && index === adsenseFeedIndex)
-            ? (
-              <>
-                <AdsenseCard
-                  adClient='ca-pub-7933583473323654'
-                  adSlot='3191663602'
-                  style={{'display': 'block'}}
-                  adLayout='in-article'
-                  adLayoutKey='-5z+dd+31-e1+74'
-                  adFormat='fluid'
-                />
-                <PostCard key={post.node.fields.slug} post={post.node}/>
-              </>
-            )
-            : (<PostCard key={post.node.fields.slug} post={post.node}/>)
+          <React.Fragment key={index}>
+            {(adsenseInsertable && index === adsenseFeedIndex) && (
+              <AdsenseCard
+                adClient='ca-pub-7933583473323654'
+                adSlot='3191663602'
+                style={{'display': 'block'}}
+                adLayout='in-article'
+                adLayoutKey='-5z+dd+31-e1+74'
+                adFormat='fluid'
+              />
+            )}
+            <PostCard key={post.node.fields.slug} post={post.node} />
+          </React.Fragment>
         )
       })}
     </>
