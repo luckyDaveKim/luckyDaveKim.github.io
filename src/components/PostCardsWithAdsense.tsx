@@ -25,7 +25,6 @@ export const PostCardsWithAdsense: React.FC<PostCardsWithAdsenseProps> = ({posts
                 adClient='ca-pub-7933583473323654'
                 adSlot='3191663602'
                 style={{'display': 'block'}}
-                adLayout='in-article'
                 adLayoutKey='-5z+dd+31-e1+74'
                 adFormat='fluid'
               />
