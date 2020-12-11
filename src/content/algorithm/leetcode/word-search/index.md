@@ -71,7 +71,7 @@ board and word consists only of lowercase and uppercase English letters.
 
 ### Java 코드
 ```java
-public class WordSearch2 {
+public class WordSearch {
 
 	public boolean exist(char[][] board, String word) {
 		boolean isExistsBoard = board != null && board[0] != null;
