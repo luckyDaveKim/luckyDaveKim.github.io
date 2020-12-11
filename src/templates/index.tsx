@@ -8,7 +8,7 @@ import { css } from '@emotion/core';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import Pagination from '../components/Pagination';
-import { PostCardsWithAdsense } from '../components/PostCardsWithAdsense';
+import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
@@ -123,10 +123,11 @@ const IndexPage: React.FC<IndexProps> = props => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed, PostFeedRaise]}>
-              <PostCardsWithAdsense
-                posts={props.data.allMarkdownRemark.edges}
-                page={props.pageContext.currentPage}
-              />
+              {props.data.allMarkdownRemark.edges.map((post) => {
+                return (
+                  <PostCard key={post.node.fields.slug} post={post.node} />
+                );
+              })}
             </div>
           </div>
         </main>
