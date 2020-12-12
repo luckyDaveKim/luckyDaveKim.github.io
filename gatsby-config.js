@@ -8,7 +8,6 @@ module.exports = {
     siteUrl: 'https://luckydavekim.github.io', // full path to blog - no ending slash
   },
   plugins: [
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -66,23 +65,17 @@ module.exports = {
         postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
       },
     },
-    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-109095118-1',
-        // Puts tracking script in the head instead of the body
-        head: true,
-        // IP anonymization for GDPR compliance
-        anonymize: true,
-        // Disable analytics for users with `Do Not Track` enabled
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ['/preview/**'],
-        // Specifies what percentage of users should be tracked
-        sampleRate: 100,
-        // Determines how often site speed tracking beacons will be sent
-        siteSpeedSampleRate: 10,
+      },
+    },
+    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        sitemapSize: 100,
       },
     },
   ],
