@@ -5,9 +5,9 @@ import { lighten } from 'polished';
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore
-import favicon from '../../src/favicon.png';
+import favicon from '../images/favicon.ico';
 import { colors } from '../styles/colors';
-import config from "../website-config";
+import config from '../website-config';
 
 interface IndexProps {
   className?: string;
