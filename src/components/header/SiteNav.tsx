@@ -3,7 +3,7 @@ import { darken } from 'polished';
 import React  from 'react';
 
 import { LinkGetProps } from '@reach/router';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';

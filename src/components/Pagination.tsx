@@ -3,7 +3,7 @@ import React from 'react';
 import _ from 'lodash';
 import path from 'path'
 import { setLightness } from 'polished';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { colors } from '../styles/colors';
 

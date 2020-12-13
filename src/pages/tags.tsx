@@ -3,7 +3,13 @@ import {Helmet} from 'react-helmet';
 import ReactWordcloud from 'react-wordcloud';
 import {graphql, navigate} from 'gatsby';
 import * as _ from 'lodash';
-import {css} from '@emotion/core';
+import flow from 'lodash/fp/flow';
+import flatMap from 'lodash/fp/flatMap';
+import map from 'lodash/fp/map';
+import groupBy from 'lodash/fp/groupBy';
+import sortBy from 'lodash/fp/sortBy';
+import slice from 'lodash/fp/slice';
+import {css} from '@emotion/react';
 
 import {Footer} from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
@@ -38,13 +44,13 @@ interface TagsPageProps {
 }
 
 const Tags: React.FC<TagsPageProps> = props => {
-  const tags = _.chain(props.data.allMarkdownRemark.edges)
-    .flatMap(edge => _.castArray(_.get(edge, 'node.frontmatter.tags', [])))
-    .groupBy()
-    .map((v, k) => ({'text': `#${k.toUpperCase()}`, 'value': v.length }))
-    .value()
-    .sort((a, b) => b.value - a.value)
-    .slice(0, 25);
+  const tags = flow(
+    flatMap(({node}) => node.frontmatter.tags),
+    groupBy(tag => tag),
+    map(tagGroup => ({text: tagGroup[0], value: tagGroup.length})),
+    sortBy(word => -word.value),
+    slice(0, 25)
+  )(props.data.allMarkdownRemark.edges)
 
   return (
     <IndexLayout>

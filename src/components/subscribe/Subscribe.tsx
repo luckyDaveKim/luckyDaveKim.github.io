@@ -1,7 +1,7 @@
 import { lighten } from 'polished';
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { colors } from '../../styles/colors';
 import { SubscribeForm } from './SubscribeForm';
@@ -34,7 +34,7 @@ const SubscribeFormSection = styled.section`
   border-radius: 3px;
 
   p {
-    margin-bottom: 0.2em 0 1em;
+    margin-bottom: 0.2em;
     /* color: var(--midgrey); */
     color: ${colors.midgrey};
     font-size: 2.1rem;

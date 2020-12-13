@@ -8,13 +8,7 @@ module.exports = {
     siteUrl: 'https://luckydavekim.github.io', // full path to blog - no ending slash
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        quality: 100,
-        stripMetadata: true,
-      },
-    },
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
