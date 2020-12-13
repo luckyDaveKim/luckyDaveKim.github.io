@@ -7,7 +7,6 @@ const replacePath = path => (path === '/' ? path : path.replace(/\/$/, ''));
 // Implement the Gatsby API "onCreatePage". This is
 // called after every page is created.
 exports.onCreatePage = ({ page, actions }) => {
-  console.log(`page ==> ${page.path}`)
   const { createPage, deletePage } = actions;
   const oldPage = Object.assign({}, page);
   // Remove trailing slash unless page is /
