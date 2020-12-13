@@ -61,7 +61,7 @@ IntelliJ로 프로젝트를 열어보면, Spring Boot는 다음과 같은 구조
 기본적인 Todo API를 만들어 보겠습니다.  
 `com.backend.vuekt.todo.api` 패키지에 `TodoApi.kt` 클래스를 생성하였습니다.
 
-```$xslt
+```java
 package com.backend.vuekt.todo.api
 
 import org.springframework.web.bind.annotation.GetMapping
@@ -96,7 +96,7 @@ class TodoApi {
 `build.gradle.kts` gradle 설정 파일에 다음과 같이 dependencies를 변경해 줍니다.
 
 #### As-Is
-```$xslt
+```yaml
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -107,7 +107,7 @@ dependencies {
 ```
 
 #### To-Be
-```$xslt
+```yaml
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -128,7 +128,7 @@ dependencies {
 
 그리고 추가로 `useJUnitPlatform`을 선언합니다.
 
-```$xslt
+```yaml
 tasks.withType<Test> {
 	useJUnitPlatform() <=== (1)
 }
@@ -141,7 +141,7 @@ tasks.withType<Test> {
 
 `com.backend.vuekt.todo.api.todoapi` 패키지에 `ReadTodoTests.kt` 클래스를 생성하였습니다.
 
-```$xslt
+```java
 package com.backend.vuekt.todo.api.todoapi
 
 import com.backend.vuekt.todo.api.TodoApi

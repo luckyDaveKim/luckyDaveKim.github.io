@@ -30,15 +30,15 @@ tags:
 
 ## HTML, Javascript, CSS 파일 추가
 1.Bash 명령어를 통해 github 저장소를 clone 한다.
-```$xslt
+```bash
 git clone https://github.com/luckyDaveKim/luckyDaveKim.github.io
 ```
 2.HTML 소스를 작성한다.
-```$xslt
+```markdown
 github 테스트 페이지
 ```
 3.작성한 소스를 commit 및 push 한다.
-```$xslt
+```bash
 git add *
 git commit - m "init blog"
 git push
