@@ -41,6 +41,8 @@ Output: [3, 9, 20, null, null, 15, 7]
 
 재귀를 통해 이를 반복하면 트리를 구할 수 있습니다.
 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/K6zd9TegpFlFG7" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ssuser7b8f0f1/leetcode-105-construct-binary-tree-from-preorder-and-inorder-traversal" title="[LeetCode] #105. Construct Binary Tree from Preorder and Inorder Traversal" target="_blank">[LeetCode] #105. Construct Binary Tree from Preorder and Inorder Traversal</a> </strong> from <strong><a href="https://www.slideshare.net/ssuser7b8f0f1" target="_blank">Mingyu Kim</a></strong> </div>
+
 ## 나의 해법
 ### 성능
 - 시간 복잡도 : `O(n)`
