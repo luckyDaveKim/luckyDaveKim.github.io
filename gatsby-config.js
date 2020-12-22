@@ -70,6 +70,29 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         sitemapSize: 100,
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }`,
+        serialize: ({site, allSitePage}) => {
+          const removeTrailingSlash = path => path.replace(/\/$/, '');
+          return allSitePage.nodes.map(node => {
+            return {
+              url: `${site.siteMetadata.siteUrl}${removeTrailingSlash(node.path)}`,
+              changefreq: 'daily',
+              priority: 0.7,
+            }
+          })
+        }
       },
     },
   ],
