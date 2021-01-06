@@ -49,7 +49,7 @@ const Tags: React.FC<TagsPageProps> = props => {
     groupBy(tag => tag),
     map(tagGroup => ({text: tagGroup[0], value: tagGroup.length})),
     sortBy(word => -word.value),
-    slice(0, 25)
+    slice(0, 80)
   )(props.data.allMarkdownRemark.edges)
 
   return (
@@ -78,15 +78,15 @@ const Tags: React.FC<TagsPageProps> = props => {
                   onWordClick: (word) => navigate(`/tags/${_.kebabCase(word.text)}`)
                 }}
                 options={{
-                  colors: _.map(colors),
+                  colors: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b'],
                   deterministic: false,
                   enableTooltip: false,
-                  fontSizes: [12, 38],
+                  fontSizes: [8, 40],
                   fontFamily: 'impact',
                   padding: 1,
                   rotations: 3,
                   rotationAngles: [0, 90],
-                  scale: 'log',
+                  scale: 'sqrt',
                   spiral: 'archimedean',
                   transitionDuration: 500,
                 }} />
