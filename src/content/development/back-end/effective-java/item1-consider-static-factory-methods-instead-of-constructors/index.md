@@ -288,7 +288,5 @@ public class SamSungMonitor extends Monitor {
 }
 ```
 
-#
-
 # 줄이며...
 **생성자**가 나쁘고 **정적 팩토리 메소드**가 좋은것이 아닌, 상황에 따라 적절한 사용이 필요할 것 같습니다.
