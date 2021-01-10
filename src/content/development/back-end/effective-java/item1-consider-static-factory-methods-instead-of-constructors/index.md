@@ -58,7 +58,7 @@ public class Main {
 - `from` : 매개변수 **하나**를 받아서 해당 타입의 인스턴스를 반환하는 **형변환 메서드**  
   ex) Date date = Date.from(instant);
 - `of` : 매개변수 **여러개**를 받아서 적합한 타입의 인스턴스를 반환하는 **집계 메서드**  
-  ex) Set<Rank> cards = EnumSet.of(JACK, QUEEN, KING);
+  ex) Set&lt;Rank&gt; cards = EnumSet.of(JACK, QUEEN, KING);
 - `valueOf` : `from`과 `of`의 더 자세한 버전  
   ex) BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
 - `instance` or `getInstance` : **동일한 인스턴스**를 반환하는 메서드 (Singleton)  
