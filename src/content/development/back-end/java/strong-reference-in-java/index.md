@@ -6,10 +6,10 @@ date: 2020-12-01 11:19:15 +09:00
 title: Java Strongly Reachable, Strong Reference 란
 excerpt: Java의 Strongly Reachable 특징과 Strong Reference 사용 예시에 대해 알아봅니다.
 tags:
+  - reference
   - java
   - strong_reference
   - strongly_reachable
-  - reference
   - reachable
   - 기술_면접_질문
 ---

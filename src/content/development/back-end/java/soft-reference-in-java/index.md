@@ -6,10 +6,10 @@ date: 2020-12-01 12:49:05 +09:00
 title: Java Softly Reachable, Soft Reference 란
 excerpt: Java의 Softly Reachable 특징과 Soft Reference 사용 예시에 대해 알아봅니다.
 tags:
+  - reference
   - java
   - soft_reference
   - softly_reachable
-  - reference
   - reachable
   - 기술_면접_질문
 ---

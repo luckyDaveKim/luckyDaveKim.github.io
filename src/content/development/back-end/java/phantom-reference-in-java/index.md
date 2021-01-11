@@ -6,10 +6,10 @@ date: 2020-12-01 14:26:02 +09:00
 title: Java Phantom Reachable, Phantom Reference 란
 excerpt: Java의 Phantom Reachable 특징과 Phantom Reference 사용 예시에 대해 알아봅니다.
 tags:
+  - reference
   - java
   - phantom_reference
   - phantom_reachable
-  - reference
   - reachable
   - 기술_면접_질문
 ---

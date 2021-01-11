@@ -6,10 +6,10 @@ date: 2020-12-01 13:25:27 +09:00
 title: Java Weakly Reachable, Weak Reference 란
 excerpt: Java의 Weakly Reachable 특징과 Weak Reference 사용 예시에 대해 알아봅니다.
 tags:
+  - reference
   - java
   - weak_reference
   - weakly_reachable
-  - reference
   - reachable
   - 기술_면접_질문
 ---
