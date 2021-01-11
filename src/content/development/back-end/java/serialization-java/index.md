@@ -137,7 +137,9 @@ public class Parent implements Serializable {
   }
   
 }
+```
 
+```java
 public class Child extends Parent {
 
   public Child(String name) {
@@ -166,7 +168,9 @@ public class Parent {
   }
   
 }
+```
 
+```java
 public class Child extends Parent implements Serializable {
 
   public Child(String name) {
@@ -196,7 +200,9 @@ public class Parent implements Serializable {
   }
 
 }
+```
 
+```java
 public class Composition {
 
   private final String name;
@@ -229,7 +235,9 @@ public class Parent implements Serializable {
   }
 
 }
+```
 
+```java
 public class Composition {
 
   private final String name;
@@ -315,4 +323,4 @@ public class Main {
 # 줄이며...
 자바의 직렬화를 사용하기 위해서는 `Serializable` 인터페이스를 구현해야 하며, 모든 맴버변수 또한 **직렬화 가능한 클래스**여야 합니다.
 
-이어서 자바 직렬화의 `SerialVersionUID`에 대해 알아보겠습니다.
+이어서 자바 직렬화의 `serialVersionUID`에 대해 알아보겠습니다.
