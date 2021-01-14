@@ -84,4 +84,4 @@ Gatsby로 생성한 정적 홈페이지를 GitHub Pages에 배포하는 방법�
 
 # 줄이며...
 지금까지 GitHub Pages가 무엇이고, 사용자 페이지와 프로젝트 페이지의 차이점을 알아보고 GitHub Pages를 생성 및 배포하는 방법에 대해 알아보았습니다.
-다음에는 Travis CI를 통해 자동 배포하는 방법에 대해 알아보겠습니다.
+다음에는 [Travis CI를 통해 자동 배포하는 방법](/development/front-end/install-gatsby-3)에 대해 알아보겠습니다.

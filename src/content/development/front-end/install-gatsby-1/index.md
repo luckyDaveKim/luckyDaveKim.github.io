@@ -131,4 +131,4 @@ Gatsby의 장점중 하나는 자동으로 최적화를 지원해 준다는 점 
 
 # 줄이며...
 지금까지 Gatsby가 무엇이고, SSG를 Jekyll에서 Gastby로 변경한 이유와 Gatsby의 장점에 대해 알아보았습니다.  
-다음에는 GitHub Pages에 나만의 홈페이지를 생성하고, Travis CI를 통해 자동 배포하는 방법에 대해 알아보겠습니다.
+다음에는 [GitHub Pages에 나만의 홈페이지를 생성하는 방법](/development/front-end/install-gatsby-2)에 대해 알아보겠습니다.
