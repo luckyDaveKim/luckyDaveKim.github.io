@@ -70,7 +70,7 @@ const config: WebsiteConfig = {
   lang: 'ko',
   siteUrl: 'https://luckydavekim.github.io',
   github: 'https://github.com/luckyDaveKim',
-  linkedin: 'https://www.linkedin.com/in/%EB%AF%BC%EA%B7%9C-%EA%B9%80-88890818b',
+  linkedin: 'https://www.linkedin.com/in/mingyu-kim-88890818b',
   facebook: 'https://www.facebook.com/lucky.dave.k',
   instagram: 'https://www.instagram.com/lucky.dave',
   twitter: '',
