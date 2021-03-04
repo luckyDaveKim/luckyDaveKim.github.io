@@ -4,7 +4,7 @@ draft: false
 image: img/cover.jpg
 date: 2021-03-03 21:36:03 +09:00
 title: "[Head First Design Patterns] 스트래티지 패턴(Strategy Pattern)"
-excerpt: 알고리즘군을 정의하고 각각을 캡슐화하여 교환해서 사용할 수 있도록 만든다.
+excerpt: 알고리즘군을 정의하고 각각을 캡슐화하여 교환해서 사용할 수 있도록 만듭니다.
 tags:
   - head_first_design_patterns
   - strategy_patterns
@@ -14,10 +14,11 @@ tags:
 > 보다 상세한 내용이 궁금하신 분은 해당 책을 읽어보는 것을 추천합니다. 
 
 # 개요
- 스트래티지 패턴(Strategy Pattern)에서는 알고리즘군을 정의하고 각각을 캡슐화하여 교환해서 사용할 수 있도록 만든다.
-스트래티지 패턴을 활용하면 알고리즘을 사용하는 클라이언트와는 독립적으로 알고리즘을 변경할 수 있다.
+스트래티지 패턴(Strategy Pattern)에 대해 알아보고, 구현 방법 및 예시에 대해 알아봅니다.
 
 # 의도 (Intent)
+ 스트래티지 패턴에서는 알고리즘군을 정의하고 각각을 캡슐화하여 교환해서 사용할 수 있도록 만듭니다.
+스트래티지 패턴을 활용하면 알고리즘을 사용하는 클라이언트와는 독립적으로 알고리즘을 변경할 수 있습니다.  
  바뀌는 부분은 따로 뽑아서 캡슐화시킵니다. 그러면 나중에 바뀌지 않는 부분에는 영향을 미치지 않은 채로 원하는 부분만 고치거나
 확장할 수 있습니다.
 
@@ -35,7 +36,7 @@ tags:
 # 구조 (Structure)
  스트래티지 패턴의 주요 구조는 다음과 같습니다.
 
-![Strategy Factory Structure](img/strategy-pattern-structure.png)
+![Strategy Pattern Structure](img/strategy-pattern-structure.png)
 
 - **Stock** 추상 클래스 :  
   `tradingStrategy` 맴버 변수는 `TradingStrategy` 인터페이스를 구현한 어떤 전략이든 할당이 가능하고,  
