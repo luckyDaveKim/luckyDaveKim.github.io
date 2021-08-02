@@ -67,6 +67,6 @@ const ReadNextAside = styled.aside`
 const ReadNextFeed = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -25px;PostFeedRaise
+  margin: 0 -25px;
   padding: 60px 0 0 0;
 `;
