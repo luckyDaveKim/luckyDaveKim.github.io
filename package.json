@@ -63,7 +63,7 @@
     "react-emotion": "10.0.0",
     "react-helmet": "6.1.0",
     "react-wordcloud": "1.2.7",
-    "rehype-react": "6.1.0"
+    "rehype-react": "7.0.0"
   },
   "devDependencies": {
     "@types/lodash": "4.14.172",
@@ -74,9 +74,9 @@
     "@typescript-eslint/eslint-plugin": "4.29.1",
     "@typescript-eslint/parser": "4.29.1",
     "eslint": "7.32.0",
-    "eslint-config-xo-react": "0.23.0",
-    "eslint-config-xo-space": "0.26.0",
-    "eslint-config-xo-typescript": "0.37.0",
+    "eslint-config-xo-react": "0.25.0",
+    "eslint-config-xo-space": "0.29.0",
+    "eslint-config-xo-typescript": "0.44.0",
     "eslint-plugin-import": "2.24.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "4.2.0",
