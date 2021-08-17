@@ -1,5 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby';
-import { FixedObject } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { css } from '@emotion/react';
 
@@ -8,7 +8,7 @@ import config from '../../website-config';
 interface SiteNavLogoProps {
   logo?: {
     childImageSharp: {
-      fixed: FixedObject;
+      gatsbyImageData: IGatsbyImageData;
     };
   };
 }
@@ -19,11 +19,10 @@ const SubscribeLogo = () => (
       query SubscribeOverlayLogo {
         logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
           childImageSharp {
-            # Specify the image processing specifications right in the query.
-            # Makes it trivial to update as your page's design changes.
-            fixed(quality: 100 width: 500) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(
+              layout: FIXED
+              width: 500
+            )
           }
         }
       }
@@ -34,10 +33,10 @@ const SubscribeLogo = () => (
       }
 
       return (
-        <img
+        <GatsbyImage
           css={SubscribeOverlayLogo}
           className="subscribe-overlay-logo"
-          src={data.logo.childImageSharp.fixed.src}
+          image={data.logo.childImageSharp.gatsbyImageData}
           alt={config.title}
         />
       );

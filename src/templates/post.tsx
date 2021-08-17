@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
 import { graphql, Link } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
 import React from 'react';
@@ -28,7 +28,7 @@ interface PageTemplateProps {
   data: {
     logo: {
       childImageSharp: {
-        fixed: any;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
     markdownRemark: {
@@ -42,7 +42,7 @@ interface PageTemplateProps {
         userDate: string;
         image: {
           childImageSharp: {
-            fluid: any;
+            gatsbyImageData: IGatsbyImageData;
           };
         };
         excerpt: string;
@@ -80,7 +80,7 @@ export interface PageContext {
   frontmatter: {
     image: {
       childImageSharp: {
-        fluid: FluidObject;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
     excerpt: string;
@@ -96,8 +96,8 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   let width = '';
   let height = '';
   if (post.frontmatter.image?.childImageSharp) {
-    width = post.frontmatter.image.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
-    height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
+    width = String(post.frontmatter.image.childImageSharp.gatsbyImageData.width);
+    height = String(post.frontmatter.image.childImageSharp.gatsbyImageData.height);
   }
 
   const date = new Date(post.frontmatter.date);
@@ -120,7 +120,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         {post.frontmatter.image?.childImageSharp && (
           <meta
             property="og:image"
-            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`}
+            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback?.src}`}
           />
         )}
         <meta property="article:published_time" content={post.frontmatter.date} />
@@ -142,7 +142,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         {post.frontmatter.image?.childImageSharp && (
           <meta
             name="twitter:image"
-            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`}
+            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback?.src}`}
           />
         )}
         <meta name="twitter:label1" content="Written by" />
@@ -207,9 +207,9 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
               {post.frontmatter.image?.childImageSharp && (
                 <PostFullImage>
-                  <Img
+                  <GatsbyImage
                     style={{ height: '100%' }}
-                    fluid={post.frontmatter.image.childImageSharp.fluid}
+                    image={post.frontmatter.image.childImageSharp.gatsbyImageData}
                     alt={post.frontmatter.title}
                   />
                 </PostFullImage>
@@ -423,9 +423,7 @@ export const query = graphql`
   query($slug: String, $primaryTag: String) {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED)
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -442,9 +440,10 @@ export const query = graphql`
         excerpt
         image {
           childImageSharp {
-            fluid(maxWidth: 3720) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              layout: CONSTRAINED
+              width: 1440
+            )
           }
         }
       }

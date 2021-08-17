@@ -8,7 +8,9 @@ module.exports = {
     siteUrl: 'https://luckydavekim.github.io', // full path to blog - no ending slash
   },
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -29,18 +31,16 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
-          'gatsby-remark-abbr',
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 2000,
               quality: 100,
+              maxWidth: 1440,
             },
           },
         ],
       },
     },
-    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
@@ -49,7 +49,6 @@ module.exports = {
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
     'gatsby-plugin-feed',
@@ -69,7 +68,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        sitemapSize: 100,
+        entryLimit: 100,
         query: `
         {
           site {
@@ -83,7 +82,7 @@ module.exports = {
             }
           }
         }`,
-        serialize: ({site, allSitePage}) => {
+        serialize: ({ site, allSitePage }) => {
           const removeTrailingSlash = path => path.replace(/\/$/, '');
           return allSitePage.nodes.map(node => {
             return {

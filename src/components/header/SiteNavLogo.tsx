@@ -1,13 +1,13 @@
 import { graphql, Link, StaticQuery } from 'gatsby';
 import { css } from '@emotion/react';
-import { FixedObject } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import config from '../../website-config';
 
 interface SiteNavLogoProps {
   logo?: {
     childImageSharp: {
-      fixed: FixedObject;
+      gatsbyImageData: IGatsbyImageData;
     };
   };
 }
@@ -18,9 +18,10 @@ export const SiteNavLogo = () => (
       query HeadingQuery {
         logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
           childImageSharp {
-            fixed(quality: 100 width: 500) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(
+              layout: FIXED
+              width: 500
+            )
           }
         }
       }
@@ -28,7 +29,7 @@ export const SiteNavLogo = () => (
     render={(data: SiteNavLogoProps) => (
       <Link className="site-nav-logo" css={SiteNavLogoStyles} to="/">
         {data.logo ? (
-          <img src={data.logo.childImageSharp.fixed.src} alt={config.title} />
+          <GatsbyImage image={data.logo.childImageSharp.gatsbyImageData} alt={config.title} />
         ) : (
           config.title
         )}

@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { FixedObject } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -37,12 +37,12 @@ export interface IndexProps {
   data: {
     logo: {
       childImageSharp: {
-        fixed: FixedObject;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
     header: {
       childImageSharp: {
-        fixed: FixedObject;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
     allMarkdownRemark: {
@@ -54,7 +54,7 @@ export interface IndexProps {
 }
 
 const IndexPage: React.FC<IndexProps> = props => {
-  const { width, height } = props.data.header.childImageSharp.fixed;
+  const { width, height } = props.data.header.childImageSharp.gatsbyImageData;
 
   return (
     <IndexLayout css={HomePosts}>
@@ -68,7 +68,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:url" content={config.siteUrl} />
         <meta
           property="og:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
+          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}`}
         />
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.googleSiteVerification && (
@@ -83,7 +83,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta name="twitter:url" content={config.siteUrl} />
         <meta
           name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
+          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}`}
         />
         {config.twitter && (
           <meta
@@ -99,16 +99,16 @@ const IndexPage: React.FC<IndexProps> = props => {
           css={[outer, SiteHeader, SiteHeaderStyles]}
           className="site-header-background"
           style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+            backgroundImage: `url('${props.data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}')`,
           }}
         >
           <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
-                  <img
+                  <GatsbyImage
                     style={{ maxHeight: '55px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
+                    image={props.data.logo.childImageSharp.gatsbyImageData}
                     alt={config.title}
                   />
                 ) : (
@@ -146,16 +146,15 @@ export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
     logo: file(relativePath: { eq: "img/blog-logo.png" }) {
       childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED)
       }
     }
     header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
       childImageSharp {
-        fixed(width: 2000, quality: 100) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(
+          layout: FIXED
+          width: 1440
+        )
       }
     }
     allMarkdownRemark(
@@ -175,9 +174,10 @@ export const pageQuery = graphql`
             excerpt
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 1440
+                )
               }
             }
           }

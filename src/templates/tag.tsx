@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import { FluidObject } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
@@ -38,7 +38,7 @@ interface TagTemplateProps {
           description: string;
           image?: {
             childImageSharp: {
-              fluid: FluidObject;
+              gatsbyImageData: IGatsbyImageData;
             };
           };
         };
@@ -94,7 +94,7 @@ const Tag = ({ pageContext, data, location }: TagTemplateProps) => {
           </div>
           <ResponsiveHeaderBackground
             css={[outer, SiteHeaderBackground]}
-            backgroundImage={tagData?.node?.image?.childImageSharp?.fluid?.src}
+            backgroundImage={tagData?.node?.image?.childImageSharp?.gatsbyImageData.images.fallback?.src}
             className="site-header-background"
           >
             <SiteHeaderContent css={inner} className="site-header-content">
@@ -139,9 +139,10 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 3720) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width: 1440
+              )
             }
           }
         }
@@ -164,9 +165,10 @@ export const pageQuery = graphql`
             date
             image {
               childImageSharp {
-                fluid(maxWidth: 1240) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 1440
+                )
               }
             }
           }

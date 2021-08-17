@@ -94,13 +94,10 @@ exports.createPages = async ({ graphql, actions }) => {
               excerpt
               image {
                 childImageSharp {
-                  fluid(maxWidth: 3720) {
-                    aspectRatio
-                    base64
-                    sizes
-                    src
-                    srcSet
-                  }
+                  gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 1440
+                  )
                 }
               }
             }
@@ -112,9 +109,10 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
       categories: allMarkdownRemark(filter: {}) {
-        group(field: fields___category) {
-          totalCount
-          fieldValue
+        nodes {
+          fields {
+            category
+          }
         }
       }
     }
@@ -195,30 +193,34 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create category pages
   const categoryTemplate = path.resolve('./src/templates/category.tsx');
-  result.data.categories.group
-    .forEach(({
-                fieldValue: category,
-                totalCount: numPosts
-              }) => {
-      const postsPerPage = 6;
-      const numPages = Math.ceil(numPosts / postsPerPage);
-      const pathPrefix = `/${_.kebabCase(category)}`;
 
-      Array.from({ length: numPages }).forEach((_, i) => {
-        createPage({
-          path: i === 0 ? `${pathPrefix}` : `${pathPrefix}/${i + 1}`,
-          component: categoryTemplate,
-          context: {
-            limit: postsPerPage,
-            skip: i * postsPerPage,
-            currentPage: i + 1,
-            numPages,
-            pathPrefix,
-            category,
-          },
-        });
+  const categoryCounts = result.data.categories.nodes
+    .map(node => node.fields.category)
+    .reduce((acc, cur) => {
+      acc[cur] = !!acc[cur] ? acc[cur] + 1 : 1
+      return acc;
+    }, {});
+
+  for (const category in categoryCounts) {
+    const postsPerPage = 6;
+    const numPages = Math.ceil(categoryCounts[category] / postsPerPage);
+    const pathPrefix = `/${_.kebabCase(category)}`;
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `${pathPrefix}` : `${pathPrefix}/${i + 1}`,
+        component: categoryTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          currentPage: i + 1,
+          numPages,
+          pathPrefix,
+          category,
+        },
       });
     });
+  }
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
@@ -228,4 +230,15 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       devtool: 'eval-source-map',
     });
   }
+
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        path: require.resolve("path-browserify")
+      },
+      fallback: {
+        fs: false,
+      }
+    }
+  })
 };
