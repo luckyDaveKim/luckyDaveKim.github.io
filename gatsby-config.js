@@ -82,15 +82,21 @@ module.exports = {
             }
           }
         }`,
-        serialize: ({ site, allSitePage }) => {
-          const removeTrailingSlash = path => path.replace(/\/$/, '');
-          return allSitePage.nodes.map(node => {
-            return {
-              url: `${site.siteMetadata.siteUrl}${removeTrailingSlash(node.path)}`,
-              changefreq: 'daily',
-              priority: 0.7,
-            }
+        resolvePages: ({
+                         site: { siteMetadata },
+                         allSitePage: { nodes: pages }
+                       }) => {
+          return pages.map(page => {
+            return { ...siteMetadata, ...page }
           })
+        },
+        serialize: ({ siteUrl: host, path: uri }) => {
+          removeTrailingSlash = uri => uri.replace(/\/$/, '');
+          return {
+            url: `${host}${removeTrailingSlash(uri)}`,
+            changefreq: 'daily',
+            priority: 0.7,
+          }
         }
       },
     },
