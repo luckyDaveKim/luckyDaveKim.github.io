@@ -16,11 +16,7 @@ script:
   - yarn build
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  keep_history: true
-  github_token: $GITHUB_TOKEN
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  edge: true
   local_dir: public
-  target_branch: master
-  on:
-    branch: source
