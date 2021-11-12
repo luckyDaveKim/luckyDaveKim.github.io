@@ -20,8 +20,8 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "@emotion/react": "11.5.0",
-    "@emotion/styled": "11.3.0",
+    "@emotion/react": "11.6.0",
+    "@emotion/styled": "11.6.0",
     "cssnano": "5.0.10",
     "date-fns": "2.25.0",
     "emotion": "11.0.0",
