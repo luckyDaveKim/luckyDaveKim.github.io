@@ -8,14 +8,7 @@ import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import {
-  inner,
-  outer,
-  SiteArchiveHeader,
-  SiteHeader,
-  SiteMain,
-  SiteNavMain,
-} from '../styles/shared';
+import { inner, outer, SiteArchiveHeader, SiteHeader, SiteMain, SiteNavMain } from '../styles/shared';
 import { PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
 
@@ -42,7 +35,7 @@ const About: React.FC = () => (
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
         <div css={[outer, SiteNavMain]}>
           <div css={inner}>
-            <SiteNav isHome={false} />
+            <SiteNav isHome={false}/>
           </div>
         </div>
       </header>
@@ -55,66 +48,71 @@ const About: React.FC = () => (
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h1 id="interests">Interests</h1>
+                <h1 id="Introduction">Introduction</h1>
                 <ul>
-                  <li>Web</li>
-                  <li>Server</li>
-                  <li>Back-End</li>
-                  <li>Algorithm</li>
-                  <li>Front-End</li>
-                  <li>DevOps</li>
-                  <li>Software Engineering</li>
+                  <li>안녕하세요:) 6년차 백엔드 개발자입니다.</li>
+                  <li>Clean Code와 Clean Architecture에 대한 고민을 생활화합니다.</li>
+                  <li>호기심이 많으며 '왜?'에 대한 탐구를 좋아합니다.</li>
                 </ul>
 
-                <h1 id="technical-skill">Technical Skill</h1>
+                <h1 id="technical-skill">Skills</h1>
                 <ul>
-                  <li>Program Language
+                  <li>Backend
                     <ul>
-                      <li>Java</li>
-                      <li>Node.js</li>
-                      <li>JavaScript</li>
-                      <li>PHP</li>
-                      <li>C++</li>
+                      <li>Java, Kotlin, Node.js</li>
+                      <li>Spring Boot, Spring MVC, Spring Security, Spring Data JPA</li>
+                      <li>Junit, Mockito, AssertJ</li>
                     </ul>
                   </li>
-                  <li>Framework
+
+                  <li>Frontend
                     <ul>
-                      <li>Spring Boot</li>
-                      <li>Vue.Js</li>
-                      <li>Angular2</li>
-                      <li>AngularJs</li>
-                      <li>Express</li>
+                      <li>Typescript</li>
+                      <li>Rect, Vue.js</li>
+                      <li>Redux</li>
                     </ul>
                   </li>
-                  <li>Database
-                    <ul>
-                      <li>OracleDB</li>
-                      <li>MongoDB</li>
-                      <li>MySQL</li>
-                      <li>SQLite</li>
-                    </ul>
-                  </li>
-                  <li>Version Control System
-                    <ul>
-                      <li>Git</li>
-                      <li>SVN</li>
-                    </ul>
-                  </li>
-                  <li>CI / CD
-                    <ul>
-                      <li>Jenkins</li>
-                      <li>Travis CI</li>
-                    </ul>
-                  </li>
+
                   <li>DevOps
                     <ul>
-                      <li>Docker</li>
+                      <li>Nginx, Tomcat, Resin</li>
+                      <li>OracleDB, MySQL, MongoDB, Redis</li>
+                      <li>Jenkins, Bamboo, Travis CI</li>
+                      <li>Git, SVN</li>
                     </ul>
+                  </li>
+                </ul>
+
+                <h1 id="license">License</h1>
+                <ul>
+                  <li>Engineer Information Processing :: 2015.05.08</li>
+                  <li>MOS Master :: 2013.06.10</li>
+                </ul>
+
+                <h1 id="project">Project</h1>
+                <ul>
+                  <li>2021.02.01 ~ 2021.09.30 :: GSI (Global Service Infra)</li>
+                  <li>2020.01.06 ~ 2020.07.31 :: ELS MSA (E-License Service)</li>
+                  <li>2019.10.07 ~ 2019.12.27 :: HMS (Hardware Management Service)</li>
+                  <li>2019.05.01 ~ 2019.07.31 :: Partner Portal v4.5</li>
+                  <li>2019.01.01 ~ 2019.05.31 :: V3 MSS</li>
+                  <li>2018.07.01 ~ 2018.10.31 :: Partner Portal v4.4</li>
+                  <li>2018.03.01 ~ 2019.05.31 :: Partner Portal v4.3</li>
+                  <li>2016.10.01 ~ 2017.06.31 :: TMS Plus v3.0 (Threat Management System)</li>
+                  <li>2016.04.01 ~ 2016.09.30 :: TMS Plus v2.0 QC and CCC</li>
+                  <li>2015.09.01 ~ 2015.12.31 :: TMS Plus Launcher</li>
+                </ul>
+
+                <h1 id="project">Toy Project</h1>
+                <ul>
+                  <li>2021.07.05 ~ 2021.08.27 :: <a href="https://react-v-sorting.netlify.app" target="_blank">React V Sorting</a>
+                  </li>
+                  <li>2020.12.09 ~ 2020.12.09 :: <a href="https://www.npmjs.com/package/react-adsense-google" target="_blank">React Adsense Google</a>
                   </li>
                 </ul>
 
                 <h1 id="activities">Activities</h1>
-                <h2 id="2019">2019</h2>
+                <h2 id="2021">2021</h2>
                 <ul>
                   <li>2017.11.25 ~ :: Working at <strong>AhnLab</strong></li>
                 </ul>
@@ -146,35 +144,12 @@ const About: React.FC = () => (
                   <li>2013.07.01 ~ 2013.08.31 :: Language and Culture Immersion Program in <strong>Canada</strong> at <strong>Thompson Rivers University</strong>
                   </li>
                 </ul>
-
-                <h1 id="project">Project</h1>
-                <ul>
-                  <li>2019.05.01 ~ 2019.07.31 :: Partner v4.5 Back-Office Development</li>
-                  <li>2019.01.01 ~ 2019.05.31 :: V3 MSS Back-Office Development</li>
-                  <li>2018.07.01 ~ 2018.10.31 :: Partner v4.4 Back-Office Development</li>
-                  <li>2018.03.01 ~ 2019.05.31 :: Partner v4.3 Back-Office Development</li>
-                  <li>2016.10.01 ~ 2017.06.31 :: TMS Solution Web Development</li>
-                  <li>2016.04.01 ~ 2016.09.30 :: TMS Solution Quality Control and Common Criteria</li>
-                  <li>2015.09.01 ~ 2015.12.31 :: TMS Solution Launcher Development</li>
-                </ul>
-
-                <h1 id="profile">Profile</h1>
-                <ul>
-                  <li>Bachelor in Computer Engineering from <a href="http://www.gachon.ac.kr/">Gachon University</a>
-                  </li>
-                </ul>
-
-                <h1 id="license">License</h1>
-                <ul>
-                  <li>Engineer Information Processing :: 2015.05.08</li>
-                  <li>MOS Master :: 2013.06.10</li>
-                </ul>
               </div>
             </PostFullContent>
           </article>
         </div>
       </main>
-      <Footer />
+      <Footer/>
     </Wrapper>
   </IndexLayout>
 );
