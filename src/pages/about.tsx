@@ -68,7 +68,7 @@ const About: React.FC = () => (
                   <li>Frontend
                     <ul>
                       <li>Typescript</li>
-                      <li>Rect, Vue.js</li>
+                      <li>React, Vue.js</li>
                       <li>Redux</li>
                     </ul>
                   </li>
