@@ -72,7 +72,7 @@
     "@types/react-helmet": "6.1.4",
     "@typescript-eslint/eslint-plugin": "5.5.0",
     "@typescript-eslint/parser": "5.5.0",
-    "eslint": "8.3.0",
+    "eslint": "8.4.0",
     "eslint-config-xo-react": "0.25.0",
     "eslint-config-xo-space": "0.30.0",
     "eslint-config-xo-typescript": "0.47.1",
