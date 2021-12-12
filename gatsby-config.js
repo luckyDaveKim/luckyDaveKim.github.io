@@ -120,40 +120,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-robots-txt',
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        entryLimit: 100,
-        query: `
-        {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-        }`,
-        resolvePages: ({
-                         site: { siteMetadata },
-                         allSitePage: { nodes: pages }
-                       }) => {
-          return pages.map(page => {
-            return { ...siteMetadata, ...page }
-          })
-        },
-        serialize: ({ siteUrl: host, path: uri }) => {
-          removeTrailingSlash = uri => uri.replace(/\/$/, '');
-          return {
-            url: `${host}${removeTrailingSlash(uri)}`,
-            changefreq: 'daily',
-            priority: 0.7,
-          }
-        }
-      },
-    },
+    'gatsby-plugin-sitemap',
   ],
 };
