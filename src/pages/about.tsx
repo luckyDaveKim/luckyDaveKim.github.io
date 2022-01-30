@@ -112,9 +112,10 @@ const About: React.FC = () => (
                 </ul>
 
                 <h1 id="activities">Activities</h1>
-                <h2 id="2021">2021</h2>
+                <h2 id="2022">2022</h2>
                 <ul>
-                  <li>2017.11.25 ~ :: Working at <strong>AhnLab</strong></li>
+                  <li>2022.01.24 ~ :: Working at <strong>Naver</strong></li>
+                  <li>2017.11.25 ~ 2022.01.21 :: Working at <strong>AhnLab</strong></li>
                 </ul>
 
                 <h2 id="2017">2017</h2>
