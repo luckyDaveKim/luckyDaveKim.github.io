@@ -1,4 +1,196 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 26 Jan 2022 16:37:34 GMT</lastBuildDate><item><title><![CDATA[야근을 줄여줄 Intellij 유용한 단축키]]></title><description><![CDATA[개요 Intellij 에는 마우스를 사용하지 않고 키보드로만 작업이 가능할 정도의 편리한 단축키를 제공하고 있습니다. 이 포스팅에서는 자주 사용하는 유용한 단축키에 대해 알아보겠습니다. 지금 가장 필요한 기능 제공 Windows:  +  MacOS…]]></description><link>https://luckydavekim.github.io/development/etc/most-useful-intellij-shortcut</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/most-useful-intellij-shortcut</guid><pubDate>Thu, 13 Jan 2022 16:24:54 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 30 Jan 2022 06:12:18 GMT</lastBuildDate><item><title><![CDATA[[MacOS] 한/영 전환 시 딜레이를 없애는 방법]]></title><description><![CDATA[개요 MacOS에서 문서 작업중 한/영 전환이 빠릿빠릿하게 전환이 되지 않아 몇번씩 누르던 경험이 있습니다. 이 포스팅에서는 저와 같이 참다 참다 폭발한 여러분께 손쉬운 해결 방법에 대해 소개하고자 합니다. 원인 왜 모든 기능이 빠른 MacOS…]]></description><link>https://luckydavekim.github.io/development/etc/remove-switching-language-delay-on-capslock</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/remove-switching-language-delay-on-capslock</guid><pubDate>Sun, 30 Jan 2022 06:06:53 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+&lt;p&gt;MacOS에서 문서 작업중 한/영 전환이 빠릿빠릿하게 전환이 되지 않아 몇번씩 누르던 경험이 있습니다.&lt;br&gt;
+이 포스팅에서는 저와 같이 참다 참다 폭발한 여러분께 손쉬운 해결 방법에 대해 소개하고자 합니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;원인&lt;/h1&gt;
+&lt;p&gt;왜 모든 기능이 빠른 MacOS에서 CapsLock을 통한 한/영 전환시 딜레이가 있을까요?&lt;br&gt;
+원인은 CapsLock을 길게 누를 경우 대문자 고정 기능 때문입니다.
+CapsLock을 길게 누르는지 짧게 누르는지 판단하는 기능 때문에 간혹 한/영 전환이 빠릿하지 않았던 것 입니다.&lt;/p&gt;
+&lt;p&gt;이를 해결하는 방법에 대해 알아보겠습니다.&lt;/p&gt;
+&lt;h1&gt;Karabiner 설치&lt;/h1&gt;
+&lt;p&gt;Karabiner는 키보드 매핑을 변경해주는 프로그램입니다.&lt;br&gt;
+다음 명령어를 통해 Karabiner를 설치해줍니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask karabiner-elements&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;brew&lt;/code&gt;가 설치되어 있다는 가정하에 진행하겠습니다. 아직 설치하지 않은 분은 &lt;a href=&quot;/development/etc/install-brew&quot;&gt;brew 설치&lt;/a&gt;를 참고해주세요.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Karabiner 설정&lt;/h1&gt;
+&lt;p&gt;Karabiner는 키보드 입력값을 변경할 수 있는 만큼, MacOS에서 설정 하려면 여러 인증 과정을 거쳐야 합니다.&lt;/p&gt;
+&lt;h2&gt;Karabiner 실행&lt;/h2&gt;
+&lt;p&gt;Spotlight를 사용해 Karabiner-Elements를 실행합니다.&lt;/p&gt;
+&lt;p&gt;Spotlight는 &lt;code class=&quot;language-text&quot;&gt;cmd&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;space&lt;/code&gt; 단축키로 빠르게 실행하고, &lt;strong&gt;Karabiner-Elements&lt;/strong&gt;를 입력해서 실행합니다.&lt;/p&gt;
+&lt;h2&gt;Karabiner 활성화&lt;/h2&gt;
+&lt;p&gt;Karabiner를 실행하면 이를 활성화 할지 묻습니다.&lt;br&gt;
+확인을 눌러줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 744px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5f5ce0bcf8a07b61303d9df5f2166116/134e0/activate-karabiner.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 113.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEv0lEQVQ4y5WVa2wUVRTHz3bRdGYWaURQaNm2GEAKpW9ot0sbI42GNVbFYGx33jM7+4DdZZdt6Xbptmx3t89dSostUKEoSnzGBz5QExM/+tnPlg98MLHGmFA20ewcc4fSItSoN/nn3jnnP785JzP3DhQVFcH313+AXRWVMJrOwtjwBEyfuQAzk7MwPTm7PN+rmak3YHryAmRHpyCVGIHNm0pgXdEjsLV8K8DadRbY8NhGEwCYG+r2rrfbWqz7Gpqs+/auyGazW+32VmtTY/NKvKHJamu0W22NzY8DwBoAMBUXlwC0P/8ygcGeyupSgVV+lAXtd4lz/SJxrgVDvGtBZJUFoVNeEFl1QeI1I7aU+1XmtZ+febqtAREJqwCea3MUkCdUPLXLJrLqH4roQUVwL0vmNfR6j2E40otezW9c3+/Z39z6KmE8e+CgGey2VgIsLCstbxNYZZGYZV7LK4I7L3Gu/FFfKD85eyk/9/6H+Z5oPC+yal4RPXnikQU38WF97V4BAGi7rcUMzU0tBEiXWssOCk4ltwTUVdGDglPBnq4YdkejGAiFcCA+iHyngqrkRYV364pgCGur61UAsNga95MK7wCtW0od9wJFVkW+Q0aJU1GVSJsuJA/hOiTknYrhWQHWuQiw+Z+AxBg8chy7QlHsPRHHY/4uDPm7MBzsxp6uk3giEkNN9ulL0PuATfcD3Siyqk5uSiWGcXzkNA70DWKiP2UoPTiKw6kxdEle0oVOClgVWFZa7uA6pFzwaATTgyN6oj+NsZ5+7Os9hQN9SRLD5MCQEYvHEjg2nNXDwW5d5FxYV9PwYMul1rLllvtPDupnsmdxdCiDUxPTmIincDg5hjNnL+BQcgxPj0/i9NR5XVOMtrG2pv5BoFFhp5TzaQHMjE4sAzOjE5hKjBgVTmSmjHV27IxRoU8LGMC61YCkQr5TzmmqH4P+bt2t+jEWTWB2/CxOZF/HdHIch9IZjIRj6FKOos99jHh0mTc+m9VeSplDdMo5Nyeg2uHUXU4W3SyPPkFCDy+ixgro4QQkeY3l0OXkdI3ldFVwYc1qwPKSEgfLeXIveTPY7s3qL3qz2O7J4AueDL5yJGuIXLd7s2jkvBm93Xta5+QQ1ldVPdjyzuJHHYf4SG5teB6Z0A2dCd1AJjSPDwd+wt3Jm7gnddNYkxjJWULzemH4pu5QR9C+Z9sK8O7W27J580FJ8N4Oxs9hIH4uH+ib0cOnZvXu1JweSc7p3enLxvr44EU9ED9nKNh/Pq+5j2P17sqlrWc3w/5m43CgNj1R7PBp/j+vzl3Bq5eu4DsX38RP3/sIr3/yOX577Uv87qtv8OvPvsBrH3xs5K5eegvfvfw2nghHcXdFlUaAdlvLGqitrjcq3LhhY+trh9l5WfTclnjtlsRriwLnWhRYdZEnct6ZSUwS3Isi8QjuW2yn9NuO7TsPE2BdTYOZnK1gNpspAHiSpplDDGMJU4VUlKKoGE3RMZq+K+bOTNExkqMoqpemmYiFsXQCQAUBmkwm47AmY43JZCoCgHIAqASAWgCo+xcRTxUpxASm9QDwkEHavm3HXaiZpplCmmYsFEWt/S+iKdrCMBaqwFRg/FNomoHVhul/6m/jL4B6mQk3TvKsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Activate Karabiner&quot;
+        title=&quot;Activate Karabiner&quot;
+        src=&quot;/static/5f5ce0bcf8a07b61303d9df5f2166116/134e0/activate-karabiner.png&quot;
+        srcset=&quot;/static/5f5ce0bcf8a07b61303d9df5f2166116/53918/activate-karabiner.png 360w,
+/static/5f5ce0bcf8a07b61303d9df5f2166116/242a6/activate-karabiner.png 720w,
+/static/5f5ce0bcf8a07b61303d9df5f2166116/134e0/activate-karabiner.png 744w&quot;
+        sizes=&quot;(max-width: 744px) 100vw, 744px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;차단된 Karabiner를 로드하기 위해, &lt;code class=&quot;language-text&quot;&gt;시스템 환경설정&lt;/code&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;보안 및 개인 정보 보호&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;일반&lt;/code&gt; 탭으로 이동해서, Karabiner를 허용해줍니다.&lt;br&gt;
+만약, 허용 버튼이 활성화 되지 않았다면, 좌측 하단의 자물쇠를 누르고 인증해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/27050de0cb7036da1a80a80431118aab/8cbfd/allow-karabiner.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 89.72222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAADFElEQVQ4y6WUO3PkRBDH5w7Wu3sUERBg73n1foykGb1Wz9XD1tp3a+zyFr7gAhKqvBEhn4CUgBhCAoiosgP4cKDTNDVa33rPnCFAVf/q6dboNz096kHB/BjpJvlkX6SaqTmKZRAF646iyaYiTGRlOpGVyedCHyOW18vBtPf5XBtTxcGu5mD306Z8gdCP336Pcj/7+eq4giKr/8zjqpsndddUp935ctVdLFfd5flVV2RHXRzkXRLOu3RW9P48rbssKv/K4woiP/31px9+QQgAkDo1b4lGwVToG1OmYEgEfDuGJCggICkEJAEXR0DMEAInAVvzgM/DCuX2DbeqYP6BEHraA6f76o0uUjAl2mKJMH3qsNQv2fH8JZvRnHlWzPKgZLFXsCysGdFDpgsOM0TKDJG0hkhB2Fd/3wLFiX5jyS54VtKWxTmUSQNVsoAibqDOTqApl7BafQ1ni0swRQpYdsFSvLdquZUm+g7wQLuxFBew4rd5fgEn5RmcVl/AolzCSXUGX168hsWLr3rfw9EWyC2W3daS3wv0wJLd1lZccLTgTv72Q6p5QIwQbNV/F6i4j2V4n/7dyvd6EHtnzr8B+aEYm8MBQyQPa7XVLtR6DMhfejhuI5JB4KQwo3m/bQ5/H/Q/D4UDXRy3zdEKLpevoCmWkAUVX+TxTDd6fMu6QFpTS4AaMyB6CKGT9WNDIH0JzJ1yGBIFLBJwBKs1JRfEh0BTdvk22zI+7jPLwhpmJIPInUNEc4jdoi/DjOQQ+xUUdgSrpIarxXl7SiJQ9pV7oMCBIumBVXrCyqRhR/lp3yW+nTDfilngpL31cMx8O2WhEbIjJ2KNm7WZ7oG02ynBRL6tTBfoFLfKc4uphxZTnmOmTe1eb/2N7sY8dmgzW/VbvKnhfS/XovDbgjqQqLTjP+9GQX8hUHMGuuiANDFA3soE6UAHXbChzhYdvzDkQ+MWIfQEcepnw3GmDkfffLw3uh4MxtfDwXjNtTcYrYeD0Xo8fLZ+NvroH+Lxp+iD670Ph+vR3jjvM/xuYqKd58n/EFIPHPQ3to7aswBv4mkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Allow Karabiner&quot;
+        title=&quot;Allow Karabiner&quot;
+        src=&quot;/static/27050de0cb7036da1a80a80431118aab/89066/allow-karabiner.png&quot;
+        srcset=&quot;/static/27050de0cb7036da1a80a80431118aab/53918/allow-karabiner.png 360w,
+/static/27050de0cb7036da1a80a80431118aab/242a6/allow-karabiner.png 720w,
+/static/27050de0cb7036da1a80a80431118aab/89066/allow-karabiner.png 1440w,
+/static/27050de0cb7036da1a80a80431118aab/8cbfd/allow-karabiner.png 1560w&quot;
+        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Karabiner의 키보드 접근을 허용하기 위해, &lt;code class=&quot;language-text&quot;&gt;시스템 환경설정&lt;/code&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;보안 및 개인 정보 보호&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;개인 정보 보호&lt;/code&gt; 탭으로 이동해서
+&lt;code class=&quot;language-text&quot;&gt;입력 모니터링&lt;/code&gt; 메뉴를 누르고 &lt;em&gt;karabiner_grabber&lt;/em&gt;, &lt;em&gt;karabiner_observer&lt;/em&gt;를 체크해줍니다.&lt;br&gt;
+만약, 체크박스가 활성화 되지 않았다면, 좌측 하단의 자물쇠를 누르고 인증해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bba40ae2613ef035ab13cc24ae04b609/8cbfd/allow-karabiner-monitoring.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 89.72222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAADdElEQVQ4y6WUW2/cRBiGnUKymyAhlaQtye567fVpfBiP16fYa+8hu5vmyCYlHCQqQVGbOxCIH0CvueGaigsEElyhukj0x4Frv8hW1CpNesVIjz7NaPTonfF85rx0ymm6vb4lMlVXqWwSWzY0Kis9IvMtURbaktzeFOo1h3o1tunU82qvZTCZGo5KDWdjNtrjuJ+++4FL3PjXs+kYw8Hkn2R7XKTRuJhP9orF4b3i+OC0ODk+K4bxThH04yJ0B0Xkp8VosFOk8aQYhKN/k+0xQjf+48mPv3McAE7p6s9shUGX2AtDdqoKm3jwaATfjuHZEVy6jbCfIAkn6JshdMnGxd4XhsygCPpzjuNu1MLuppzpPQd6j+Vq1yq1Li2p6pU+jcvQSUvHCMuQJeXu+LBc7J+VUX9UqrxVEtGuyPUeg7Cl/P1S+P57fLY//QD3P/kir9IR0YbcMSDxpE51vPchDqYLpMG0ZhzNMR8dYpruY5bu544eQmypr4S3b/LZYn6Eh5/dz5Uuhcqb6LUITM1B6g2xP9jFINxBYCcI7AFcK4Kt+TWM+HlVLwlbG0K2k+7i5PisOjLkjl4LbdNH6iRIjRDU6CNgCUKWwCZ+fQKla0LtWjlVvcvC9i0hG8ZzHB2c5abk1JsrITU8DN0UYxrDsQIM/AlibwTfHsBU+rBUt+Jqwq0NIZuP9vDx6ae5IbuQeQtiy4BjhQhYBLWtQ+HNa7k2YWejk22nC8yOH+SeTGDwMuTbbVgSqaWkx+o0VarXuTahsH4n02ffwvzyz1y9+xj89DHejb7Hlvc5Iieqv2Z1b4wEV3D04DrhZmbOvob58GneWfyM7r1fcPPoN9yJv0FIfSTBDK4ZvYmcacFlIb/eybzxKYYnD3JfUuFpFqyOCML34Jghqnf2JqFnxXmV9LLwlvDU8XfhTz7KHRKUuuyWUtUJkl0y4peOHl4LI0Fpa35uKe4rYTW8jvzXWKOgvJ4rAq1bSu+xkois1AS7rNpR4c1S4S9XTaCVtBb22trzl8KRKGZ3GcW22i8sUnWAB6p5cIwATPehibR+l1KboNe+qC0NqmBhHM+L6ici8eQZx3FLlW+p02gOlEbzq7WV5qOV5dXzxgUry83zxnLzfLWxdr7WfOcK1foN7q1HK283zpsrq0md8IlI6nu8GEv/A05pUe4/60jdfxnebegAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Allow Karabiner monitoring&quot;
+        title=&quot;Allow Karabiner monitoring&quot;
+        src=&quot;/static/bba40ae2613ef035ab13cc24ae04b609/89066/allow-karabiner-monitoring.png&quot;
+        srcset=&quot;/static/bba40ae2613ef035ab13cc24ae04b609/53918/allow-karabiner-monitoring.png 360w,
+/static/bba40ae2613ef035ab13cc24ae04b609/242a6/allow-karabiner-monitoring.png 720w,
+/static/bba40ae2613ef035ab13cc24ae04b609/89066/allow-karabiner-monitoring.png 1440w,
+/static/bba40ae2613ef035ab13cc24ae04b609/8cbfd/allow-karabiner-monitoring.png 1560w&quot;
+        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;CapsLock 키 변경&lt;/h2&gt;
+&lt;p&gt;Karabiner에서 &lt;code class=&quot;language-text&quot;&gt;Simple modifications&lt;/code&gt; 탭에서 &lt;code class=&quot;language-text&quot;&gt;Add item&lt;/code&gt; 버튼을 눌러 &lt;em&gt;From key&lt;/em&gt;와 &lt;em&gt;To Key&lt;/em&gt;를 &lt;strong&gt;caps_lock&lt;/strong&gt;과 &lt;strong&gt;f13&lt;/strong&gt;으로 변경해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0b556476dde582d78c94ddfff8687c03/b23e8/add-item.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.94444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAAB6ElEQVQoz5WS3W7TMBTHjZaWStyg0modrGvzsaSJE7dxMuezaZuKMoEEL8MTcLEgno9HgElwwQQSElpdH5SkRZsmGL34ydLR0c//42MkoZb0MgvesoB98El4ceZGhT8Oiwn2i7HlFTHLilmyrMjivBhjryCmW7i2V3gkKChhF5Sw95Swd6ZuHyGEUNtU7R+GRmAaLWGVv4J5+hwSNockWECenUM+fQHTMK/IohxmyQqYtwDPCYA6AWDdhZHiwNPDk0Up7JwO8Sc6okA0cm2qhNu6y8cW46mf8WW85AFNeeCm9UlTzrwZd3DCDcXmhuysDdnm+hD/Ouw8m5fCJ+bQunyT5PA6mm8iNxWhNxV0MhPTSSpWXiTOxrFgbiLYJBaMZgLjRMyiXAR0KrSBJXTZBl3G6173uBaeDvGlIdtgyPZGVxwwdsh2NYrxb0TZo8v2urdLWAnr4mYrrqmkDtyq3UUYf4Q3Eo7qRJtasA9/E6qkTLRNeG8quNF3V6gOrM9q3wRtgPlWuh+KUy7meveGHaKRr+fhHELslzfBSCH3LeIWu/5e97j6h21rOPqY0+inr5NvSt+40gbmlXry/2gD87vSN75020cxetxqSOiBZCOEIoRQ0Gy0wobU3IegITWjZuMhPTiQHv0GqmErlEhFmWsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Add item&quot;
+        title=&quot;Add item&quot;
+        src=&quot;/static/0b556476dde582d78c94ddfff8687c03/89066/add-item.png&quot;
+        srcset=&quot;/static/0b556476dde582d78c94ddfff8687c03/53918/add-item.png 360w,
+/static/0b556476dde582d78c94ddfff8687c03/242a6/add-item.png 720w,
+/static/0b556476dde582d78c94ddfff8687c03/89066/add-item.png 1440w,
+/static/0b556476dde582d78c94ddfff8687c03/36aa2/add-item.png 2160w,
+/static/0b556476dde582d78c94ddfff8687c03/b23e8/add-item.png 2224w&quot;
+        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;키보드 단축키 설정&lt;/h1&gt;
+&lt;p&gt;MacOS의 키보드의 한/영 전환 단축키를 Karabiner에서 설저한 단축키로 변경합니다.&lt;/p&gt;
+&lt;h2&gt;키보드 단축키 변경&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;시스템 환경설정&lt;/code&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;키보드&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;단축키&lt;/code&gt; 탭으로 이동해서
+&lt;code class=&quot;language-text&quot;&gt;입력 소스&lt;/code&gt; 메뉴를 누르고 &lt;strong&gt;입력 메뉴에서 다음 소스 선택&lt;/strong&gt; 단축키를 &lt;strong&gt;F13&lt;/strong&gt;으로 변경해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f2ddaead14e425091a774def36a66156/8cbfd/change-shortcut.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 90.83333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAADQElEQVQ4y52T24rbVhSGVXJRepPMpM44tqSxzpIly9qSrKMly4cZu5k4pTM0yUMUepuLBkoolFLaGHKRdzDJ0wV8M8L6y9bYM5OmKaWCj39JLP177b3WZvxixug9cvdI8juW4fLE9njH9nhDs3hVMnjPCXjfDXmPBLzrDHhvh20Rvm+5+2+dfs+9OysWDPPHD78wCUnefjcukCfjD2lYbIZhsZkVi818eraJB9km9NJN5Gd1HPtXZPFkk0XjTRLkH9JwhMBN3r748RXDAGA0wXxHdAJTdaqu4oDimAGIFcI2fAQkreOe7tXvFFMlsFSXakVjVei+o1614XFbWRuSQxMuLdWtKLE3qiKSVmlQVE8W59VkOK9if1SlwbhWXbQrXbCpXhpSH522sr4xbMnrwM0wny7L+eQxpvkCiT+CPzjBOH+EPJ4hi2aI/QKRN4LfT2HIdBchpezKDkROuzEUWvK6Z6eYTpblLP8GfSOA0NbBFi+gLX+Hf/EbustfIZ/+jAfDl7gX/4SD5CVak1cQz/4sj/tPIbf4G0P2SFzn8RTfnz8v6QG7dgDSG0CRfUhSCEUOIcshVCWCJEUQpRCCGEIQAqqlRvM49WPDIpni27Pz0rUjaKJFGwT1uAuZ1SBzO3axco0OmVVLXbAg8vqtLT8U1j33FLP5szIPxxBZAzJvQu1YtX6W41pLXbQ/PkOxJa271gjEnZS25kLiDCgdq0biupD5f4YuLLS1UhN6kG5XKHL62hAsSKxe7iujSRQaf46e5sHW/ZLOo8De7jKrrU2FDqlbmgrBf8HWfTxenOPiyfMyHYzBP5T+blgnXhvWt2AX0zmjg0/1NnSgDan/6RzSKXe6AUbJSTnJFtUkm1fj4bwqkpOqSE8rz44rYoaV0w1qiHml9Ebti7jeMn0EVq0rTAbFZeyPtrF3ReTl24AMt5Gbben3kAy3Icm2sZfX9I3B1lTI5d6wNttV+J42Q2B1iJ9g3MRc3VW6MBbTJeg1nY0ewevFtMvv9xV+cf9e46Jx2HzTOGy+bhw2V//G1wfNVeuIW3Gtzqrd5FetJve62Wi/uX/w4IJ6MYboUNM7DMN8yTDMV/8T+u8dWxswfwE7wgGXJaDm2wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Change shortcut&quot;
+        title=&quot;Change shortcut&quot;
+        src=&quot;/static/f2ddaead14e425091a774def36a66156/89066/change-shortcut.png&quot;
+        srcset=&quot;/static/f2ddaead14e425091a774def36a66156/53918/change-shortcut.png 360w,
+/static/f2ddaead14e425091a774def36a66156/242a6/change-shortcut.png 720w,
+/static/f2ddaead14e425091a774def36a66156/89066/change-shortcut.png 1440w,
+/static/f2ddaead14e425091a774def36a66156/8cbfd/change-shortcut.png 1560w&quot;
+        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이제 CapsLock의 빠릿빠릿한 한/영 전환을 경험하실 수 있습니다!&lt;br&gt;
+더 이상 한/영 전환이 되지 않아 여러번 누르는 불편함 없이 MacOS를 사용하세요! :)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[야근을 줄여줄 Intellij 유용한 단축키]]></title><description><![CDATA[개요 Intellij 에는 마우스를 사용하지 않고 키보드로만 작업이 가능할 정도의 편리한 단축키를 제공하고 있습니다. 이 포스팅에서는 자주 사용하는 유용한 단축키에 대해 알아보겠습니다. 지금 가장 필요한 기능 제공 Windows:  +  MacOS…]]></description><link>https://luckydavekim.github.io/development/etc/most-useful-intellij-shortcut</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/most-useful-intellij-shortcut</guid><pubDate>Thu, 13 Jan 2022 16:24:54 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;Intellij 에는 마우스를 사용하지 않고 키보드로만 작업이 가능할 정도의 편리한 단축키를 제공하고 있습니다.&lt;br&gt;
 이 포스팅에서는 자주 사용하는 유용한 단축키에 대해 알아보겠습니다.&lt;/p&gt;
 &lt;hr&gt;
