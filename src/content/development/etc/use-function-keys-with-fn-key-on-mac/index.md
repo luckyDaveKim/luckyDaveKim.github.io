@@ -1,7 +1,7 @@
 ---
 template: post
 draft: false
-image: img/cover.jpeg
+image: img/cover.jpg
 date: 2022-01-10 21:24:43 +09:00
 title: "[MacOS] fn키 누르지 않고 F1 ~ F12 사용하는 방법"
 excerpt: macOS에서 fn 키를 누르지 않고 F1 ~ F12 키를 사용하는 방법을 알아봅니다.
