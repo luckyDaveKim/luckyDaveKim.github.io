@@ -33,7 +33,7 @@ Karabiner는 키보드 매핑을 변경해주는 프로그램입니다.
 $ brew install --cask karabiner-elements
 ```
 
-> `brew`가 설치되어 있다는 가정하에 진행하겠습니다. 아직 설치하지 않은 분은 [brew 설치](/development/etc/mac-os/install-brew)를 참고해주세요.
+> **Homebrew**가 설치되어 있다는 가정하에 진행하겠습니다. 아직 설치하지 않은 분은 [Homebrew 설치](/development/etc/mac-os/install-homebrew)를 참고해주세요.
 
 # Karabiner 설정
 Karabiner는 키보드 입력값을 변경할 수 있는 만큼, MacOS에서 설정 하려면 여러 인증 과정을 거쳐야 합니다.  
