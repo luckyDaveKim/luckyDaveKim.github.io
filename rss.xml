@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Feb 2022 14:48:45 GMT</lastBuildDate><item><title><![CDATA[[MacOS] 한/영 전환 시 딜레이를 없애는 방법]]></title><description><![CDATA[개요 MacOS에서 문서 작업중 한/영 전환이 빠릿빠릿하게 전환이 되지 않아 몇번씩 누르던 경험이 있습니다. 이 포스팅에서는 저와 같이 참다 참다 폭발한 여러분께 손쉬운 해결 방법에 대해 소개하고자 합니다. 원인 왜 모든 기능이 빠른 MacOS…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/remove-switching-language-delay-on-capslock</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/remove-switching-language-delay-on-capslock</guid><pubDate>Sun, 30 Jan 2022 06:06:53 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Feb 2022 15:39:41 GMT</lastBuildDate><item><title><![CDATA[[MacOS] 패키지 관리 서비스 Homebrew 설치 방법]]></title><description><![CDATA[개요 MacOS에서 프로그램을 설치하고 제거하는 방법은 여러 가지가 있습니다. .dmg와 같은 확장자 파일을 실행시켜 설치하거나, 에서 아이콘을 길게 눌러 삭제하는 방법이 있습니다.
+CLI…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/install-homebrew</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/install-homebrew</guid><pubDate>Wed, 02 Feb 2022 15:32:41 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+&lt;p&gt;MacOS에서 프로그램을 설치하고 제거하는 방법은 여러 가지가 있습니다.&lt;br&gt;
+&lt;strong&gt;.dmg&lt;/strong&gt;와 같은 확장자 파일을 실행시켜 설치하거나, &lt;code class=&quot;language-text&quot;&gt;Launchpad&lt;/code&gt;에서 아이콘을 길게 눌러 삭제하는 방법이 있습니다.
+&lt;em&gt;CLI&lt;/em&gt;에서 손쉽게 프로그램을 설치 및 삭제 할 수 있는 &lt;a href=&quot;https://brew.sh/index_ko&quot;&gt;Homebrew&lt;/a&gt; 설치 방법을 소개하고자 합니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Homebrew 설치&lt;/h1&gt;
+&lt;p&gt;Homebrew는 MacOS에서 패키지를 관리해주는 프로그램입니다.&lt;br&gt;
+다음 명령어를 통해 Homebrew를 설치해줍니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ /bin/bash -c &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Homebrew 사용&lt;/h1&gt;
+&lt;p&gt;Homebrew는 &lt;code class=&quot;language-text&quot;&gt;brew&lt;/code&gt; 명령어를 통해 사용할 수 있습니다.
+설치가 잘 되었는지 다음 명령어를 통해 확인해봅니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew --version
+
+Homebrew &lt;span class=&quot;token number&quot;&gt;3.3&lt;/span&gt;.12
+Homebrew/homebrew-core &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;git revision 34126e1bb3d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; last commit &lt;span class=&quot;token number&quot;&gt;2022&lt;/span&gt;-01-26&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;패키지 설치&lt;/h2&gt;
+&lt;p&gt;이제 Homebrew로 패키지를 손쉽게 설치할 수 있습니다.&lt;br&gt;
+설치하고 싶은 패키지가 Homebrew에서 지원하는지는 &lt;a href=&quot;https://formulae.brew.sh&quot;&gt;Homebrew Formulae&lt;/a&gt;에서 확인할 수 있고,
+명령어도 함께 제공됩니다.&lt;/p&gt;
+&lt;p&gt;Homebrew를 통한 패키지 설치는 다음과 같은 형식입니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;PACKAGE_NAME&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;패키지 업그레이드&lt;/h2&gt;
+&lt;p&gt;설치된 패키지를 &lt;code class=&quot;language-text&quot;&gt;upgrade&lt;/code&gt; 명령어를 통해, 최신 버전으로 업그레이드할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew upgrade &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;PACKAGE_NAME&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;패키지 삭제&lt;/h2&gt;
+&lt;p&gt;필요가 없어진 패키지도 &lt;code class=&quot;language-text&quot;&gt;remove&lt;/code&gt; 명령어를 통해, 간단하게 제거할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew remove &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;PACKAGE_NAME&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Homebrew 업그레이드&lt;/h2&gt;
+&lt;p&gt;Homebrew 또한 패키지이기 때문에 새로운 버전이 나올 수 있습니다.
+이때 &lt;code class=&quot;language-text&quot;&gt;update&lt;/code&gt; 명령어를 통해, Homebrew 패키지 자체를 업그레이드할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 Homebrew로 다양한 패키지를 손쉽게 관리해보세요!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[MacOS] 한/영 전환 시 딜레이를 없애는 방법]]></title><description><![CDATA[개요 MacOS에서 문서 작업중 한/영 전환이 빠릿빠릿하게 전환이 되지 않아 몇번씩 누르던 경험이 있습니다. 이 포스팅에서는 저와 같이 참다 참다 폭발한 여러분께 손쉬운 해결 방법에 대해 소개하고자 합니다. 원인 왜 모든 기능이 빠른 MacOS…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/remove-switching-language-delay-on-capslock</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/remove-switching-language-delay-on-capslock</guid><pubDate>Sun, 30 Jan 2022 06:06:53 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;MacOS에서 문서 작업중 한/영 전환이 빠릿빠릿하게 전환이 되지 않아 몇번씩 누르던 경험이 있습니다.&lt;br&gt;
 이 포스팅에서는 저와 같이 참다 참다 폭발한 여러분께 손쉬운 해결 방법에 대해 소개하고자 합니다.&lt;/p&gt;
 &lt;hr&gt;
