@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Feb 2022 17:13:13 GMT</lastBuildDate><item><title><![CDATA[[MacOS] M1 맥북 구매 후 꼭 설치해야 하는 유틸리티 7가지]]></title><description><![CDATA[개요 M1 맥북 구매 후 생산성을 향상에 도움이 되는 꼭 설치해야 하는 유틸리티 7가지를 소개하고자 합니다. 요약 Homebrew iTerm2 Oh My ZSH Rectangle Alfred Hidden Bar GIPHY Capture Homebrew…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/must-install-mac-os-application</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/must-install-mac-os-application</guid><pubDate>Sun, 13 Feb 2022 17:02:58 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 16 Feb 2022 03:32:55 GMT</lastBuildDate><item><title><![CDATA[[MacOS] M1 맥북 구매 후 꼭 설치해야 하는 유틸리티 7가지]]></title><description><![CDATA[개요 M1 맥북 구매 후 생산성을 향상에 도움이 되는 꼭 설치해야 하는 유틸리티 7가지를 소개하고자 합니다. 요약 Homebrew iTerm2 Oh My ZSH Rectangle Alfred Hidden Bar GIPHY Capture Homebrew…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/must-install-mac-os-application</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/must-install-mac-os-application</guid><pubDate>Sun, 13 Feb 2022 17:02:58 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;M1 맥북 구매 후 생산성을 향상에 도움이 되는 꼭 설치해야 하는 유틸리티 7가지를 소개하고자 합니다.&lt;/p&gt;
 &lt;h1&gt;요약&lt;/h1&gt;
 &lt;ol&gt;
@@ -52,6 +52,41 @@
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 brew 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask iterm2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;설정&lt;/h2&gt;
+&lt;p&gt;Finder의 경로에서 터미널을 바로 실행하고 싶을 수가 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;시스템 환경설정&lt;/em&gt; &gt; &lt;em&gt;키보드&lt;/em&gt; &gt; &lt;em&gt;단축키&lt;/em&gt; &gt; &lt;em&gt;서비스&lt;/em&gt; &gt; &lt;em&gt;New iTerm2 Tab Here&lt;/em&gt; 체크&lt;br&gt;
+원하는 단축키를 등록한 후 Finder에서 단축키를 수행하면 iTerm이 해당 경로에서 열립니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/acd70a2899778cf6f7ec479af403fcf3/8cbfd/iterm-setting.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 90.83333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAADgElEQVQ4y52TP2/bRhjGWWQoumRxBaeOWVkSKUrkHe/4T/xPipIo05Zlu3KLDgGKbk06d+gQZOwYAx7yHYTk0wXQYsJ8Cl5gxEEMFOjww/u8R/AHHu89abKcSWOLPf1Bs7omYbJtWbJlWbKh6/JI02TXcWTP82TXdUW+hzMmc85l51PftTh/uixLSbr5+42UeP67TZliOk0/pkm6y9J0tyzL3UlV7eIo2oVBsIvCUOR78izbZVm2S+L4Y5ok8H3/3ZvXryUJgKQPtfcTRsEoaRghMAmBa9vwHAc2Ywh9H55tw2JM9C2cUgEjpGnrWNPety4hVHq9LdN12JTcWpQ0NqVNFoZNGgRNkabN5uKiqcqyyeNY9G01x+OG6XrDDOPW1HW0js/CbncbpzlW55t6tb7EcXWGrCgRBglmeY40DBF6HmLfRxwEIjPDEJi6XnNCMBwMPgvVo6OtHReozi7r02qFietjZFigTo4oiFAtFkISTSYIXBf6cIixqoraCul4DO2hsN892k7zKS6rWe3TIWj/AHSkgEYrhGGCdVXh4uwMP52foywK6KoqhIamweHsEaF8sM2rXzD77Z+6P/8LneBPHKavoIcrOK6P5XyOaZahnM/FwWiKipE6hD4agZvm18Jh93Br5RdY/vxHnZdXUIwIKi/ArQiRZeG0mGIRR1imCRLHBlMVmKoCZzxC5NiPCHtHW+YX8P2g9ogGrSfDHg/xIslwZXO8mqd4Oc/wcp5iQzWcql2cDH7Erw7F7w6p+UiDqigPhIPB1mQ2RjqtdYOJA7mc6nhxnOLYC7CJJ1i5Fs59F5VlItMGyDQFpw7HauLUNqVQ+/0Hwn5/y6kJi/HapAyJS1BMDIx1s/1HoAYB0Q0YuiEyJRQW51iv17i6uqqnSYJ+t/ul0CIEFiF1W21KwAgVte05MQSfMgE3DEF7Gdhjc9hO+cS2sSiK+nixaI7n82Y5nzVlUTTlbNaEntdMHKeZ2PYX2KbZWJTWFqUYPtxyu/92MU+S2yyO77IoEqRRdBcHwV0ahnftehIEgvvnLud3nJBb8YUPhUqv96Gdem0w+IqRogju87DfRx7HWJ+cYFVVOClLcXtGivJBCCVJ+ub7vb3Nfqdzs9/pvN3vdK7/i8ODg+uuLF/Lz5+3+e3Bs2c3nb29TeuSmK630ieSJH0rSdJ3/5P23ScuY9K/UbMa8JIOO5IAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;iTerm 설정&quot;
+        title=&quot;iTerm 설정&quot;
+        src=&quot;/static/acd70a2899778cf6f7ec479af403fcf3/89066/iterm-setting.png&quot;
+        srcset=&quot;/static/acd70a2899778cf6f7ec479af403fcf3/53918/iterm-setting.png 360w,
+/static/acd70a2899778cf6f7ec479af403fcf3/242a6/iterm-setting.png 720w,
+/static/acd70a2899778cf6f7ec479af403fcf3/89066/iterm-setting.png 1440w,
+/static/acd70a2899778cf6f7ec479af403fcf3/8cbfd/iterm-setting.png 1560w&quot;
+        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h1&gt;Oh My ZSH&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -389,9 +424,43 @@ Rectangle은 MacOS에서도 이를 가능하도록 도와줍니다.&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12&quot;&gt;GIPHY Capture 다운로드&lt;/a&gt;를
 통해 설치할 수 있습니다.&lt;/p&gt;
+&lt;h2&gt;설정&lt;/h2&gt;
+&lt;p&gt;GIPHY Capture에 화면 기록 권한을 설정해야 촬영한 영상이 정상적으로 저장됩니다.&lt;br&gt;
+&lt;em&gt;시스템 환경설정&lt;/em&gt; &gt; &lt;em&gt;보안 및 개인 정보 보호&lt;/em&gt; &gt; &lt;em&gt;개인 정보 보호&lt;/em&gt; &gt; &lt;em&gt;화면 기록&lt;/em&gt; &gt; &lt;em&gt;GIPHY CAPTURE&lt;/em&gt; 체크&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9716770bc9d83745b9fbe555d08c3c84/8cbfd/giphy-capture-setting.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 89.72222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAADX0lEQVQ4y6WUy2/cVBSH3YCSmQSxgQrUZN5++9rXj/E7Y89M6hnSvCYZtSqVKlg0sKJLVpFgwz+AWLcqQmxYOAv448Cxf+g6IUkhXWHp09G1jz4fHZ9jztsZc6qhf9QSdVFTNV7XCa8TwkuiyHe7Xb7f6/GddpsnmsbbllVjUlqfWR41DJ5SKlLD+HiWZRz36rsfuJEfvHk8TzAeJ38mo1GZJKNylmXl4uioPDo8LE+Oj8txmpaB75dhEJRxFNXnNEnK0fb2X8lohCAIfv359WuOA8ApknTuGDqoblwYhgldp7CtITwvQOD78D0PnusiCkOkSQLXcaATAkPXWbxgUZakPziOW6mFfL+fa5oKVeELU9isqLhZeaRXxbZcxYFfuc6wioOg2p3Pq5PFohrFUaUpSmUQwigMQiAMBr9fC9vtrTx7+DkOn/9Y3F/+gg8fvcL67ht8kP0EbzTHcnGAg/19jNNxTZZlyGYzhL6PwPOKoW1D4Pkb4YNuKz8J93C6923R2j3DYH6GTnaGT+Jv8NCN8TRNcBwFWPo2TnwHS9fCrqWDmiYc0ywcy/qXsNXJn0xivDxIC1PjEVIRrtaD3G/hq2SAPdvEVJSw9C0sXAuPXRMHygCSrIAoSmGbJsTbwv7WZh7M9zF99kXhWTYUWUW3xyO2RBylKmbbPo53JphGIXbiCInnwjIMWJQy/lsh3/k0t+Ilokcvi8iz4A1dsKShodRfXJYVSLIM5RbqFdpdFbZbD/LZ9BDPnnxd2KYB27TAGq0qal0FJeSyoluYV9xZ4aDXz/2hiWkaFa4zhCQI7I2QBQFxGGKeZZcV2/ZdXApvj43Y7+aaHYGGWbEd+qCGAVkUoUgSGwtM0hS+676Ly7G5LeQ37+fWZ18ifP59EVgE1KB1lUzIktlmvEt4PYdvCTtbuR7O4WRPC4eSSiek3gSGY1mV6zh3MrRt9rxgfX5LKAn8+ZASaJJQEFWtdE2rYavFIhOrsnzNP2eWy3rIhKIg3OyyIfd/m3gElJoXjmWCjQFj6DhwbBtEVesWXCOKTMBGBjuTScl+HpIonnMcd49j1rXGevj+avO02Wi8aDQap9esrdWsN5unGxsbN6yv15Hdf29l5cXa6upps9mM6wrbcsBdXff+J5ymKNzfYTjrgTg5x1QAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;GIPHY Capture 설정&quot;
+        title=&quot;GIPHY Capture 설정&quot;
+        src=&quot;/static/9716770bc9d83745b9fbe555d08c3c84/89066/giphy-capture-setting.png&quot;
+        srcset=&quot;/static/9716770bc9d83745b9fbe555d08c3c84/53918/giphy-capture-setting.png 360w,
+/static/9716770bc9d83745b9fbe555d08c3c84/242a6/giphy-capture-setting.png 720w,
+/static/9716770bc9d83745b9fbe555d08c3c84/89066/giphy-capture-setting.png 1440w,
+/static/9716770bc9d83745b9fbe555d08c3c84/8cbfd/giphy-capture-setting.png 1560w&quot;
+        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h1&gt;줄이며…&lt;/h1&gt;
 &lt;p&gt;제가 사용하며 생산성을 크게 키워주는 유틸리티를 소개해보았습니다.&lt;br&gt;
-이를 통해 또 다른 누군가의 생산성이 향상되면 좋겠습니다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[MacOS] M1 맥북 구매 후 초기 설정 6가지]]></title><description><![CDATA[개요 M1 맥북 구매 후 초기에 설정하면 편리한 기능들을 소개하고자 합니다. 요약 iCloud 데스크탑 및 문서 폴더 연동 해제 데스크탑 스택 사용 Dock 설정 자동으로 Dock 가리기와 보기 Dock…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/initial-mac-os-setting</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/initial-mac-os-setting</guid><pubDate>Sat, 05 Feb 2022 09:15:15 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+이를 통해 또 다른 누군가의 생산성이 향상되면 좋겠습니다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[MacOS] M1 맥북 구매 후 초기 설정 6가지]]></title><description><![CDATA[개요 M1 맥북 구매 후 초기에 설정하면 편리한 기능들을 소개하고자 합니다. 요약 iCloud 데스크탑 및 문서 폴더 연동 해제 데스크탑 스택 사용 Dock 설정 자동으로 Dock 가리기와 보기 Dock 크기 조절 Dock…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/initial-mac-os-setting</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/initial-mac-os-setting</guid><pubDate>Sat, 05 Feb 2022 09:15:15 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;M1 맥북 구매 후 초기에 설정하면 편리한 기능들을 소개하고자 합니다.&lt;/p&gt;
 &lt;h1&gt;요약&lt;/h1&gt;
 &lt;ol&gt;
@@ -401,6 +470,7 @@ Rectangle은 MacOS에서도 이를 가능하도록 도와줍니다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;자동으로 Dock 가리기와 보기&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Dock 크기 조절&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Dock 반응 속도 조절&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;윈도우 최소화 효과&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -570,6 +640,14 @@ Dock을 숨겨 놓아 화면을 좀 더 넓게 사용할 수 있습니다.&lt;/p
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Dock 반응 속도 조절&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;터미널&lt;/em&gt;에 접속해서 아래 명령어를 실행합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ defaults &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt; com.apple.dock autohide-delay -float &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;killall&lt;/span&gt; Dock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dock을 자동으로 가렸을 때 포인터를 가져다 대면 Dock이 보입니다.
+그런데 반응 속도가 빠릿빠릿하지 않습니다.&lt;br&gt;
+이를 설정하면 Dock이 바로 응답해서 빠른 작업을 할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;윈도우 최소화 효과&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;시스템 환경설정&lt;/em&gt; &gt; &lt;em&gt;Dock 및 메뉴 막대&lt;/em&gt; &gt; &lt;em&gt;윈도우 최소화 효과&lt;/em&gt; &gt; &lt;em&gt;크기 효과&lt;/em&gt; 선택&lt;/p&gt;
 &lt;blockquote&gt;
