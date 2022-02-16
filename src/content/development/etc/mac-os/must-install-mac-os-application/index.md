@@ -2,7 +2,7 @@
 template: post
 draft: false
 image: img/cover.jpg
-date: 2022-02-14 02:02:58 +09:00
+date: 2022-02-16 07:29:19 +09:00
 title: "[MacOS] M1 맥북 구매 후 꼭 설치해야 하는 유틸리티 7가지"
 excerpt: 맥북의 생산성을 올려주는 유틸리티에 대해 알아봅니다.
 tags:
@@ -53,6 +53,14 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 ```bash
 $ brew install --cask iterm2
 ```
+
+## 설정
+Finder의 경로에서 터미널을 바로 실행하고 싶을 수가 있습니다.
+
+*시스템 환경설정* > *키보드* > *단축키* > *서비스* > *New iTerm2 Tab Here* 체크  
+원하는 단축키를 등록한 후 Finder에서 단축키를 수행하면 iTerm이 해당 경로에서 열립니다.
+
+![iTerm 설정](./img/iterm-setting.png)
 
 # Oh My ZSH
 | 라이센스 구분 |                                     써                                     |
@@ -200,6 +208,12 @@ $ brew install --cask hiddenbar
 ## 설치
 [GIPHY Capture 다운로드](https://apps.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12)를
 통해 설치할 수 있습니다.
+
+## 설정
+GIPHY Capture에 화면 기록 권한을 설정해야 촬영한 영상이 정상적으로 저장됩니다.  
+*시스템 환경설정* > *보안 및 개인 정보 보호* > *개인 정보 보호* > *화면 기록* > *GIPHY CAPTURE* 체크
+
+![GIPHY Capture 설정](./img/giphy-capture-setting.png)
 
 # 줄이며...
 제가 사용하며 생산성을 크게 키워주는 유틸리티를 소개해보았습니다.  
