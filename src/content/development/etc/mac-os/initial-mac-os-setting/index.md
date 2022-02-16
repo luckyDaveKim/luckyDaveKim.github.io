@@ -2,7 +2,7 @@
 template: post
 draft: false
 image: img/cover.jpg
-date: 2022-02-05 18:15:15 +09:00
+date: 2022-02-16 08:15:14 +09:00
 title: "[MacOS] M1 맥북 구매 후 초기 설정 6가지"
 excerpt: 맥북 구매 후 초기에 세팅하면 좋은 설정 정보 6가지 방법을 알아봅니다.
 tags:
@@ -20,6 +20,7 @@ M1 맥북 구매 후 초기에 설정하면 편리한 기능들을 소개하고�
 3. Dock 설정
    - *자동으로 Dock 가리기와 보기*
    - *Dock 크기 조절*
+   - *Dock 반응 속도 조절*
    - *윈도우 최소화 효과*
 4. 메뉴 막대 설정
    - 배터리 *퍼센트 보기*
@@ -67,6 +68,17 @@ M1 맥북 구매 후 초기에 설정하면 편리한 기능들을 소개하고�
 ![Dock 크기 조절 예시](img/dock-sizing.gif)
 
 ![Dock 크기 조절](img/dock-size.png)
+
+## Dock 반응 속도 조절
+*터미널*에 접속해서 아래 명령어를 실행합니다.
+
+```bash
+$ defaults write com.apple.dock autohide-delay -float 0;killall Dock
+```
+
+> Dock을 자동으로 가렸을 때 포인터를 가져다 대면 Dock이 보입니다.
+> 그런데 반응 속도가 빠릿빠릿하지 않습니다.  
+> 이를 설정하면 Dock이 바로 응답해서 빠른 작업을 할 수 있습니다.
 
 ## 윈도우 최소화 효과
 *시스템 환경설정* > *Dock 및 메뉴 막대* > *윈도우 최소화 효과* > *크기 효과* 선택
