@@ -1,10 +1,8 @@
-import React from 'react';
-
 import styled from '@emotion/styled';
 
 import { inner, outer } from '../styles/shared';
 import { PageContext } from '../templates/post';
-import {PostCard} from './PostCard';
+import { PostCard } from './PostCard';
 import { ReadNextCard } from './ReadNextCard';
 
 interface ReadNextProps {
@@ -59,6 +57,7 @@ const ReadNextAside = styled.aside`
     padding-bottom: 0;
     border-bottom: none;
   }
+
   .post-card-excerpt {
     display: none;
   }

@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Footer } from '../components/Footer';
@@ -11,15 +10,15 @@ import {
   inner,
   outer,
   PostFeed,
+  ResponsiveHeaderBackground,
+  SiteArchiveHeader,
   SiteDescription,
   SiteHeader,
+  SiteHeaderBackground,
   SiteHeaderContent,
   SiteMain,
-  SiteTitle,
   SiteNavMain,
-  SiteArchiveHeader,
-  ResponsiveHeaderBackground,
-  SiteHeaderBackground,
+  SiteTitle,
 } from '../styles/shared';
 import { PageContext } from './post';
 import { Helmet } from 'react-helmet';

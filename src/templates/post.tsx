@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import GoogleAdsense from 'react-adsense-google';
 
@@ -102,9 +101,9 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
   const date = new Date(post.frontmatter.date);
   // 1991-03-26
-  const datetime = format(date, 'yyyy-MM-dd', {locale: ko});
+  const datetime = format(date, 'yyyy-MM-dd', { locale: ko });
   // 1991년 03월 26일
-  const displayDatetime = format(date, 'yyyy년 MMM do', {locale: ko});
+  const displayDatetime = format(date, 'yyyy년 MMM do', { locale: ko });
 
   return (
     <IndexLayout className="post-template">
@@ -217,12 +216,12 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               <PostContent htmlAst={post.htmlAst} />
 
               <GoogleAdsense
-                adClient='ca-pub-7933583473323654'
-                adSlot='3598572309'
-                style={{'display': 'block', 'textAlign': 'center'}}
-                adLayout='in-article'
-                adFormat='fluid'
-                fullWidthResponsive='true'
+                adClient="ca-pub-7933583473323654"
+                adSlot="3598572309"
+                style={{ 'display': 'block', 'textAlign': 'center' }}
+                adLayout="in-article"
+                adFormat="fluid"
+                fullWidthResponsive="true"
               />
 
               <Comment />
