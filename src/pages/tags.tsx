@@ -4,13 +4,13 @@ import { graphql } from 'gatsby';
 import { css } from '@emotion/react';
 
 import { Footer } from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import { inner, outer, SiteArchiveHeader, SiteHeader, SiteMain, SiteNavMain } from '../styles/shared';
-import { PageContext, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
+import { inner, outer, SiteMain } from '../styles/shared';
+import { PageContext, PostFull } from '../templates/post';
 import { colors } from '../styles/colors';
 import TagsCloud from '../components/TagsCloud';
+import HeadOfTitle from '../components/header/HeadOfTitle';
 
 const PageTemplate = css`
   .site-main {
@@ -42,20 +42,12 @@ const Tags: React.FC<TagsPageProps> = props => (
       <title>Tags</title>
     </Helmet>
     <Wrapper css={PageTemplate}>
-      <header className='site-archive-header no-image' css={[SiteHeader, SiteArchiveHeader]}>
-        <div css={[outer, SiteNavMain]}>
-          <div css={inner}>
-            <SiteNav isHome={false} />
-          </div>
-        </div>
-      </header>
-      <main id='site-main' className='site-main' css={[SiteMain, outer]}>
+      <HeadOfTitle
+        title={'Tags'}
+        subTitle={'A collection of tags'} />
+      <main id="site-main" className="site-main" css={[SiteMain, outer]}>
         <div css={inner}>
-          <article className='post page' css={PostFull}>
-            <PostFullHeader className='post-full-header'>
-              <PostFullTitle className='post-full-title'>Tags</PostFullTitle>
-            </PostFullHeader>
-
+          <article className="post page" css={PostFull}>
             <TagsCloud data={props.data} />
           </article>
         </div>

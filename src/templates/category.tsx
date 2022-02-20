@@ -3,28 +3,15 @@ import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Footer } from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import {
-  inner,
-  outer,
-  PostFeed,
-  ResponsiveHeaderBackground,
-  SiteArchiveHeader,
-  SiteDescription,
-  SiteHeader,
-  SiteHeaderBackground,
-  SiteHeaderContent,
-  SiteMain,
-  SiteNavMain,
-  SiteTitle,
-} from '../styles/shared';
+import { inner, outer, PostFeed, SiteMain } from '../styles/shared';
 import { PageContext } from './post';
 import { Helmet } from 'react-helmet';
 import config from '../website-config';
 import Pagination from '../components/Pagination';
+import MetaHeadOfTitle from '../components/header/MetaHeadOfTitle';
 
 interface CategoryTemplateProps {
   location: Location;
@@ -61,7 +48,7 @@ interface CategoryTemplateProps {
 
 const Category: React.FC<CategoryTemplateProps> = ({ location, pageContext, data }) => {
   const category = pageContext.category ? pageContext.category : '';
-  const { edges, totalCount } = data.allMarkdownRemark;
+  const { edges } = data.allMarkdownRemark;
   const CategoryData = data.allCategoryYaml.edges.find(
     n => n.node.id.toLowerCase() === category.toLowerCase(),
   );
@@ -89,36 +76,10 @@ const Category: React.FC<CategoryTemplateProps> = ({ location, pageContext, data
         )}
       </Helmet>
       <Wrapper>
-        <header
-          className="site-archive-header"
-          css={[SiteHeader, SiteArchiveHeader]}
-        >
-          <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isHome={false} />
-            </div>
-          </div>
-          <ResponsiveHeaderBackground
-            css={[outer, SiteHeaderBackground]}
-            backgroundImage={CategoryData?.node?.image?.childImageSharp?.gatsbyImageData.images.fallback?.src}
-            className="site-header-background"
-          >
-            <SiteHeaderContent css={inner} className="site-header-content">
-              <SiteTitle className="site-title">{category}</SiteTitle>
-              <SiteDescription className="site-description">
-                {CategoryData?.node.description ? (
-                  CategoryData.node.description
-                ) : (
-                  <>
-                    A collection of {totalCount > 1 && `${totalCount} posts`}
-                    {totalCount === 1 && '1 post'}
-                    {totalCount === 0 && 'No posts'}
-                  </>
-                )}
-              </SiteDescription>
-            </SiteHeaderContent>
-          </ResponsiveHeaderBackground>
-        </header>
+        <MetaHeadOfTitle
+          category={pageContext.category}
+          data={data}
+        />
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={PostFeed}>
