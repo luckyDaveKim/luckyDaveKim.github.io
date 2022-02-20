@@ -35,7 +35,7 @@ const About: React.FC = () => (
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
         <div css={[outer, SiteNavMain]}>
           <div css={inner}>
-            <SiteNav isHome={false}/>
+            <SiteNav isHome={false} />
           </div>
         </div>
       </header>
@@ -105,9 +105,11 @@ const About: React.FC = () => (
 
                 <h1 id="project">Toy Project</h1>
                 <ul>
-                  <li>2021.07.05 ~ 2021.08.27 :: <a href="https://react-v-sorting.netlify.app" target="_blank">React V Sorting</a>
+                  <li>2021.07.05 ~ 2021.08.27 :: <a href="https://react-v-sorting.netlify.app"
+                                                    target="_blank">React V Sorting</a>
                   </li>
-                  <li>2020.12.09 ~ 2020.12.09 :: <a href="https://www.npmjs.com/package/react-adsense-google" target="_blank">React Adsense Google</a>
+                  <li>2020.12.09 ~ 2020.12.09 :: <a href="https://www.npmjs.com/package/react-adsense-google"
+                                                    target="_blank">React Adsense Google</a>
                   </li>
                 </ul>
 
@@ -150,7 +152,7 @@ const About: React.FC = () => (
           </article>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </Wrapper>
   </IndexLayout>
 );

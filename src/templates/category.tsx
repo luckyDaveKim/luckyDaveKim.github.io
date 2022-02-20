@@ -11,15 +11,15 @@ import {
   inner,
   outer,
   PostFeed,
+  ResponsiveHeaderBackground,
+  SiteArchiveHeader,
   SiteDescription,
   SiteHeader,
+  SiteHeaderBackground,
   SiteHeaderContent,
   SiteMain,
-  SiteTitle,
   SiteNavMain,
-  SiteArchiveHeader,
-  ResponsiveHeaderBackground,
-  SiteHeaderBackground,
+  SiteTitle,
 } from '../styles/shared';
 import { PageContext } from './post';
 import { Helmet } from 'react-helmet';
