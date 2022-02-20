@@ -96,6 +96,24 @@ export const PostFullContent = styled.section`
   ul,
   ol,
   dl,
+  li,
+  pre,
+  blockquote,
+  .post-full-comments,
+  .footnotes {
+    line-height: 1.25em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
   pre,
   blockquote,
   .post-full-comments,
@@ -290,112 +308,49 @@ export const PostFullContent = styled.section`
   }
 
   h1 {
-    margin: 0.5em 0 0.4em;
-    font-size: 4.2rem;
+    margin: 0.7em 0;
+    font-size: 3.2rem;
     line-height: 1.25em;
     font-weight: 600;
-  }
-  p + h1 {
-    margin-top: 0.8em;
-  }
-  @media (max-width: 800px) {
-    h1 {
-      font-size: 3.2rem;
-      line-height: 1.25em;
-    }
   }
 
   h2 {
-    margin: 0.5em 0 0.4em;
-    font-size: 3.2rem;
+    margin: 0.6em 0;
+    font-size: 2.6rem;
     line-height: 1.25em;
     font-weight: 600;
   }
-  p + h2 {
-    margin-top: 0.8em;
-  }
-  @media (max-width: 800px) {
-    h2 {
-      margin-bottom: 0.3em;
-      font-size: 2.8rem;
-      line-height: 1.25em;
-    }
-  }
 
   h3 {
-    margin: 0.5em 0 0.2em;
-    font-size: 2.5rem;
-    line-height: 1.3em;
+    margin: 0.5em 0;
+    font-size: 2.3rem;
+    line-height: 1.25em;
     font-weight: 600;
-  }
-  h2 + h3 {
-    margin-top: 0.7em;
-  }
-  @media (max-width: 800px) {
-    h3 {
-      margin-bottom: 0.3em;
-      font-size: 2.4rem;
-      line-height: 1.3em;
-    }
   }
 
   h4 {
-    margin: 0.5em 0 0.2em;
-    font-size: 2.5rem;
+    margin: 0.4em 0 0.2em;
+    font-size: 2.2rem;
+    line-height: 1.25em;
     font-weight: 600;
-  }
-  h2 + h4 {
-    margin-top: 0.7em;
-  }
-  h3 + h4 {
-    margin-top: 0;
-  }
-  @media (max-width: 800px) {
-    h4 {
-      margin-bottom: 0.3em;
-      font-size: 2.4rem;
-      line-height: 1.3em;
-    }
   }
 
   h5 {
-    display: block;
-    margin: 0.5em 0;
-    padding: 0.4em 1em 0.9em;
-    border: 0;
-    /* color: var(--blue); */
-    color: ${colors.blue};
-    font-family: Georgia, serif;
-    font-size: 3.2rem;
-    line-height: 1.35em;
-    text-align: center;
-  }
-  @media (min-width: 1180px) {
-    h5 {
-      max-width: 1060px;
-      /* width: 100vw; */
-    }
-  }
-  @media (max-width: 800px) {
-    h5 {
-      margin-bottom: 1em;
-      margin-left: 1.3em;
-      padding: 0 0 0.5em;
-      font-size: 2.4rem;
-      text-align: initial;
-    }
+    margin: 0.4em 0 0.2em;
+    font-size: 2.1rem;
+    line-height: 1.25em;
+    font-weight: 600;
   }
 
   h6 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: 2rem;
-    font-weight: 700;
+    margin: 0.4em 0 0.2em;
+    font-size: 2.0rem;
+    line-height: 1.25em;
+    font-weight: 600;
   }
-  @media (max-width: 800px) {
-    h6 {
-      font-size: 1.8rem;
-      line-height: 1.4em;
-    }
+
+  p {
+    line-height: 1.25em;
   }
 
   table {
@@ -471,6 +426,7 @@ export const PostFullContent = styled.section`
     h2,
     h3,
     h4,
+    h5,
     h6 {
       color: rgba(255, 255, 255, 0.9);
     }
