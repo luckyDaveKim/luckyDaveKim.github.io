@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Footer } from '../components/Footer';
