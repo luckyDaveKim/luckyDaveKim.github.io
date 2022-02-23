@@ -11,7 +11,7 @@ import { PageContext } from './post';
 import { Helmet } from 'react-helmet';
 import config from '../website-config';
 import Pagination from '../components/Pagination';
-import MetaHeadOfTitle from '../components/header/MetaHeadOfTitle';
+import CategoryMetaHeadOfTitle from '../components/header/CategoryMetaHeadOfTitle';
 
 interface CategoryTemplateProps {
   location: Location;
@@ -76,7 +76,7 @@ const Category: React.FC<CategoryTemplateProps> = ({ location, pageContext, data
         )}
       </Helmet>
       <Wrapper>
-        <MetaHeadOfTitle
+        <CategoryMetaHeadOfTitle
           category={pageContext.category}
           data={data}
         />

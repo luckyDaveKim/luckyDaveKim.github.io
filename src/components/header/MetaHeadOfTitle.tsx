@@ -4,45 +4,39 @@ import { PageContext } from '../../templates/post';
 import HeadOfTitle from './HeadOfTitle';
 
 interface Props {
-  category: string;
-  data: {
-    allCategoryYaml: {
-      edges: Array<{
-        node: {
-          id: string;
-          description: string;
-          image?: {
-            childImageSharp: {
-              gatsbyImageData: IGatsbyImageData;
-            };
-          };
+  title?: string;
+  edges: Array<{
+    node: {
+      id: string;
+      description: string;
+      image?: {
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData;
         };
-      }>;
+      };
     };
-    allMarkdownRemark: {
-      totalCount: number;
-      edges: Array<{
-        node: PageContext;
-      }>;
-    };
+  }>;
+  allMarkdownRemark: {
+    totalCount: number;
+    edges: Array<{
+      node: PageContext;
+    }>;
   };
 }
 
-const MetaHeadOfTitle: React.FC<Props> = ({ category, data }) => {
-  const title = category || '';
-
-  const MetaData = data.allCategoryYaml.edges.find(
+const MetaHeadOfTitle: React.FC<Props> = ({ title = '', edges, allMarkdownRemark }) => {
+  const metaData = edges.find(
     n => n.node.id.toLowerCase() === title.toLowerCase(),
   );
 
-  const { totalCount } = data.allMarkdownRemark;
+  const { totalCount } = allMarkdownRemark;
   const postsCount = (totalCount > 0) ? totalCount : 'No';
   const postNoun = (totalCount === 1) ? 'post' : 'posts';
-  const subTitle = MetaData?.node.description || `A collection of ${postsCount} ${postNoun}`;
+  const subTitle = metaData?.node.description || `A collection of ${postsCount} ${postNoun}`;
 
   return (
     <HeadOfTitle
-      backgroundImageSrc={MetaData?.node?.image?.childImageSharp?.gatsbyImageData.images.fallback?.src}
+      backgroundImageSrc={metaData?.node?.image?.childImageSharp?.gatsbyImageData.images.fallback?.src}
       title={title}
       subTitle={subTitle}
     />
