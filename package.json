@@ -24,7 +24,7 @@
     "date-fns": "^2.27.0",
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
-    "gatsby": "^4.9.3",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-canonical-urls": "^4.9.0",
     "gatsby-plugin-emotion": "^7.9.0",
     "gatsby-plugin-feed": "^4.9.0",
