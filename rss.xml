@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 01:31:22 GMT</lastBuildDate><item><title><![CDATA[Spring Boot v2 에서 v3 마이그레이션]]></title><description><![CDATA[개요 이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다. 마이그레이션 코드는 Spring Boot Migration Guide 를 참고하실 수 있습니다. Spring Boot…]]></description><link>https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</link><guid isPermaLink="false">https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</guid><pubDate>Fri, 26 Jan 2024 15:09:21 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 01:43:17 GMT</lastBuildDate><item><title><![CDATA[Spring Boot v2 에서 v3 마이그레이션]]></title><description><![CDATA[개요 이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다. 마이그레이션 코드는 Spring Boot Migration Guide 를 참고하실 수 있습니다. Spring Boot…]]></description><link>https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</link><guid isPermaLink="false">https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</guid><pubDate>Fri, 26 Jan 2024 15:09:21 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;마이그레이션 코드는 &lt;a href=&quot;https://github.com/luckyDaveKim/springboot-migration-guide&quot;&gt;Spring Boot Migration Guide&lt;/a&gt; 를 참고하실 수 있습니다.&lt;/p&gt;
@@ -1491,13 +1491,13 @@ MacOS: &lt;code class=&quot;language-text&quot;&gt;Esc&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Windows: &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt;&lt;br&gt;
 MacOS: &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;위 모든 단축키를 잊어버려도 괜찮습니다. &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt; 두 번이면, 모든 기능을 검색해서 사용할 수 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[MacOS] fn키 누르지 않고 F1 ~ F12 사용하는 방법]]></title><description><![CDATA[개요 이 포스팅에서는 MacOS에서 fn 키를 누르지 않고 F1 ~ F12 키를 사용하는 방법에 대해 소개하고자 합니다. 요약 Apple 메뉴 > 시스템 환경설정을 선택합니다. ‘키보드’를 클릭합니다. ‘F1, F…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/use-function-keys-with-fn-key-on-mac</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/use-function-keys-with-fn-key-on-mac</guid><pubDate>Mon, 10 Jan 2022 12:24:43 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+&lt;p&gt;위 모든 단축키를 잊어버려도 괜찮습니다. &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt; 두 번이면, 모든 기능을 검색해서 사용할 수 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[MacOS] fn키 누르지 않고 F1 ~ F12 사용하는 방법]]></title><description><![CDATA[개요 이 포스팅에서는 MacOS에서 fn 키를 누르지 않고 F1 ~ F12 키를 사용하는 방법에 대해 소개하고자 합니다. 요약 Apple…]]></description><link>https://luckydavekim.github.io/development/etc/mac-os/use-function-keys-with-fn-key-on-mac</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/mac-os/use-function-keys-with-fn-key-on-mac</guid><pubDate>Mon, 10 Jan 2022 12:24:43 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;이 포스팅에서는 MacOS에서 fn 키를 누르지 않고 F1 ~ F12 키를 사용하는 방법에 대해 소개하고자 합니다.&lt;/p&gt;
 &lt;h1&gt;요약&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Apple 메뉴 &gt; 시스템 환경설정을 선택합니다.&lt;/li&gt;
-&lt;li&gt;‘키보드’를 클릭합니다.&lt;/li&gt;
-&lt;li&gt;‘F1, F2 등의 키를 표준 기능 키로 사용’을 체크합니다.&lt;/li&gt;
+&lt;li&gt;좌측 메뉴에서 ‘키보드’ 를 클릭 후, ‘키보드 단축키…’ 를 클릭합니다.&lt;/li&gt;
+&lt;li&gt;‘기능키’ 의 ‘F1, F2 등의 키를 표준 기능 키로 사용’ 을 체크합니다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1&gt;fn 키 누르지 않고 F1 ~ F12 키 사용하기&lt;/h1&gt;
@@ -1510,34 +1510,64 @@ MacOS: &lt;code class=&quot;language-text&quot;&gt;Shift&lt;/code&gt; + &lt;code
 &lt;h2&gt;설정 방법&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Apple 메뉴 &gt; 시스템 환경설정을 선택합니다.&lt;/li&gt;
-&lt;li&gt;‘키보드’를 클릭합니다.&lt;/li&gt;
-&lt;li&gt;‘F1, F2 등의 키를 표준 기능 키로 사용’을 체크합니다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1440px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 725px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a18cd58c2d7e934c54710c61c7734edd/8cbfd/use-function-keys-with-fn-key.png&quot;
+    href=&quot;/static/d25e45b63f74ed5f74851ebd9e0952f7/f9ac7/setting-keyboard.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 90.83333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAADBUlEQVQ4y52TS2/bRhRGp8ii6MaOE7uRLMmkhsPnDEmRFN+SJdGvwKm1SNttkm3RTZcFuu8yBrLIfxCSXxdAGxPmVwytuoGrtEUJHFwM597D4dwZMjqeE527O/vDkeJY3sBzRwNPjAaW6QyYZg5GXrgV7ngDwf2BfzdWXO7vLGanhPz+028kHSXvr2Yliqz8lMblWnI8qdbV/GwdR9l6HGbr+AF5Ol3nyWSdjPNPaVwgHMXvf/n5V0IAEE0xPrimgMV4Y2ocJhMYBxkCL4FjeuCWf4fpt2PH8NociaHxRkaq6B+kqxX2u+qKKjaYat8w1W4kZ9VlM80XjeuETeilTeglTeAmTRwUTRwWDT2ymk2urIF03AuPenRlagKmJmqLuZCrdO0Qwg5g6558D33owKAckZ8iGmXt3F2uqOW8dNwLB4d0ZVAhC2pdtTAS8b0kCYs/C+HzcRuleBzkEFYgc2o5lo4HQgcG8+tgfIoymSKPp0iiKdKohDB92MyFJfeXOq3UpBxW+1f8S0IOnbl1kp2gKCpUiwtU371BPnmOLJsjTWdwRA6N+WCagKa5G8TfhUeHdMUohz8U9VWU4ypKsByneHV2gdfnz/F9McUPeYGryQuUzEWpaihVHRNVR0mN2nwoVHvDlaoKvMpYvSxmWE5P8GN1geVkfkc5x8Ib4zSIcR5lOA3SNlZhhqXl1GJoo/d5U/pduhIGx2XE6pmmY2FyLAwHc93G3HCwMB1UlvgLk7fxxOTI2ReaIjecDt2aUheU8g1ig5zbDtscm61NkR1rb8p/wNp0WlOsWh6vredwc0ibf8PQRKMPncYxvGaSzWvPidDvqJ8Lhyv5FZ06N/rQub2Hbo+GJm4Nym+FFdwujs9u5EXodZQVkc/mLn9U+zqUPoPSxu3InKNDDVk8xfnJJarZBSb5vL2G6oB9bFdICPnq8c6Tl08eH7zb291/u7e7f/3PPL1+dtC97nb6151ve9fdZ/23B/udd3u7T19KF2GKLaWPCCFfE0K++Z/I2kc288gf59f8Az19SuMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 109.72222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAADqElEQVQ4y21VyW7jRhDlnwRjW9z3neLWpGhJlqXRYkmGPRk4cHIJcggwmPN8SJAc850vqGJ6oNg5PLTYZL9+VfWqpKS2jbpyMHEMqBMNqqphomqwLBOGriKKAkyLDIauwTJ1hmFo/M40xj3z333T0KH4jo28CGF7LhxnhGXZ/EGaREjiEIHvwrZ02JbBJGHg8b7vOfydY4/7UehDCaMWWd4himN4fgDP9+G4HizTQF1NkWcJXMfiw57noJzmKMuCVcfRSEogstVqCaUo1hBigziJoBsmVE1nEKFU6Lk2HyKlVVnwnmObfBG9ozWOQywWt1C6tsLqbg5NNzh/Oq2axuGRQtHWvDZ1yapoX5JJOLaOqFxgvlxBscsVmsUBdTmFpunQ1LEwdHCYdUxIqtqm4nBJ6X/JTEShh7IsMes7KP1yh/X+jKLIYdnOGDZX2cCsF6yuEw0TE4FUKEHPVKSyyNB3LZSsWqBdbNEJgaYVTBrFCYLAwzDrmZQKQ6DcUV7jKOAiEMLQR+DbiKs7LO7uodj5gGm/RlVO0bQtXM9DKzomoBBJHeWPwpY5pX0iJ+I8iVAWKcIgGEPW3RRZ1aHrOqRZzhUWokMSR9C1CfuLwnoLCtcyNOzrAr+ddnhdDfg4a6Hk259w/+OvaKoSqm5wtUXXMyHZhPIjO+Q9NDimDtcyoE+uWb0iHj9h+/KKIsthWjYXpBUCaRpzZYs85cP/p1J6kAxPueWiBHcFmu0Az/FZHfUx5TJLYyZ7a5NLUB7Jm4v5gP1+i/ntDIprmSiLAmlecB+Tqana9LGm3rwz8SVIORXmcNhxl5BvldXmCYfzZzRtg7ppcXMzQV03nEO6nQ5ScWi6SJgX04ZWdXKNqw8/cIqUqFmiHtYIwwC24+Lq6hpVVSNNYrZKkWffwyfQb+nHy5Xe3Q49lHq+x3L3iMD3uUukwixN+LA0NYEUy7FFBSEHkLkpbPImh9ysHrF+eIYQAkEY48P1DYdOhHJ0vfUfgcjI8NLsm839qHCaJZhRN1Q1RFPDNgwI0SJNEw6ZQno/XUwOsW1qXomYlHdkm/P+Fc+//43q6U/k5z8QHf/C4fErpqmHLEu/k8lBcDkUZBcRKV1Mfa/8/PILvn75ht3+BcPwgKbd4nx8RpElPGQpV3SI8vd4PuJ0POCw32K/+4jjw4GfT6cHbNar0djH0wmfPz3htqvRVjl8x8TQ94jCgC0h/3xIlWxFHiR1iXI6uoBCJ1fkWYp/AHxczDdVCan6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;setting-keyboard&quot;
+        title=&quot;setting-keyboard&quot;
+        src=&quot;/static/d25e45b63f74ed5f74851ebd9e0952f7/f9ac7/setting-keyboard.png&quot;
+        srcset=&quot;/static/d25e45b63f74ed5f74851ebd9e0952f7/53918/setting-keyboard.png 360w,
+/static/d25e45b63f74ed5f74851ebd9e0952f7/242a6/setting-keyboard.png 720w,
+/static/d25e45b63f74ed5f74851ebd9e0952f7/f9ac7/setting-keyboard.png 725w&quot;
+        sizes=&quot;(max-width: 725px) 100vw, 725px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;좌측 메뉴에서 ‘키보드’ 를 클릭 후, ‘키보드 단축키…’ 를 클릭합니다.&lt;/li&gt;
+&lt;li&gt;‘F1, F2 등의 키를 표준 기능 키로 사용’을 체크합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 678px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/de28c641dd7575d58a9598a6ff6dc1f6/dc057/use-function-keys-with-fn-key.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1UlEQVQ4y6WR204TURhG5xG8lOp0nzoze9o5laG0nRkobSlgiwVL0WCi9yZ6p6/hJW/gcy7Tg0RCiAQvVv5k7y8r396/Mx4NOT0e0ut1qaqS7n4H3/eIjGDfevSjkDJprWcRhXSbAZkRWyRtI0m1oGh3SXwPJz+5oZzeMB6UJHFMaAN8z9DxNcPBgLOTCYODiqroc1iVFL0u7TQhb2e005hWGGC0otMdsWd9nP3igKPRMWXRoyz6xFELr2GIjFw3zANDLN07EuX+1XBDukLsECoXZ3Y+53q5JE1irO8TWp8g8FBKIIW7Ritxx+pcyfpDtnfOdDplsVhs/s5rYAMfG3j3JE9C1tfTmc0vWC6vqMqCzl5+T6i2oafwJ+uczy9ZXl+zu5vRztK1MPgf4XT2hsuLOf1+b9tuw7OFu5MrDs/fc1jkJHGI3xAEvn6+MJt8onj3jeHRlGZS0IwLWq09jFpt75GNPtiwRGuFVhLn4/ILH77+orO4pXn2k+bsluzoB1bWkKvgP9tJdP0lsvYCI1/hTMbHvD2bkacZsQ1JwiaRtRj9hKdqiRY1dDYhPP2OavVxbJTgeYZGw6wDxiiM0QjhIuqvEXX3cVYZd4e67eFVn1E25zeOkoLSwiru5QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;use-function-keys-with-fn-key&quot;
         title=&quot;use-function-keys-with-fn-key&quot;
-        src=&quot;/static/a18cd58c2d7e934c54710c61c7734edd/89066/use-function-keys-with-fn-key.png&quot;
-        srcset=&quot;/static/a18cd58c2d7e934c54710c61c7734edd/53918/use-function-keys-with-fn-key.png 360w,
-/static/a18cd58c2d7e934c54710c61c7734edd/242a6/use-function-keys-with-fn-key.png 720w,
-/static/a18cd58c2d7e934c54710c61c7734edd/89066/use-function-keys-with-fn-key.png 1440w,
-/static/a18cd58c2d7e934c54710c61c7734edd/8cbfd/use-function-keys-with-fn-key.png 1560w&quot;
-        sizes=&quot;(max-width: 1440px) 100vw, 1440px&quot;
+        src=&quot;/static/de28c641dd7575d58a9598a6ff6dc1f6/dc057/use-function-keys-with-fn-key.png&quot;
+        srcset=&quot;/static/de28c641dd7575d58a9598a6ff6dc1f6/53918/use-function-keys-with-fn-key.png 360w,
+/static/de28c641dd7575d58a9598a6ff6dc1f6/dc057/use-function-keys-with-fn-key.png 678w&quot;
+        sizes=&quot;(max-width: 678px) 100vw, 678px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
