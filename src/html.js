@@ -15,13 +15,13 @@ export default function HTML(props) {
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GKM3N4DZE"></script>
         <script>
           {
-            ```
+            `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-3GKM3N4DZE');
-            ```
+            `
           }
         </script>
         {props.headComponents}
