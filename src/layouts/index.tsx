@@ -2,9 +2,6 @@ import React from 'react';
 import { Global, css } from '@emotion/react';
 import { lighten } from 'polished';
 
-// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-// @ts-ignore
-import favicon from '../images/favicon.ico';
 import { colors } from '../styles/colors';
 import config from '../website-config';
 
@@ -502,7 +499,6 @@ export function Head() {
   return (
     <>
       <html lang={config.lang} />
-      <link rel="icon" href={favicon} type="image/x-icon" />
     </>
   );
 }
