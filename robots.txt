@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://luckydavekim.github.io/sitemap/sitemap-index.xml
+Sitemap: https://luckydavekim.github.io/sitemap-index.xml
 Host: https://luckydavekim.github.io

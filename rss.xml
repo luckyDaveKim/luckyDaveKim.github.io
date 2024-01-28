@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 04:37:45 GMT</lastBuildDate><item><title><![CDATA[Spring Boot v2 에서 v3 마이그레이션]]></title><description><![CDATA[개요 이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다. 마이그레이션 코드는 Spring Boot Migration Guide 를 참고하실 수 있습니다. Spring Boot…]]></description><link>https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</link><guid isPermaLink="false">https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</guid><pubDate>Fri, 26 Jan 2024 15:09:21 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 04:53:40 GMT</lastBuildDate><item><title><![CDATA[Spring Boot v2 에서 v3 마이그레이션]]></title><description><![CDATA[개요 이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다. 마이그레이션 코드는 Spring Boot Migration Guide 를 참고하실 수 있습니다. Spring Boot…]]></description><link>https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</link><guid isPermaLink="false">https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</guid><pubDate>Fri, 26 Jan 2024 15:09:21 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;마이그레이션 코드는 &lt;a href=&quot;https://github.com/luckyDaveKim/springboot-migration-guide&quot;&gt;Spring Boot Migration Guide&lt;/a&gt; 를 참고하실 수 있습니다.&lt;/p&gt;
@@ -205,7 +205,7 @@ Swagger 대신 SpringDoc 을 사용하며 ant_path_matcher 설정 의존성을 �
 &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;SwaggerConfig&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;token annotation punctuation&quot;&gt;@Bean&lt;/span&gt;
 	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Docket&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;postsApi&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Docket&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;DocumentationType&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SWAGGER_2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Docket&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;DocumentationType&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;SWAGGER_2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 			&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;apiInfo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;apiInfo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 			&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 			&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -444,7 +444,7 @@ Dock을 숨겨 놓아 화면을 좀 더 넓게 사용할 수 있습니다.&lt;/p
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;Dock 반응 속도 조절&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;터미널&lt;/em&gt;에 접속해서 아래 명령어를 실행합니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ defaults &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt; com.apple.dock autohide-delay -float &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;killall&lt;/span&gt; Dock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ defaults &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt; com.apple.dock autohide-delay &lt;span class=&quot;token parameter variable&quot;&gt;-float&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;killall&lt;/span&gt; Dock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Dock을 자동으로 가렸을 때 포인터를 가져다 대면 Dock이 보입니다.
 그런데 반응 속도가 빠릿빠릿하지 않습니다.&lt;br&gt;
@@ -745,7 +745,7 @@ Dock을 숨겨 놓아 화면을 좀 더 넓게 사용할 수 있습니다.&lt;/p
 &lt;p&gt;&lt;a href=&quot;/development/etc/mac-os/install-homebrew&quot;&gt;Homebrew의 자세한 사용 방법&lt;/a&gt;이 궁금하신 분은 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ /bin/bash -c &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ /bin/bash &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1&gt;iTerm2&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -765,7 +765,7 @@ Dock을 숨겨 놓아 화면을 좀 더 넓게 사용할 수 있습니다.&lt;/p
 기본 터미널보다 더 다양한 플러그인과 테마를 통해 수월한 개발을 할 수 있도록 해줍니다.&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 brew 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask iterm2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; iterm2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;설정&lt;/h2&gt;
 &lt;p&gt;Finder의 경로에서 터미널을 바로 실행하고 싶을 수가 있습니다.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;시스템 환경설정&lt;/em&gt; &gt; &lt;em&gt;키보드&lt;/em&gt; &gt; &lt;em&gt;단축키&lt;/em&gt; &gt; &lt;em&gt;서비스&lt;/em&gt; &gt; &lt;em&gt;New iTerm2 Tab Here&lt;/em&gt; 체크&lt;br&gt;
@@ -820,7 +820,7 @@ Dock을 숨겨 놓아 화면을 좀 더 넓게 사용할 수 있습니다.&lt;/p
 손쉽게 테마를 꾸며 가독성을 높일 수 있도록 해줍니다.&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 brew 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-fsSL&lt;/span&gt; https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;설정&lt;/h2&gt;
 &lt;h3&gt;테마 설정&lt;/h3&gt;
 &lt;p&gt;iterm을 실행 후, &lt;strong&gt;.zshrc&lt;/strong&gt; 파일에 테마를 지정합니다.&lt;/p&gt;
@@ -923,7 +923,7 @@ Rectangle은 MacOS에서도 이를 가능하도록 도와줍니다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/9f156c67bd4dbfcf5e4067495700d2a0/rectangle-useage.gif&quot; alt=&quot;Rectangle 사용법&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 brew 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask rectangle&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; rectangle&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1&gt;Alfred&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -943,7 +943,7 @@ Rectangle은 MacOS에서도 이를 가능하도록 도와줍니다.&lt;/p&gt;
 프로그램의 특정 기능을 바로 실행하거나, 빠르게 포탈 검색을 할 수 있도록 해줍니다.&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 brew 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask alfred&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; alfred&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;설정&lt;/h2&gt;
 &lt;h3&gt;Hotkey 설정&lt;/h3&gt;
 &lt;p&gt;Spotlight 단축키를 Alfred로 대체합니다.&lt;/p&gt;
@@ -1117,7 +1117,7 @@ Rectangle은 MacOS에서도 이를 가능하도록 도와줍니다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/43a1291982ba8d8451be4f915edc12c7/hiddenbar-useage.gif&quot; alt=&quot;Hidden Bar 사용법&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;다음 brew 명령어 실행을 통해 설치할 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask hiddenbar&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; hiddenbar&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1&gt;GIPHY Capture&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1183,11 +1183,11 @@ CLI…]]></description><link>https://luckydavekim.github.io/development/etc/mac-
 &lt;h1&gt;Homebrew 설치&lt;/h1&gt;
 &lt;p&gt;Homebrew는 MacOS에서 패키지를 관리해주는 프로그램입니다.&lt;br&gt;
 다음 명령어를 통해 Homebrew를 설치해줍니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ /bin/bash -c &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ /bin/bash &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1&gt;Homebrew 사용&lt;/h1&gt;
 &lt;p&gt;Homebrew는 &lt;code class=&quot;language-text&quot;&gt;brew&lt;/code&gt; 명령어를 통해 사용할 수 있습니다.
 설치가 잘 되었는지 다음 명령어를 통해 확인해봅니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew --version
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token parameter variable&quot;&gt;--version&lt;/span&gt;
 
 Homebrew &lt;span class=&quot;token number&quot;&gt;3.3&lt;/span&gt;.12
 Homebrew/homebrew-core &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;git revision 34126e1bb3d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; last commit &lt;span class=&quot;token number&quot;&gt;2022&lt;/span&gt;-01-26&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1219,7 +1219,7 @@ CapsLock을 길게 누르는지 짧게 누르는지 판단하는 기능 때문�
 &lt;h1&gt;Karabiner 설치&lt;/h1&gt;
 &lt;p&gt;Karabiner는 키보드 매핑을 변경해주는 프로그램입니다.&lt;br&gt;
 다음 명령어를 통해 Karabiner를 설치해줍니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --cask karabiner-elements&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; karabiner-elements&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Homebrew&lt;/strong&gt;가 설치되어 있다는 가정하에 진행하겠습니다. 아직 설치하지 않은 분은 &lt;a href=&quot;/development/etc/mac-os/install-homebrew&quot;&gt;Homebrew 설치&lt;/a&gt;를 참고해주세요.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6164,7 +6164,7 @@ Output: 7&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getDist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; dist&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; row&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; col&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;row &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; col &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;MAX_VALUE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;MAX_VALUE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
 		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; dist&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;row&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;col&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -6666,7 +6666,7 @@ GitHub Pages 같은 경우 초기 진입장벽이 다른 블로그 서비스보�
 &lt;p&gt;3-1. &lt;a href=&quot;/development/front-end/install-gatsby-1&quot;&gt;지난 포스팅&lt;/a&gt;에서 생성한 Gatsby 소스에서 &lt;code class=&quot;language-text&quot;&gt;gatsby build&lt;/code&gt; 명령어를 실행 후 생성된 public 디렉토리 내부 파일들을 모두 복사해옵니다.&lt;br&gt;
 3-2. Gatsby build를 통해 가져온 파일을 커밋합니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&apos;init&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;init&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;3-3. 커밋한 내용을 원격 저장소에 push 합니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;3-4. 잠시후 GitHub Pages &lt;code class=&quot;language-text&quot;&gt;https://{user-name}.github.io&lt;/code&gt; 에 접속해보면 Gatsby로 build한 웹페이지가 나타나는 것을 확인 할 수 있습니다.&lt;/p&gt;
@@ -6748,7 +6748,7 @@ Jekyll 과 같이 모든 페이지 정보들이 빌드 시점에 생성되므로
 &lt;ol&gt;
 &lt;li&gt;Gatsby CLI 설치&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; intall -g gatsby-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; intall &lt;span class=&quot;token parameter variable&quot;&gt;-g&lt;/span&gt; gatsby-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Gatsby 설치는 npm 으로 &lt;code class=&quot;language-text&quot;&gt;gatsby-cli&lt;/code&gt;를 설치하며 시작됩니다.&lt;/p&gt;
 &lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;Gatsby 프로젝트 생성&lt;/li&gt;
