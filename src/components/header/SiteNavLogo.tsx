@@ -1,4 +1,4 @@
-import { graphql, Link, StaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { css } from '@emotion/react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
@@ -12,31 +12,30 @@ interface SiteNavLogoProps {
   };
 }
 
-export const SiteNavLogo = () => (
-  <StaticQuery
-    query={graphql`
-      query HeadingQuery {
-        logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: FIXED
-              width: 500
-            )
-          }
+export const SiteNavLogo = () => {
+  const data: SiteNavLogoProps = useStaticQuery(graphql`
+    query HeadingQuery {
+      logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            layout: FIXED
+            width: 500
+          )
         }
       }
-    `}
-    render={(data: SiteNavLogoProps) => (
-      <Link className="site-nav-logo" css={SiteNavLogoStyles} to="/">
-        {data.logo ? (
-          <GatsbyImage image={data.logo.childImageSharp.gatsbyImageData} alt={config.title} />
-        ) : (
-          config.title
-        )}
-      </Link>
-    )}
-  />
-);
+    }
+  `);
+
+  return (
+    <Link className="site-nav-logo" css={SiteNavLogoStyles} to="/">
+      {data.logo ? (
+        <GatsbyImage image={data.logo.childImageSharp.gatsbyImageData} alt={config.title} />
+      ) : (
+        config.title
+      )}
+    </Link>
+  );
+};
 
 const SiteNavLogoStyles = css`
   position: relative;
