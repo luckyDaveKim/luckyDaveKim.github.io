@@ -1,10 +1,10 @@
+import React from 'react';
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
 import { graphql, Link } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
-import { Helmet } from 'react-helmet';
 import GoogleAdsense from 'react-adsense-google';
 
 import { css } from '@emotion/react';
@@ -92,13 +92,6 @@ export interface PageContext {
 
 const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   const post = data.markdownRemark;
-  let width = '';
-  let height = '';
-  if (post.frontmatter.image?.childImageSharp) {
-    width = String(post.frontmatter.image.childImageSharp.gatsbyImageData.width);
-    height = String(post.frontmatter.image.childImageSharp.gatsbyImageData.height);
-  }
-
   const date = new Date(post.frontmatter.date);
   // 1991-03-26
   const datetime = format(date, 'yyyy-MM-dd', { locale: ko });
@@ -107,60 +100,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
   return (
     <IndexLayout className="post-template">
-      <Helmet>
-        <title>{post.frontmatter.title}</title>
-
-        <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />
-        <meta property="og:site_name" content={config.title} />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.frontmatter.title} />
-        <meta property="og:description" content={post.frontmatter.excerpt || post.excerpt} />
-        <meta property="og:url" content={config.siteUrl + location.pathname} />
-        {post.frontmatter.image?.childImageSharp && (
-          <meta
-            property="og:image"
-            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback?.src}`}
-          />
-        )}
-        <meta property="article:published_time" content={post.frontmatter.date} />
-        {/* not sure if modified time possible */}
-        {/* <meta property="article:modified_time" content="2018-08-20T15:12:00.000Z" /> */}
-        {post.frontmatter.tags?.map((tag, index) => (
-          <meta
-            key={index}
-            property="article:tag"
-            content={tag} />
-        ))}
-
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        {config.facebook && <meta property="article:author" content={config.facebook} />}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.frontmatter.title} />
-        <meta name="twitter:description" content={post.frontmatter.excerpt || post.excerpt} />
-        <meta name="twitter:url" content={config.siteUrl + location.pathname} />
-        {post.frontmatter.image?.childImageSharp && (
-          <meta
-            name="twitter:image"
-            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback?.src}`}
-          />
-        )}
-        <meta name="twitter:label1" content="Written by" />
-        <meta name="twitter:label2" content="Filed under" />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
-        {config.twitter && (
-          <meta
-            name="twitter:creator"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
-        {width && <meta property="og:image:width" content={width} />}
-        {height && <meta property="og:image:height" content={height} />}
-      </Helmet>
       <Wrapper css={PostTemplate}>
         <header className="site-header">
           <div css={[outer, SiteNavMain]}>
@@ -450,7 +389,7 @@ export const query = graphql`
     relatedPosts: allMarkdownRemark(
       filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: { ne: true } } }
       limit: 5
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       totalCount
       edges {
@@ -472,3 +411,70 @@ export const query = graphql`
 `;
 
 export default PageTemplate;
+
+export function Head({ data, location }: PageTemplateProps) {
+  const post = data.markdownRemark;
+  let width = '';
+  let height = '';
+  if (post.frontmatter.image?.childImageSharp) {
+    width = String(post.frontmatter.image.childImageSharp.gatsbyImageData.width);
+    height = String(post.frontmatter.image.childImageSharp.gatsbyImageData.height);
+  }
+
+  return (
+    <>
+      <title>{post.frontmatter.title}</title>
+
+      <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />
+      <meta property="og:site_name" content={config.title} />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={post.frontmatter.title} />
+      <meta property="og:description" content={post.frontmatter.excerpt || post.excerpt} />
+      <meta property="og:url" content={config.siteUrl + location.pathname} />
+      {post.frontmatter.image?.childImageSharp && (
+        <meta
+          property="og:image"
+          content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback?.src}`}
+        />
+      )}
+      <meta property="article:published_time" content={post.frontmatter.date} />
+      {/* not sure if modified time possible */}
+      {/* <meta property="article:modified_time" content="2018-08-20T15:12:00.000Z" /> */}
+      {post.frontmatter.tags?.map((tag, index) => (
+        <meta
+          key={index}
+          property="article:tag"
+          content={tag} />
+      ))}
+
+      {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+      {config.facebook && <meta property="article:author" content={config.facebook} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={post.frontmatter.title} />
+      <meta name="twitter:description" content={post.frontmatter.excerpt || post.excerpt} />
+      <meta name="twitter:url" content={config.siteUrl + location.pathname} />
+      {post.frontmatter.image?.childImageSharp && (
+        <meta
+          name="twitter:image"
+          content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback?.src}`}
+        />
+      )}
+      <meta name="twitter:label1" content="Written by" />
+      <meta name="twitter:label2" content="Filed under" />
+      {config.twitter && (
+        <meta
+          name="twitter:site"
+          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+        />
+      )}
+      {config.twitter && (
+        <meta
+          name="twitter:creator"
+          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+        />
+      )}
+      {width && <meta property="og:image:width" content={width} />}
+      {height && <meta property="og:image:height" content={height} />}
+    </>
+  );
+}

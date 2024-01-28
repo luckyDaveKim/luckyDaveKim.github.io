@@ -8,7 +8,6 @@ import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { inner, outer, PostFeed, SiteMain } from '../styles/shared';
 import { PageContext } from './post';
-import { Helmet } from 'react-helmet';
 import config from '../website-config';
 import TagMetaHeadOfTitle from '../components/header/TagMetaHeadOfTitle';
 
@@ -40,35 +39,11 @@ interface TagTemplateProps {
   };
 }
 
-const Tag = ({ pageContext, data, location }: TagTemplateProps) => {
-  const tag = pageContext.tag ? pageContext.tag : '';
+const Tag = ({ pageContext, data }: TagTemplateProps) => {
   const { edges } = data.allMarkdownRemark;
-  const tagData = data.allTagYaml.edges.find(
-    n => n.node.id.toLowerCase() === tag.toLowerCase(),
-  );
 
   return (
     <IndexLayout>
-      <Helmet>
-        <title>
-          {tag} - {config.title}
-        </title>
-        <meta name="description" content={tagData?.node ? tagData.node.description : ''} />
-        <meta property="og:site_name" content={config.title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${tag} - ${config.title}`} />
-        <meta property="og:url" content={config.siteUrl + location.pathname} />
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${tag} - ${config.title}`} />
-        <meta name="twitter:url" content={config.siteUrl + location.pathname} />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
-      </Helmet>
       <Wrapper>
         <TagMetaHeadOfTitle
           tag={pageContext.tag}
@@ -91,6 +66,36 @@ const Tag = ({ pageContext, data, location }: TagTemplateProps) => {
 
 export default Tag;
 
+export function Head({ pageContext, data, location }: TagTemplateProps) {
+  const tag = pageContext.tag ? pageContext.tag : '';
+  const tagData = data.allTagYaml.edges.find(
+    n => n.node.id.toLowerCase() === tag.toLowerCase(),
+  );
+
+  return (
+    <>
+      <title>
+        {tag} - {config.title}
+      </title>
+      <meta name="description" content={tagData?.node ? tagData.node.description : ''} />
+      <meta property="og:site_name" content={config.title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={`${tag} - ${config.title}`} />
+      <meta property="og:url" content={config.siteUrl + location.pathname} />
+      {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={`${tag} - ${config.title}`} />
+      <meta name="twitter:url" content={config.siteUrl + location.pathname} />
+      {config.twitter && (
+        <meta
+          name="twitter:site"
+          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+        />
+      )}
+    </>
+  );
+}
+
 export const pageQuery = graphql`
   query($tag: String) {
     allTagYaml {
@@ -111,7 +116,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
     ) {
       totalCount

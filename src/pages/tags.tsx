@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { css } from '@emotion/react';
 
@@ -38,9 +37,6 @@ interface TagsPageProps {
 
 const Tags: React.FC<TagsPageProps> = props => (
   <IndexLayout>
-    <Helmet>
-      <title>Tags</title>
-    </Helmet>
     <Wrapper css={PageTemplate}>
       <HeadOfTitle
         title={'Tags'}
@@ -61,7 +57,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
@@ -73,5 +69,12 @@ export const pageQuery = graphql`
     }
   }
 `;
-
 export default Tags;
+
+export function Head() {
+  return (
+    <>
+      <title>Tags</title>
+    </>
+  );
+}

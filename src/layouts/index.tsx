@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Global, css } from '@emotion/react';
 import { lighten } from 'polished';
 
@@ -16,10 +15,6 @@ interface IndexProps {
 const IndexLayout: React.FC<IndexProps> = props => {
   return (
     <div className={props.className}>
-      <Helmet>
-        <html lang={config.lang} />
-        <link rel="icon" href={favicon} type="image/x-icon" />
-      </Helmet>
       <Global
         styles={css`
           html,
@@ -502,3 +497,12 @@ const IndexLayout: React.FC<IndexProps> = props => {
 };
 
 export default IndexLayout;
+
+export function Head() {
+  return (
+    <>
+      <html lang={config.lang} />
+      <link rel="icon" href={favicon} type="image/x-icon" />
+    </>
+  );
+}

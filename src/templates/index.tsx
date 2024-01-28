@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/react';
 
@@ -53,62 +52,24 @@ export interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = props => {
-  const { width, height } = props.data.header.childImageSharp.gatsbyImageData;
-
+const IndexPage: React.FC<IndexProps> = ({ pageContext, data }) => {
   return (
     <IndexLayout css={HomePosts}>
-      <Helmet>
-        <title>{config.title}</title>
-        <meta name="description" content={config.description} />
-        <meta property="og:site_name" content={config.title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={config.title} />
-        <meta property="og:description" content={config.description} />
-        <meta property="og:url" content={config.siteUrl} />
-        <meta
-          property="og:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}`}
-        />
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        {config.googleSiteVerification && (
-          <meta name="google-site-verification" content={config.googleSiteVerification} />
-        )}
-        {config.naverSiteVerification && (
-          <meta name="naver-site-verification" content={config.naverSiteVerification} />
-        )}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
-        <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:url" content={config.siteUrl} />
-        <meta
-          name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}`}
-        />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
-        <meta property="og:image:width" content={width.toString()} />
-        <meta property="og:image:height" content={height.toString()} />
-      </Helmet>
       <Wrapper>
         <div
           css={[outer, SiteHeader, SiteHeaderStyles]}
           className="site-header-background"
           style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}')`,
+            backgroundImage: `url('${data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}')`,
           }}
         >
           <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
-                {props.data.logo ? (
+                {data.logo ? (
                   <GatsbyImage
                     style={{ maxHeight: '55px' }}
-                    image={props.data.logo.childImageSharp.gatsbyImageData}
+                    image={data.logo.childImageSharp.gatsbyImageData}
                     alt={config.title}
                   />
                 ) : (
@@ -123,7 +84,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed, PostFeedRaise]}>
-              {props.data.allMarkdownRemark.edges.map((post) => {
+              {data.allMarkdownRemark.edges.map((post) => {
                 return (
                   <PostCard key={post.node.fields.slug} post={post.node} />
                 );
@@ -132,9 +93,9 @@ const IndexPage: React.FC<IndexProps> = props => {
           </div>
         </main>
         <Pagination
-          currentPage={props.pageContext.currentPage}
-          numPages={props.pageContext.numPages}
-          pathPrefix={props.pageContext.pathPrefix}
+          currentPage={pageContext.currentPage}
+          numPages={pageContext.numPages}
+          pathPrefix={pageContext.pathPrefix}
         />
         <Footer />
       </Wrapper>
@@ -158,7 +119,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
@@ -233,3 +194,46 @@ const HomePosts = css`
 `;
 
 export default IndexPage;
+
+export function Head({ data }) {
+  const { width, height } = data.header.childImageSharp.gatsbyImageData;
+
+  return (
+    <>
+      <title>{config.title}</title>
+      <meta name="description" content={config.description} />
+      <meta property="og:site_name" content={config.title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={config.title} />
+      <meta property="og:description" content={config.description} />
+      <meta property="og:url" content={config.siteUrl} />
+      <meta
+        property="og:image"
+        content={`${config.siteUrl}${data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}`}
+      />
+      {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+      {config.googleSiteVerification && (
+        <meta name="google-site-verification" content={config.googleSiteVerification} />
+      )}
+      {config.naverSiteVerification && (
+        <meta name="naver-site-verification" content={config.naverSiteVerification} />
+      )}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={config.title} />
+      <meta name="twitter:description" content={config.description} />
+      <meta name="twitter:url" content={config.siteUrl} />
+      <meta
+        name="twitter:image"
+        content={`${config.siteUrl}${data.header.childImageSharp.gatsbyImageData?.images.fallback?.src}`}
+      />
+      {config.twitter && (
+        <meta
+          name="twitter:site"
+          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+        />
+      )}
+      <meta property="og:image:width" content={width.toString()} />
+      <meta property="og:image:height" content={height.toString()} />
+    </>
+  );
+}

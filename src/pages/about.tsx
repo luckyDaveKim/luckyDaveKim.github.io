@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/react';
 
@@ -27,9 +26,6 @@ const PageTemplate = css`
 
 const About: React.FC = () => (
   <IndexLayout>
-    <Helmet>
-      <title>About</title>
-    </Helmet>
     <Wrapper css={PageTemplate}>
       <HeadOfTitle
         title={'About'}
@@ -148,3 +144,11 @@ const About: React.FC = () => (
 );
 
 export default About;
+
+export function Head() {
+  return (
+    <>
+      <title>About</title>
+    </>
+  );
+}

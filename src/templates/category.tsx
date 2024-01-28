@@ -8,7 +8,6 @@ import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { inner, outer, PostFeed, SiteMain } from '../styles/shared';
 import { PageContext } from './post';
-import { Helmet } from 'react-helmet';
 import config from '../website-config';
 import Pagination from '../components/Pagination';
 import CategoryMetaHeadOfTitle from '../components/header/CategoryMetaHeadOfTitle';
@@ -46,35 +45,11 @@ interface CategoryTemplateProps {
   };
 }
 
-const Category: React.FC<CategoryTemplateProps> = ({ location, pageContext, data }) => {
-  const category = pageContext.category ? pageContext.category : '';
+const Category: React.FC<CategoryTemplateProps> = ({ pageContext, data }) => {
   const { edges } = data.allMarkdownRemark;
-  const CategoryData = data.allCategoryYaml.edges.find(
-    n => n.node.id.toLowerCase() === category.toLowerCase(),
-  );
 
   return (
     <IndexLayout>
-      <Helmet>
-        <title>
-          {category} - {config.title}
-        </title>
-        <meta name="description" content={CategoryData?.node ? CategoryData.node.description : ''} />
-        <meta property="og:site_name" content={config.title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${category} - ${config.title}`} />
-        <meta property="og:url" content={config.siteUrl + location.pathname} />
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${category} - ${config.title}`} />
-        <meta name="twitter:url" content={config.siteUrl + location.pathname} />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
-      </Helmet>
       <Wrapper>
         <CategoryMetaHeadOfTitle
           category={pageContext.category}
@@ -102,6 +77,36 @@ const Category: React.FC<CategoryTemplateProps> = ({ location, pageContext, data
 
 export default Category;
 
+export function Head({ location, pageContext, data }) {
+  const category = pageContext.category ? pageContext.category : '';
+  const CategoryData = data.allCategoryYaml.edges.find(
+    n => n.node.id.toLowerCase() === category.toLowerCase(),
+  );
+
+  return (
+    <>
+      <title>
+        {category} - {config.title}
+      </title>
+      <meta name="description" content={CategoryData?.node ? CategoryData.node.description : ''} />
+      <meta property="og:site_name" content={config.title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={`${category} - ${config.title}`} />
+      <meta property="og:url" content={config.siteUrl + location.pathname} />
+      {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={`${category} - ${config.title}`} />
+      <meta name="twitter:url" content={config.siteUrl + location.pathname} />
+      {config.twitter && (
+        <meta
+          name="twitter:site"
+          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+        />
+      )}
+    </>
+  );
+}
+
 export const pageQuery = graphql`
   query($skip: Int!, $limit: Int!, $category: String!) {
     allCategoryYaml {
@@ -121,7 +126,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { fields: { category: { eq: $category } }, frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
