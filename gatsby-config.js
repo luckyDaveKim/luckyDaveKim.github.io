@@ -79,8 +79,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ 'content:encoded': node.html }],
-                })
-              })
+                });
+              });
             },
             query: `
               {
@@ -102,7 +102,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: `${TITLE} | ${DESCRIPTION}`
+            title: `${TITLE} | ${DESCRIPTION}`,
           },
         ],
       },
@@ -114,9 +114,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-109095118-1',
+        trackingIds: [
+          'G-3GKM3N4DZE',
+        ],
       },
     },
     'gatsby-plugin-robots-txt',
