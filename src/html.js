@@ -11,7 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GKM3N4DZE"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109095118-1"></script>
         <script>
           {
             `
@@ -19,7 +19,7 @@ export default function HTML(props) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-3GKM3N4DZE');
+            gtag('config', 'UA-109095118-1');
             `
           }
         </script>
