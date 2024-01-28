@@ -40,7 +40,7 @@ const About: React.FC = () => (
             <div className="post-content">
               <h1 id="Introduction">Introduction</h1>
               <ul>
-                <li>안녕하세요:) 6년차 백엔드 개발자입니다.</li>
+                <li>안녕하세요:) 8년차 백엔드 개발자입니다.</li>
                 <li>Clean Code와 Clean Architecture에 대한 고민을 생활화합니다.</li>
                 <li>호기심이 많으며 '왜?'에 대한 탐구를 좋아합니다.</li>
               </ul>
@@ -67,6 +67,7 @@ const About: React.FC = () => (
                   <ul>
                     <li>Nginx, Tomcat, Resin</li>
                     <li>OracleDB, MySQL, MongoDB, Redis</li>
+                    <li>Kafka</li>
                     <li>Jenkins, Bamboo, Travis CI</li>
                     <li>Git, SVN</li>
                   </ul>
