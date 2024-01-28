@@ -13,4 +13,7 @@
 ## 유지보수
 
 ### 패키지 업데이트
-`yarn upgrade-interactive` 명령어 수행
+- Upgrade minor version
+  - `yarn upgrade-interactive` 명령어 수행
+- Upgrade latest version
+- `yarn upgrade-interactive --latest` 명령어 수행
