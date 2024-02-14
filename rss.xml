@@ -1,4 +1,120 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 10:29:22 GMT</lastBuildDate><item><title><![CDATA[Spring Boot v2 에서 v3 마이그레이션]]></title><description><![CDATA[개요 이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다. 마이그레이션 코드는 Spring Boot Migration Guide 를 참고하실 수 있습니다. Spring Boot…]]></description><link>https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</link><guid isPermaLink="false">https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</guid><pubDate>Fri, 26 Jan 2024 15:09:21 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DevDave | The blog for dave]]></title><description><![CDATA[The blog for dave]]></description><link>https://luckydavekim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 14 Feb 2024 15:56:15 GMT</lastBuildDate><item><title><![CDATA[Mac에 Rancher Desktop 설치하는 방법]]></title><description><![CDATA[개요 이 포스팅에서는 MacOS에서 Docker를 손쉽게 사용하기 위한 Rancher Desktop을 설치하는 방법에 대해 소개하고자 합니다. 사전 준비 mac에 brew가 설치되지 않았다면, Homebrew 설치 방법을 참고해서 설치해주세요. TL…]]></description><link>https://luckydavekim.github.io/development/etc/docker/install-rancher-desktop-on-mac</link><guid isPermaLink="false">https://luckydavekim.github.io/development/etc/docker/install-rancher-desktop-on-mac</guid><pubDate>Thu, 15 Feb 2024 02:48:39 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
+&lt;p&gt;이 포스팅에서는 MacOS에서 Docker를 손쉽게 사용하기 위한 Rancher Desktop을 설치하는 방법에 대해 소개하고자 합니다.&lt;/p&gt;
+&lt;h2&gt;사전 준비&lt;/h2&gt;
+&lt;p&gt;mac에 brew가 설치되지 않았다면, &lt;a href=&quot;https://luckydavekim.github.io/development/etc/mac-os/install-homebrew/&quot;&gt;Homebrew 설치 방법&lt;/a&gt;을 참고해서 설치해주세요.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;TL;DR&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; rancher
+brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;docker&lt;/span&gt;
+brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;docker-compose&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Rancher Desktop 이란?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://rancherdesktop.io/&quot;&gt;Rancher Desktop&lt;/a&gt;은 Windows 혹은 MacOS에서 Docker를 실행할 수 있도록 도와주는 프로그램입니다. &lt;a href=&quot;https://www.docker.com/products/docker-desktop/&quot;&gt;Docker Desktop&lt;/a&gt;이 &lt;a href=&quot;https://www.docker.com/pricing/&quot;&gt;유료&lt;/a&gt;로 전환되며 대체제로 새롭게 조명받게 됐습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;참고 : Docker는 기술적으로 Linux에서만 구동할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Rancher Desktop 설치&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;brew&lt;/code&gt; 명령어를 사용해 손쉽게 Rancher Desktop을 설치할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--cask&lt;/span&gt; rancher&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그리고 Docker를 설치해줍니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;docker&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Rancher Desktop 설정&lt;/h1&gt;
+&lt;h2&gt;Rancher Desktop Path 등록&lt;/h2&gt;
+&lt;p&gt;각자 mac 환경에서 사용 중인 쉘 종류에 따라 아래 명령어를 선택하여 실행합니다.&lt;/p&gt;
+&lt;h3&gt;bash 쉘을 사용하는 경우…&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;export PATH=&quot;$PATH:$HOME/.rd/bin&quot;&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; ~/.bashrc
+&lt;span class=&quot;token builtin class-name&quot;&gt;source&lt;/span&gt; ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;zsh 쉘을 사용하는 경우…&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;export PATH=&quot;$PATH:$HOME/.rd/bin&quot;&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; ~/.zshrc
+&lt;span class=&quot;token builtin class-name&quot;&gt;source&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Container engine 설정&lt;/h1&gt;
+&lt;p&gt;설치한 Rancher Desktop을 실행 후, container engine을 Docker로 설정해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1288px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/089c69d12b5398b8ef6895eaa9096909/f3e6b/rancher-desktop-preferences.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.388888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABg0lEQVR42p2S3W6jMBCF/QyUBIj5sQ3YkJAEkpBNWq3UXlTq+7/Q2WMv7araq+bi09jgOTPHY7H7/Q5z83zAjC/YH0+YpjOOI1nW83zDfL2jaRzqxobYtt1/1LWFaE6v0NMbYntFYg4UvFDgGZf5Tp5xnl8wnu8sMFNoC9ftYeoe2UYtVEhJtiAcq+lCYR3FSNcbDPsTxukKO1zQDRNU3aHQHSrVIi80irJmNJC5hmQs+b2qGpTE/xN+4w/Eq02osN2NtNWjqFoeaqGYoLWFIpWyIbEM/xi5b9wBrd3Bun04I5zb0UqHOM6QZRWm0y1YHadf7PaMrj+g3x5DIZ+oTUfLXYjauL/FfCRltXSYpgWiKAkd+mTrhtD+Rqqvu/H4/TdyFaz7dbgCIp6eUnh8h0mSf0v+PPQTxJp3t6KYF03YqSzqh4T+dbjKEFEsWgQ1J6lyb+cBQeaKkk+l4DDkWqJOcxhZQkrafsiygjjwdQ+c3pGD6Llu7DY8XFO78Jx+grf8B9RPMYjCLoVOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Rancher Desktop preferences&quot;
+        title=&quot;&quot;
+        src=&quot;/static/089c69d12b5398b8ef6895eaa9096909/f3e6b/rancher-desktop-preferences.png&quot;
+        srcset=&quot;/static/089c69d12b5398b8ef6895eaa9096909/53918/rancher-desktop-preferences.png 360w,
+/static/089c69d12b5398b8ef6895eaa9096909/242a6/rancher-desktop-preferences.png 720w,
+/static/089c69d12b5398b8ef6895eaa9096909/f3e6b/rancher-desktop-preferences.png 1288w&quot;
+        sizes=&quot;(max-width: 1288px) 100vw, 1288px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 772px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9eed2827955b1168a83d5f9a6fbed64a/a546b/rancher-desktop-container-engine.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.94444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVR42p2Ty1LbMBSG/RYl1jVO7NiRbNlxbDBOgHLpwK7TYVh0prwBKxY8/s+RS2EgJGm7+CyNbH3znyMruOh79Ks1DtsjuMLBzC1ym9NoUJcVmmWDpmlR18thrMoFrMk3yG2BLJsjsEVNHx7Thg7jKAWTMbiYgKuEmIHRPAw1QqaHkbExGP8c/z5wRUXpOkTjGEJEmNoWUZJjMnPQsxJ6YiBpXcrJgBDb4SQNXHuC7uwGzeoKY5IsXI3ucA07d+ChguD6NQHfA2M+4e0D2p+PaH89oTy/xbeqxo+uxzX173SW4iRJcJZmyBKzVzoIy2aFbn2JyFAvoynO3QJfy9/0mcFROsdVPEXCFUa0SewUKgScHiyUhIKi8izjMEwMWC5hhUQlBL7LENI3fq+QR3iFGjvy0Nxz8MIXwgiFteRDQrZb+LbgT1m8lPURL81I2kuxQ6g3hdvK8VKfWlNbtvXRt+6vhX+kG+mYHkod0RmEKkYwlPlf0I+uEwi6Uf6GWVsjTt37hP8ESVXiIGK6/8USd3f3OO5O8Qyr7W9LB5hYAQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;container engine setting to Docker&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9eed2827955b1168a83d5f9a6fbed64a/a546b/rancher-desktop-container-engine.png&quot;
+        srcset=&quot;/static/9eed2827955b1168a83d5f9a6fbed64a/53918/rancher-desktop-container-engine.png 360w,
+/static/9eed2827955b1168a83d5f9a6fbed64a/242a6/rancher-desktop-container-engine.png 720w,
+/static/9eed2827955b1168a83d5f9a6fbed64a/a546b/rancher-desktop-container-engine.png 772w&quot;
+        sizes=&quot;(max-width: 772px) 100vw, 772px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;Rancher Desktop 설치 확인&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;hello-world&lt;/code&gt; 이미지를 Docker로 실행해서 정상적으로 Rancher Desktop이 설치되었는지 확인합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;docker&lt;/span&gt; run hello-world&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;정상적으로 Rancher Desktop이 설치되었다면, 이미지를 받아와서 아래와 같이 뜹니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;줄이며…&lt;/h1&gt;
+&lt;p&gt;MacOS에서 Docker Desktop을 대체할 수 있는 &lt;code class=&quot;language-text&quot;&gt;Rancher Desktop&lt;/code&gt; 을 설치하는 방법에 대해 알아보있습니다.&lt;br&gt;
+앞으로 Docker로 손쉽게 다양한 환경을 실행해보겠습니다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Boot v2 에서 v3 마이그레이션]]></title><description><![CDATA[개요 이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다. 마이그레이션 코드는 Spring Boot Migration Guide 를 참고하실 수 있습니다. Spring Boot…]]></description><link>https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</link><guid isPermaLink="false">https://luckydavekim.github.io/development/back-end/spring-framework/spring-boot-migration-v2-to-v3</guid><pubDate>Fri, 26 Jan 2024 15:09:21 GMT</pubDate><content:encoded>&lt;h1&gt;개요&lt;/h1&gt;
 &lt;p&gt;이 포스팅에서는 Spring Boot 버전 2.x 에서 3.x 로 올리며 겪은 이슈에 대해 공유하려 합니다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;마이그레이션 코드는 &lt;a href=&quot;https://github.com/luckyDaveKim/springboot-migration-guide&quot;&gt;Spring Boot Migration Guide&lt;/a&gt; 를 참고하실 수 있습니다.&lt;/p&gt;
